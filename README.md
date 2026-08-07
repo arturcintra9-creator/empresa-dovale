@@ -23,6 +23,26 @@ Para achar rápido, abra o `index.html` e use `Ctrl + F` com o texto da coluna d
 
 ---
 
+## Atalhos de duplo clique (jeito fácil)
+
+Na pasta do site há dois arquivos que você abre com **duplo clique**,
+sem precisar de terminal:
+
+| Atalho | Quando usar |
+|---|---|
+| **PUBLICAR.bat** | Só na primeira vez, para colocar o site no ar |
+| **ATUALIZAR.bat** | Toda vez que você mudar algo e quiser publicar |
+
+O `ATUALIZAR` mostra o que você alterou, recompila o visual, pede uma
+descrição curta da mudança e envia. A Vercel republica sozinha em cerca
+de 1 minuto.
+
+> Se o Windows mostrar um aviso de segurança na primeira vez,
+> clique em **Mais informações → Executar assim mesmo**.
+> O aviso aparece porque o arquivo foi baixado/criado agora, não porque há risco.
+
+---
+
 ## Como rodar no seu computador
 
 **Modo simples — só ver a página:**
