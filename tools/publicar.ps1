@@ -1,5 +1,11 @@
 # Publica o site pela primeira vez.
 # Chamado pelo atalho PUBLICAR.bat (duplo clique).
+#
+# Parametro opcional -Modo:
+#   github  -> vai direto para o envio ao GitHub, sem perguntar
+#   vercel  -> vai direto para a publicacao na Vercel, sem perguntar
+
+param([string]$Modo = '')
 
 $ErrorActionPreference = 'Stop'
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
@@ -40,6 +46,11 @@ if (-not $commits -or $commits -eq '0') {
 }
 Ok "Projeto pronto, com $commits commit(s) para publicar."
 
+# ---------- Modo direto (sem menu) ----------
+if ($Modo -eq 'github') { $opcao = '1' }
+elseif ($Modo -eq 'vercel') { $opcao = '2' }
+else {
+
 # ---------- Menu ----------
 Write-Host ""
 Write-Host "  Escolha como quer publicar:" -ForegroundColor White
@@ -54,6 +65,8 @@ Write-Host "       precisa ser feita por aqui de novo."
 Write-Host ""
 
 $opcao = Read-Host "  Digite 1 ou 2 e aperte Enter"
+
+}
 
 # ---------- Opcao 1: GitHub ----------
 if ($opcao -eq '1') {
