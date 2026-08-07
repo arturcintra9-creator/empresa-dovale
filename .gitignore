@@ -1,0 +1,23 @@
+# Dependencias
+node_modules/
+
+# Vercel
+.vercel/
+
+# Sistema operacional
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Editores
+.vscode/
+.idea/
+*.swp
+
+# Logs
+npm-debug.log*
+*.log
+
+# Observacao: a pasta dist/ NAO esta ignorada de proposito.
+# O arquivo dist/style.css fica versionado para que o site funcione
+# mesmo abrindo o index.html direto, sem precisar rodar o build.

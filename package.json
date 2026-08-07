@@ -1,0 +1,16 @@
+{
+  "name": "empresa-dovale",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Landing page da Empresa DoVale - Climatizacao, Eletrica, Automacao e Seguranca Eletronica",
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./dist/style.css --minify",
+    "dev": "tailwindcss -i ./src/input.css -o ./dist/style.css --watch",
+    "imagens": "node ./tools/gerar-imagens.mjs"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.16",
+    "sharp": "^0.34.4",
+    "tailwindcss": "^4.1.16"
+  }
+}

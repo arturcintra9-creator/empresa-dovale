@@ -1,0 +1,281 @@
+@import "tailwindcss";
+
+/* Arquivos que o Tailwind analisa para saber quais classes gerar.
+   Se você criar novas paginas .html, adicione-as aqui. */
+@source "../index.html";
+
+/* =========================================================
+   TEMA — Paleta, tipografia e animacoes da Empresa DoVale
+   ========================================================= */
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  /* Azul Profundo — eletrica, seguranca, confianca */
+  --color-navy-50:  #eef4fb;
+  --color-navy-100: #d6e4f5;
+  --color-navy-200: #adc8ea;
+  --color-navy-300: #7da4db;
+  --color-navy-400: #4a7cc4;
+  --color-navy-500: #2b5ca6;
+  --color-navy-600: #1d4585;
+  --color-navy-700: #153468;
+  --color-navy-800: #0f264d;
+  --color-navy-900: #0b2447;
+  --color-navy-950: #061630;
+
+  /* Azul Gelo / Ciano — climatizacao, refrigeracao, tecnologia */
+  --color-ice-50:  #eefbff;
+  --color-ice-100: #d6f4ff;
+  --color-ice-200: #b0eaff;
+  --color-ice-300: #75dcff;
+  --color-ice-400: #33c6f7;
+  --color-ice-500: #0aa9e0;
+  --color-ice-600: #0087bd;
+  --color-ice-700: #026c99;
+  --color-ice-800: #0a597e;
+  --color-ice-900: #0e4a69;
+
+  /* Verde oficial do WhatsApp */
+  --color-whats-500: #25d366;
+  --color-whats-600: #20bd5a;
+
+  /* Animacoes personalizadas */
+  --animate-pulseRing: pulseRing 2.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-floatSlow: floatSlow 6s ease-in-out infinite;
+
+  @keyframes pulseRing {
+    0%   { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.55); }
+    70%  { box-shadow: 0 0 0 18px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+  }
+
+  @keyframes floatSlow {
+    0%, 100% { transform: translateY(0px); }
+    50%      { transform: translateY(-14px); }
+  }
+}
+
+/* =========================================================
+   BASE
+   ========================================================= */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Foco visivel para navegacao por teclado (acessibilidade) */
+  :focus-visible {
+    outline: 3px solid var(--color-ice-400);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}
+
+/* =========================================================
+   COMPONENTES E EFEITOS
+   ========================================================= */
+
+/* ---- Animacoes de entrada disparadas pelo scroll ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(34px);
+  transition: opacity .8s cubic-bezier(.22, 1, .36, 1),
+              transform .8s cubic-bezier(.22, 1, .36, 1);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity .8s cubic-bezier(.22, 1, .36, 1),
+              transform .8s cubic-bezier(.22, 1, .36, 1);
+}
+.reveal-left.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity .8s cubic-bezier(.22, 1, .36, 1),
+              transform .8s cubic-bezier(.22, 1, .36, 1);
+}
+.reveal-right.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-zoom {
+  opacity: 0;
+  transform: scale(.94);
+  transition: opacity .7s ease-out,
+              transform .7s cubic-bezier(.22, 1, .36, 1);
+}
+.reveal-zoom.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ---- Card de servico: borda gradiente revelada no hover ---- */
+.service-card {
+  position: relative;
+  transition: transform .45s cubic-bezier(.22, 1, .36, 1),
+              box-shadow .45s ease,
+              border-color .45s ease;
+}
+.service-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  padding: 1.5px;
+  background: linear-gradient(135deg, #33c6f7, #2b5ca6 55%, #0b2447);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity .45s ease;
+  pointer-events: none;
+}
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 26px 55px -22px rgba(11, 36, 71, .45);
+}
+.service-card:hover::before {
+  opacity: 1;
+}
+.service-card .icon-wrap {
+  transition: transform .45s cubic-bezier(.22, 1, .36, 1),
+              background .45s ease,
+              color .45s ease;
+}
+.service-card:hover .icon-wrap {
+  transform: scale(1.08) rotate(-6deg);
+  background-image: linear-gradient(135deg, #0aa9e0, #1d4585);
+  color: #fff;
+}
+.service-card .card-line {
+  width: 2.5rem;
+  transition: width .5s cubic-bezier(.22, 1, .36, 1);
+}
+.service-card:hover .card-line {
+  width: 100%;
+}
+
+/* ---- Botao CTA com brilho deslizante ---- */
+.btn-cta {
+  position: relative;
+  overflow: hidden;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.btn-cta::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, .32), transparent);
+  transform: skewX(-20deg);
+  transition: left .7s ease;
+}
+.btn-cta:hover::after {
+  left: 160%;
+}
+.btn-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 38px -14px rgba(37, 211, 102, .65);
+}
+.btn-cta:active {
+  transform: translateY(-1px) scale(.99);
+}
+
+/* ---- Texturas de fundo ---- */
+.tech-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, .055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, .055) 1px, transparent 1px);
+  background-size: 62px 62px;
+}
+.dot-grid {
+  background-image: radial-gradient(rgba(11, 36, 71, .10) 1.4px, transparent 1.4px);
+  background-size: 26px 26px;
+}
+
+/* ---- Link do menu com sublinhado animado ---- */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  height: 2px;
+  width: 0;
+  background: linear-gradient(90deg, #33c6f7, #2b5ca6);
+  border-radius: 2px;
+  transition: width .35s cubic-bezier(.22, 1, .36, 1);
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* ---- Itens da lista de diferenciais ---- */
+.feature-item {
+  transition: transform .35s ease, background .35s ease;
+}
+.feature-item:hover {
+  transform: translateX(8px);
+}
+
+/* ---- Barra de rolagem ---- */
+::-webkit-scrollbar {
+  width: 11px;
+}
+::-webkit-scrollbar-track {
+  background: #eef4fb;
+}
+::-webkit-scrollbar-thumb {
+  background: #1d4585;
+  border-radius: 99px;
+  border: 3px solid #eef4fb;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0b2447;
+}
+
+/* =========================================================
+   ACESSIBILIDADE — respeita quem prefere menos movimento
+   ========================================================= */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal,
+  .reveal-left,
+  .reveal-right,
+  .reveal-zoom {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .animate-pulseRing,
+  .animate-floatSlow,
+  .animate-bounce,
+  .animate-ping {
+    animation: none !important;
+  }
+}

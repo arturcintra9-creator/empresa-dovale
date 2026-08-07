@@ -1,0 +1,183 @@
+# Empresa DoVale — Landing Page
+
+Página de vendas em HTML + Tailwind CSS + JavaScript puro.
+Sem framework, sem banco de dados. Rápida de editar e de publicar.
+
+---
+
+## ⚠️ ANTES DE PUBLICAR — dados que precisam ser confirmados
+
+Alguns textos foram escritos como exemplo porque a informação real não foi passada.
+**Confira cada um antes de divulgar o site**, porque o cliente pode cobrar depois:
+
+| Onde está | O que diz hoje | Confirmar |
+|---|---|---|
+| Seção "Por que escolher" | **"24h para retorno do seu orçamento"** | O prazo real de resposta |
+| Rodapé | **"Seg. a Sáb. · 08h às 18h"** | O horário real de atendimento |
+| Rodapé e Hero | **"São Paulo e região" / "Grande São Paulo"** | O raio real de cobertura |
+| Seção "Por que escolher" | **"100% com responsabilidade técnica"** | Existe registro CREA/CFT para citar? |
+| Rodapé | Não há CNPJ nem razão social | Adicionar aumenta a confiança |
+| Rodapé | Não há e-mail nem Instagram | Adicionar se existirem |
+
+Para achar rápido, abra o `index.html` e use `Ctrl + F` com o texto da coluna do meio.
+
+---
+
+## Como rodar no seu computador
+
+**Modo simples — só ver a página:**
+dê duplo clique no `index.html`. Funciona direto, sem instalar nada.
+
+**Modo edição — ao mexer no visual:**
+
+```bash
+npm install
+```
+
+Depois, deixe este comando rodando enquanto edita:
+
+```bash
+npm run dev
+```
+
+Ele fica observando os arquivos e recompila o CSS sozinho a cada alteração.
+Salve o arquivo, atualize o navegador (`Ctrl + F5`) e a mudança aparece.
+
+---
+
+## Comandos disponíveis
+
+| Comando | O que faz |
+|---|---|
+| `npm run dev` | Recompila o CSS automaticamente enquanto você edita |
+| `npm run build` | Gera o CSS final minificado em `dist/style.css` |
+| `npm run imagens` | Regera `og-image.png`, `favicon.png` e `apple-touch-icon.png` |
+
+---
+
+## Publicar na Vercel
+
+### Primeira vez
+
+**1. Crie o repositório no GitHub**
+
+O Git já está iniciado e com o primeiro commit feito. Falta só enviar:
+
+```bash
+git remote add origin https://github.com/SEU-USUARIO/empresa-dovale.git
+```
+
+```bash
+git push -u origin main
+```
+
+**2. Importe na Vercel**
+
+- Acesse https://vercel.com/new
+- Escolha o repositório `empresa-dovale`
+- A Vercel lê o `vercel.json` sozinha e já sabe o que fazer — **não mude nada**
+- Clique em **Deploy**
+
+Em cerca de um minuto o site estará no ar em `https://algum-nome.vercel.app`.
+
+### Alternativa sem GitHub (mais rápido para testar)
+
+```bash
+npx vercel --prod
+```
+
+Ele pede login na primeira vez e sobe a pasta direto.
+
+---
+
+## ⚠️ Logo após o primeiro deploy — passo obrigatório
+
+A Vercel vai te dar o endereço final (ex.: `https://empresa-dovale.vercel.app`).
+Esse endereço precisa ser gravado em **3 arquivos**, senão a miniatura do
+WhatsApp não aparece e o Google indexa errado:
+
+| Arquivo | O que trocar |
+|---|---|
+| `index.html` | 8 ocorrências de `https://empresadovale.vercel.app` |
+| `robots.txt` | 1 ocorrência |
+| `sitemap.xml` | 1 ocorrência |
+
+Use **Localizar e Substituir** (`Ctrl + H`) em cada arquivo, troque
+`https://empresadovale.vercel.app` pelo endereço real, e envie:
+
+```bash
+git add . ; git commit -m "Atualiza endereco do site" ; git push
+```
+
+A Vercel republica sozinha em segundos.
+
+---
+
+## Como fazer alterações no futuro
+
+1. Edite o `index.html` (textos, telefone, seções)
+2. Se mexeu no visual, rode `npm run build`
+3. Envie:
+
+```bash
+git add . ; git commit -m "Descreva o que mudou" ; git push
+```
+
+Pronto — a Vercel detecta o envio e republica o site automaticamente.
+
+---
+
+## Trocar o número de WhatsApp
+
+O número aparece em **18 lugares** no `index.html`, em 4 formatos diferentes.
+Use **Localizar e Substituir** (`Ctrl + H`) para cada formato, nesta ordem:
+
+| Procurar por | Ocorrências | Formato |
+|---|---|---|
+| `wa.me/5511938062320` | 8 | links do WhatsApp |
+| `(11) 93806-2320` | 5 | número visível na tela |
+| `tel:+5511938062320` | 4 | links de ligar |
+| `+55-11-93806-2320` | 1 | dados estruturados do Google |
+
+O formato do WhatsApp é `55` + DDD + número, sem espaços, parênteses ou traços.
+
+---
+
+## Estrutura dos arquivos
+
+```
+EmpresaDoValle/
+├── index.html              A página inteira (textos e estrutura)
+├── src/input.css           Cores, fontes e animações — edite aqui o visual
+├── dist/style.css          CSS gerado automaticamente — NÃO edite à mão
+├── tools/gerar-imagens.mjs Script que cria a imagem de compartilhamento
+├── og-image.png            Miniatura exibida ao compartilhar o link
+├── favicon.svg / .png      Ícone da aba do navegador
+├── apple-touch-icon.png    Ícone ao salvar na tela inicial do celular
+├── robots.txt              Instruções para o Google
+├── sitemap.xml             Mapa do site para buscadores
+├── vercel.json             Configuração de deploy e cabeçalhos de segurança
+└── package.json            Dependências e comandos
+```
+
+> `dist/style.css` fica versionado de propósito: assim o site funciona mesmo
+> abrindo o `index.html` direto, sem precisar rodar nenhum build.
+
+---
+
+## Mudar as cores
+
+Abra `src/input.css` e edite o bloco `@theme`:
+
+- `--color-navy-*` → azul profundo (elétrica, segurança)
+- `--color-ice-*` → azul gelo / ciano (climatização, refrigeração)
+
+Depois rode `npm run build`.
+
+---
+
+## Domínio próprio
+
+Na Vercel: **Settings → Domains → Add**.
+Ela mostra os registros de DNS para configurar no seu provedor (Registro.br, GoDaddy etc.).
+Depois de apontar o domínio, refaça a troca de endereço descrita acima.
