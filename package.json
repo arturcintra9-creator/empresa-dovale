@@ -4,8 +4,9 @@
   "private": true,
   "description": "Landing page da Empresa DoVale - Climatizacao, Eletrica, Automacao e Seguranca Eletronica",
   "scripts": {
-    "build": "tailwindcss -i ./src/input.css -o ./dist/style.css --minify",
+    "build": "node ./tools/aplicar-url.mjs && tailwindcss -i ./src/input.css -o ./dist/style.css --minify",
     "dev": "tailwindcss -i ./src/input.css -o ./dist/style.css --watch",
+    "url": "node ./tools/aplicar-url.mjs",
     "imagens": "node ./tools/gerar-imagens.mjs"
   },
   "devDependencies": {

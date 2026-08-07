@@ -51,6 +51,7 @@ Salve o arquivo, atualize o navegador (`Ctrl + F5`) e a mudança aparece.
 |---|---|
 | `npm run dev` | Recompila o CSS automaticamente enquanto você edita |
 | `npm run build` | Gera o CSS final minificado em `dist/style.css` |
+| `npm run url <endereço>` | Grava o endereço do site em todos os arquivos |
 | `npm run imagens` | Regera `og-image.png`, `favicon.png` e `apple-touch-icon.png` |
 
 ---
@@ -90,26 +91,27 @@ Ele pede login na primeira vez e sobe a pasta direto.
 
 ---
 
-## ⚠️ Logo após o primeiro deploy — passo obrigatório
+## O endereço do site se ajusta sozinho
 
-A Vercel vai te dar o endereço final (ex.: `https://empresa-dovale.vercel.app`).
-Esse endereço precisa ser gravado em **3 arquivos**, senão a miniatura do
-WhatsApp não aparece e o Google indexa errado:
+O site precisa saber o próprio endereço em 10 lugares (miniatura do WhatsApp,
+canonical, sitemap, dados do Google). **Isso é automático:** durante o build,
+a Vercel informa o domínio do projeto e o script `tools/aplicar-url.mjs`
+grava o endereço certo em tudo.
 
-| Arquivo | O que trocar |
-|---|---|
-| `index.html` | 8 ocorrências de `https://empresadovale.vercel.app` |
-| `robots.txt` | 1 ocorrência |
-| `sitemap.xml` | 1 ocorrência |
+Você não precisa fazer nada. Os arquivos do seu computador continuam com o
+endereço provisório — a troca acontece só no servidor, a cada publicação.
 
-Use **Localizar e Substituir** (`Ctrl + H`) em cada arquivo, troque
-`https://empresadovale.vercel.app` pelo endereço real, e envie:
+### Quando você tiver domínio próprio
+
+Aí sim vale gravar de forma permanente:
+
+```bash
+npm run url https://empresadovale.com.br
+```
 
 ```bash
 git add . ; git commit -m "Atualiza endereco do site" ; git push
 ```
-
-A Vercel republica sozinha em segundos.
 
 ---
 
