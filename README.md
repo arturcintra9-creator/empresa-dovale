@@ -5,21 +5,15 @@ Sem framework, sem banco de dados. Rápida de editar e de publicar.
 
 ---
 
-## ⚠️ ANTES DE PUBLICAR — dados que precisam ser confirmados
+## ⚠️ ANTES DE PUBLICAR — dados a confirmar
 
-Alguns textos foram escritos como exemplo porque a informação real não foi passada.
-**Confira cada um antes de divulgar o site**, porque o cliente pode cobrar depois:
+Nenhum dado foi inventado. Tudo que ainda não foi confirmado está
+**marcado em laranja tracejado na própria tela** e como
+`<!-- CONFIRMAR: ... -->` no código — são 35 marcações.
 
-| Onde está | O que diz hoje | Confirmar |
-|---|---|---|
-| Seção "Por que escolher" | **"24h para retorno do seu orçamento"** | O prazo real de resposta |
-| Rodapé | **"Seg. a Sáb. · 08h às 18h"** | O horário real de atendimento |
-| Rodapé e Hero | **"São Paulo e região" / "Grande São Paulo"** | O raio real de cobertura |
-| Seção "Por que escolher" | **"100% com responsabilidade técnica"** | Existe registro CREA/CFT para citar? |
-| Rodapé | Não há CNPJ nem razão social | Adicionar aumenta a confiança |
-| Rodapé | Não há e-mail nem Instagram | Adicionar se existirem |
+A lista completa, agrupada por assunto, está em **[ENTREGA.md](ENTREGA.md)**.
 
-Para achar rápido, abra o `index.html` e use `Ctrl + F` com o texto da coluna do meio.
+Para achar no código: abra o `index.html` e busque por `CONFIRMAR`.
 
 ---
 

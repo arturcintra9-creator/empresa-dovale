@@ -3,671 +3,570 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Empresa DoVale | Climatização, Elétrica, Automação e Segurança Eletrônica</title>
-  <meta name="description" content="Empresa DoVale: soluções completas em climatização, refrigeração, instalação e manutenção elétrica, automação e segurança eletrônica para residências e indústrias. Orçamento rápido pelo WhatsApp." />
-  <meta name="theme-color" content="#0B2447" />
+
+  <!-- CONFIRMAR: trocar [CIDADE] pela cidade-base real da empresa em todo o site -->
+  <title>Manutenção de ar-condicionado, elétrica e segurança em [CIDADE] | Empresa DoVale</title>
+  <meta name="description" content="Empresa DoVale: manutenção e instalação de climatização, elétrica, automação e segurança eletrônica para residências, comércio e indústria em [CIDADE]. Orçamento pelo WhatsApp (11) 93806-2320." />
+  <meta name="theme-color" content="#1c2025" />
 
   <!-- ==========================================================
-       ATENCAO: depois do deploy, troque as 4 ocorrencias de
-       https://empresadovale.vercel.app pelo endereco final do site.
-       Elas estao logo abaixo (og:url, og:image, twitter:image, canonical)
-       e no bloco de dados estruturados no fim deste <head>.
+       O endereço abaixo é substituído automaticamente no build
+       pelo domínio real (tools/aplicar-url.mjs). Não editar à mão.
        ========================================================== -->
-
   <link rel="canonical" href="https://empresadovale.vercel.app/" />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Empresa DoVale" />
-  <meta name="keywords" content="climatização, ar condicionado, refrigeração, instalação elétrica, manutenção elétrica, automação residencial, automação industrial, segurança eletrônica, CFTV, São Paulo" />
 
-  <!-- Open Graph — miniatura ao compartilhar no WhatsApp, Facebook e LinkedIn -->
+  <!-- Open Graph -->
   <meta property="og:site_name" content="Empresa DoVale" />
   <meta property="og:locale" content="pt_BR" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://empresadovale.vercel.app/" />
-  <meta property="og:title" content="Empresa DoVale | Infraestrutura Elétrica, Climatização e Segurança" />
-  <meta property="og:description" content="Do lar à indústria: energia, climatização, automação e segurança eletrônica com competência técnica e segurança. Orçamento pelo WhatsApp (11) 93806-2320." />
+  <meta property="og:title" content="Manutenção de ar-condicionado, elétrica e segurança em [CIDADE] | Empresa DoVale" />
+  <meta property="og:description" content="Climatização, elétrica, automação e segurança eletrônica com uma equipe só. Residência, comércio e indústria. Orçamento pelo WhatsApp (11) 93806-2320." />
   <meta property="og:image" content="https://empresadovale.vercel.app/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Empresa DoVale — Energia, Climatização e Segurança em uma única equipe técnica." />
+  <meta property="og:image:alt" content="Empresa DoVale — manutenção de climatização, elétrica, automação e segurança eletrônica." />
 
-  <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Empresa DoVale | Infraestrutura Elétrica, Climatização e Segurança" />
-  <meta name="twitter:description" content="Do lar à indústria: energia, climatização, automação e segurança eletrônica. Orçamento pelo WhatsApp." />
+  <meta name="twitter:title" content="Manutenção de ar-condicionado, elétrica e segurança em [CIDADE] | Empresa DoVale" />
+  <meta name="twitter:description" content="Climatização, elétrica, automação e segurança eletrônica com uma equipe só." />
   <meta name="twitter:image" content="https://empresadovale.vercel.app/og-image.png" />
 
-  <!-- Icones -->
+  <!-- Ícones -->
   <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="./favicon.png" sizes="32x32" type="image/png" />
   <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
 
-  <!-- Tipografia -->
+  <!-- Tipografia: uma família só -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
   <!-- CSS compilado do Tailwind. Gerado por: npm run build -->
   <link rel="stylesheet" href="./dist/style.css" />
 
-  <!-- Lucide Icons -->
+  <!-- Lucide Icons — SVG monocromático, traço simples -->
   <script src="https://unpkg.com/lucide@0.545.0/dist/umd/lucide.js" defer></script>
 
   <!-- ==========================================================
        DADOS ESTRUTURADOS (Schema.org)
-       Ajuda o Google a exibir telefone, servicos e horario na busca local.
-       Confira os dados abaixo antes de publicar.
+       CONFIRMAR: cidade, bairros, horário, CNPJ e razão social
+       precisam ser preenchidos antes de publicar de verdade.
        ========================================================== -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": ["HVACBusiness", "Electrician"],
     "name": "Empresa DoVale",
-    "description": "Especializada em climatização, refrigeração, instalação e manutenção elétrica, sistemas automatizados e segurança eletrônica para clientes residenciais e industriais.",
+    "legalName": "[CONFIRMAR: razão social]",
+    "taxID": "[CONFIRMAR: CNPJ]",
+    "description": "Manutenção e instalação de climatização, refrigeração, elétrica, automação e segurança eletrônica para residências, comércio e indústria.",
     "url": "https://empresadovale.vercel.app/",
     "image": "https://empresadovale.vercel.app/og-image.png",
-    "logo": "https://empresadovale.vercel.app/apple-touch-icon.png",
     "telephone": "+55-11-93806-2320",
-    "priceRange": "$$",
-    "areaServed": {
-      "@type": "City",
-      "name": "São Paulo",
-      "addressRegion": "SP",
-      "addressCountry": "BR"
-    },
+    "areaServed": [
+      { "@type": "City", "name": "[CONFIRMAR: cidade 1]" },
+      { "@type": "City", "name": "[CONFIRMAR: cidade 2]" }
+    ],
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-        "opens": "08:00",
-        "closes": "18:00"
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "[CONFIRMAR: abertura]",
+        "closes": "[CONFIRMAR: fechamento]"
       }
     ],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Serviços da Empresa DoVale",
       "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Climatização e Refrigeração",
-            "description": "Instalação, higienização e manutenção de ar-condicionado split, multi-split, sistemas VRF, câmaras frias e refrigeração comercial."
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Instalação e Manutenção Elétrica",
-            "description": "Instalações, adequações e manutenção preventiva e corretiva em quadros, circuitos, aterramento e proteção, residencial e industrial."
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Automação Residencial e Industrial",
-            "description": "Iluminação inteligente, acionamentos programados, portões e acessos motorizados, comandos e sensores industriais."
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Segurança Eletrônica",
-            "description": "Projeto e instalação de CFTV com acesso remoto, alarmes, sensores perimetrais, interfonia e controle de acesso."
-          }
-        }
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Manutenção de ar-condicionado", "description": "Limpeza, carga de gás, troca de peça e instalação de split, multi-split, VRF e câmara fria." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Instalação e manutenção elétrica", "description": "Quadro de distribuição, circuito novo, aterramento e diagnóstico de falha em residência, comércio e indústria." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Automação residencial e industrial", "description": "Motor de portão, cenários de iluminação, acionamento programado e integração de máquinas." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Segurança eletrônica", "description": "CFTV com acesso pelo celular, alarme, interfone e controle de acesso." } }
       ]
     }
   }
   </script>
 </head>
 
-<body class="bg-white text-navy-900 antialiased overflow-x-hidden">
+<body class="bg-white text-grafite-900 antialiased">
+
+  <!-- =========================================================
+       FAIXA DE EMERGÊNCIA — acima da dobra
+       CONFIRMAR: existe plantão de emergência? Qual o prazo real
+       de chegada? Atende fim de semana e madrugada?
+  ========================================================== -->
+  <div class="bg-laranja-500 text-white">
+    <div class="max-w-6xl mx-auto px-5 sm:px-6">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-center gap-x-4 gap-y-1 py-2 text-center sm:text-left">
+        <p class="text-sm font-bold flex items-center justify-center gap-2">
+          <i data-lucide="triangle-alert" class="w-4 h-4 shrink-0"></i>
+          Parou agora? Chamado de emergência
+        </p>
+        <span class="pendente bg-white/15 border-white/50 text-white">CONFIRMAR: prazo de atendimento</span>
+        <a href="https://wa.me/5511938062320?text=EMERG%C3%8ANCIA%20-%20preciso%20de%20atendimento%20urgente."
+           target="_blank" rel="noopener noreferrer"
+           class="text-sm font-bold underline underline-offset-2 hover:no-underline">
+          Chamar no WhatsApp →
+        </a>
+      </div>
+    </div>
+  </div>
 
   <!-- =========================================================
        HEADER
   ========================================================== -->
-  <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-transparent">
-    <div class="max-w-7xl mx-auto px-5 sm:px-8">
-      <div class="flex items-center justify-between h-20">
+  <header class="sticky top-0 z-50 bg-grafite-950 border-b border-grafite-800">
+    <div class="max-w-6xl mx-auto px-5 sm:px-6">
+      <div class="flex items-center justify-between h-16">
 
-        <!-- Logo -->
-        <a href="#inicio" class="flex items-center gap-3 group">
-          <div class="relative h-11 w-11 rounded-xl bg-gradient-to-br from-ice-400 to-navy-700 flex items-center justify-center shadow-lg shadow-navy-900/25 transition-transform duration-500 group-hover:scale-105 group-hover:rotate-3">
-            <i data-lucide="zap" class="w-6 h-6 text-white"></i>
-          </div>
-          <div class="leading-tight">
-            <span id="logo-name" class="block text-xl font-extrabold tracking-tight text-white transition-colors duration-500">
-              Do<span class="text-ice-400">Vale</span>
-            </span>
-            <span id="logo-tag" class="block text-[10px] font-semibold uppercase tracking-[0.18em] text-white/60 transition-colors duration-500">
-              Engenharia &amp; Instalações
-            </span>
-          </div>
+        <a href="#inicio" class="flex items-center gap-2.5">
+          <span class="h-8 w-8 bg-laranja-500 flex items-center justify-center rounded-sm">
+            <i data-lucide="zap" class="w-4.5 h-4.5 text-white"></i>
+          </span>
+          <span class="text-lg font-extrabold tracking-tight text-white leading-none">
+            Do<span class="text-grafite-400">Vale</span>
+          </span>
         </a>
 
-        <!-- Navegação desktop -->
-        <nav id="nav-desktop" class="hidden lg:flex items-center gap-9 text-sm font-medium text-white/85 transition-colors duration-500">
-          <a href="#servicos"    class="nav-link hover:text-ice-400 transition-colors">Serviços</a>
-          <a href="#diferenciais" class="nav-link hover:text-ice-400 transition-colors">Por que a DoVale</a>
-          <a href="#processo"    class="nav-link hover:text-ice-400 transition-colors">Como funciona</a>
-          <a href="#contato"     class="nav-link hover:text-ice-400 transition-colors">Contato</a>
+        <nav id="nav-desktop" class="hidden lg:flex items-center gap-7 text-sm font-medium text-grafite-300">
+          <a href="#servicos" class="nav-link hover:text-white">Serviços</a>
+          <a href="#trabalho" class="nav-link hover:text-white">Como trabalhamos</a>
+          <a href="#area" class="nav-link hover:text-white">Onde atendemos</a>
+          <a href="#orcamento" class="nav-link hover:text-white">Orçamento</a>
         </nav>
 
-        <!-- Ações -->
-        <div class="flex items-center gap-3">
+        <div class="flex items-center gap-2">
           <a href="tel:+5511938062320"
-             id="phone-link"
-             class="hidden md:flex items-center gap-2 text-sm font-semibold text-white/90 hover:text-ice-400 transition-colors duration-300">
+             class="hidden md:flex items-center gap-1.5 text-sm font-bold text-white hover:text-laranja-400 transition-colors tabular">
             <i data-lucide="phone" class="w-4 h-4"></i>
             (11) 93806-2320
           </a>
 
-          <a href="https://wa.me/5511938062320?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20com%20a%20Empresa%20DoVale."
-             target="_blank" rel="noopener noreferrer"
-             class="btn-cta inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-[#25D366]/30">
-            <i data-lucide="message-circle" class="w-4 h-4"></i>
-            <span class="hidden sm:inline">Orçamento</span>
-            <span class="sm:hidden">Falar</span>
+          <a href="#orcamento" class="btn btn-acento px-4 py-2 text-sm">
+            Pedir orçamento
           </a>
 
-          <!-- Botão menu mobile -->
           <button id="menu-btn" aria-label="Abrir menu" aria-expanded="false"
-                  class="lg:hidden h-10 w-10 rounded-lg flex items-center justify-center text-white transition-colors duration-300 hover:bg-white/10">
-            <i data-lucide="menu" class="w-6 h-6" id="menu-icon"></i>
+                  class="lg:hidden h-9 w-9 flex items-center justify-center text-white rounded-sm hover:bg-grafite-800">
+            <i data-lucide="menu" class="w-5 h-5" id="menu-icon"></i>
           </button>
         </div>
       </div>
     </div>
 
-    <!-- Menu mobile -->
-    <div id="mobile-menu"
-         class="lg:hidden overflow-hidden max-h-0 transition-all duration-500 ease-in-out bg-white/97 backdrop-blur-xl border-t border-navy-100 shadow-xl">
-      <nav class="px-6 py-5 flex flex-col gap-1 text-navy-900">
-        <a href="#servicos"     class="mobile-link flex items-center gap-3 py-3 px-3 rounded-lg font-medium hover:bg-navy-50 hover:text-navy-700 transition-colors">
-          <i data-lucide="layers" class="w-4 h-4 text-ice-500"></i> Serviços
-        </a>
-        <a href="#diferenciais" class="mobile-link flex items-center gap-3 py-3 px-3 rounded-lg font-medium hover:bg-navy-50 hover:text-navy-700 transition-colors">
-          <i data-lucide="badge-check" class="w-4 h-4 text-ice-500"></i> Por que a DoVale
-        </a>
-        <a href="#processo"     class="mobile-link flex items-center gap-3 py-3 px-3 rounded-lg font-medium hover:bg-navy-50 hover:text-navy-700 transition-colors">
-          <i data-lucide="route" class="w-4 h-4 text-ice-500"></i> Como funciona
-        </a>
-        <a href="#contato"      class="mobile-link flex items-center gap-3 py-3 px-3 rounded-lg font-medium hover:bg-navy-50 hover:text-navy-700 transition-colors">
-          <i data-lucide="mail" class="w-4 h-4 text-ice-500"></i> Contato
-        </a>
-        <a href="tel:+5511938062320" class="mobile-link flex items-center gap-3 py-3 px-3 rounded-lg font-semibold text-navy-700 hover:bg-navy-50 transition-colors">
-          <i data-lucide="phone" class="w-4 h-4 text-ice-500"></i> (11) 93806-2320
-        </a>
+    <div id="mobile-menu" class="lg:hidden overflow-hidden max-h-0 transition-all duration-300 bg-grafite-900 border-t border-grafite-800">
+      <nav class="px-5 py-3 flex flex-col text-sm">
+        <a href="#servicos"  class="mobile-link py-2.5 text-grafite-200 hover:text-white">Serviços</a>
+        <a href="#trabalho"  class="mobile-link py-2.5 text-grafite-200 hover:text-white">Como trabalhamos</a>
+        <a href="#area"      class="mobile-link py-2.5 text-grafite-200 hover:text-white">Onde atendemos</a>
+        <a href="#orcamento" class="mobile-link py-2.5 text-grafite-200 hover:text-white">Orçamento</a>
+        <a href="tel:+5511938062320" class="mobile-link py-2.5 font-bold text-white tabular">(11) 93806-2320</a>
       </nav>
     </div>
   </header>
 
   <!-- =========================================================
-       HERO
+       HERO — alinhado à esquerda, denso
   ========================================================== -->
-  <section id="inicio" class="relative min-h-screen flex items-center overflow-hidden bg-navy-950">
+  <section id="inicio" class="bg-grafite-950 text-white">
+    <div class="max-w-6xl mx-auto px-5 sm:px-6 py-14 sm:py-20">
+      <div class="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
 
-    <!-- Fundo: gradiente + grid técnico + brilhos -->
-    <div class="absolute inset-0 bg-gradient-to-br from-navy-950 via-navy-900 to-navy-800"></div>
-    <div class="absolute inset-0 tech-grid opacity-70"></div>
-    <div class="absolute -top-40 -right-32 w-[36rem] h-[36rem] bg-ice-500/20 rounded-full blur-[130px] animate-floatSlow"></div>
-    <div class="absolute -bottom-52 -left-32 w-[34rem] h-[34rem] bg-navy-500/25 rounded-full blur-[130px]"></div>
-    <div class="absolute top-1/3 left-1/2 w-72 h-72 bg-ice-400/10 rounded-full blur-[100px]"></div>
-
-    <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 pt-32 pb-24 w-full">
-      <div class="grid lg:grid-cols-12 gap-14 items-center">
-
-        <!-- Coluna de texto -->
         <div class="lg:col-span-7">
+          <!-- CONFIRMAR: anos de mercado e bairros atendidos -->
+          <p class="flex flex-wrap items-center gap-2 text-xs font-bold uppercase tracking-widest text-grafite-400 mb-5">
+            <span class="pendente">CONFIRMAR: anos de mercado</span>
+            <span class="text-grafite-600">·</span>
+            <span class="pendente">CONFIRMAR: bairros atendidos</span>
+          </p>
 
-          <div class="reveal inline-flex items-center gap-2 rounded-full border border-ice-400/30 bg-ice-400/10 px-4 py-1.5 backdrop-blur-sm mb-7">
-            <span class="relative flex h-2 w-2">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-ice-400 opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-2 w-2 bg-ice-400"></span>
-            </span>
-            <span class="text-xs font-semibold tracking-wide text-ice-200 uppercase">
-              Atendimento residencial e industrial
-            </span>
-          </div>
-
-          <h1 class="reveal text-4xl sm:text-5xl lg:text-[3.65rem] font-extrabold leading-[1.08] tracking-tight text-white mb-6" style="transition-delay:.08s">
-            Energia, Climatização e Segurança
-            <span class="block mt-2 bg-gradient-to-r from-ice-300 via-ice-400 to-ice-200 bg-clip-text text-transparent">
-              em uma única equipe técnica.
-            </span>
+          <!-- CONFIRMAR: trocar [CIDADE] pela cidade-base real -->
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black leading-[1.1] mb-5">
+            Manutenção de climatização, elétrica, automação e segurança em
+            <span class="text-laranja-500">[CIDADE]</span>
           </h1>
 
-          <p class="reveal text-lg sm:text-xl leading-relaxed text-navy-100/85 max-w-2xl mb-9" style="transition-delay:.16s">
-            A <strong class="text-white font-semibold">Empresa DoVale</strong> projeta, instala e mantém sistemas
-            elétricos, de refrigeração, automação e segurança eletrônica — do apartamento à linha de produção.
-            Menos fornecedores para gerenciar, mais confiabilidade na sua operação.
+          <p class="text-lg text-grafite-300 leading-relaxed max-w-xl mb-7">
+            Uma equipe para os quatro sistemas. Atende residência, comércio e indústria.
+            Quem faz o orçamento é quem executa o serviço.
           </p>
 
-          <!-- CTAs -->
-          <div class="reveal flex flex-col sm:flex-row gap-4 mb-12" style="transition-delay:.24s">
-            <a href="https://wa.me/5511938062320?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20com%20a%20Empresa%20DoVale."
+          <div class="flex flex-col sm:flex-row gap-3 mb-9">
+            <a href="#orcamento" class="btn btn-acento px-6 py-3.5 text-base">
+              Pedir orçamento
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+            <a href="https://wa.me/5511938062320?text=Ol%C3%A1%2C%20preciso%20de%20um%20servi%C3%A7o%20da%20DoVale."
                target="_blank" rel="noopener noreferrer"
-               class="btn-cta animate-pulseRing group inline-flex items-center justify-center gap-3 rounded-full bg-[#25D366] px-8 py-4 text-base font-bold text-white shadow-2xl shadow-[#25D366]/25">
-              <i data-lucide="message-circle" class="w-5 h-5"></i>
-              Solicitar Orçamento via WhatsApp
-              <i data-lucide="arrow-right" class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"></i>
-            </a>
-
-            <a href="#servicos"
-               class="group inline-flex items-center justify-center gap-2 rounded-full border border-white/25 bg-white/5 px-8 py-4 text-base font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:bg-white/12 hover:border-white/45 hover:-translate-y-0.5">
-              Conhecer os serviços
-              <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-300 group-hover:translate-y-1"></i>
+               class="btn btn-whats px-6 py-3.5 text-base">
+              <i data-lucide="message-circle" class="w-4.5 h-4.5"></i>
+              Falar no WhatsApp
             </a>
           </div>
 
-          <!-- Provas rápidas -->
-          <div class="reveal grid grid-cols-2 sm:grid-cols-4 gap-5 max-w-2xl border-t border-white/10 pt-8" style="transition-delay:.32s">
+          <!-- Fatos, não adjetivos -->
+          <dl class="grid grid-cols-2 sm:grid-cols-4 gap-x-5 gap-y-4 border-t border-grafite-800 pt-6 text-sm">
             <div>
-              <div class="flex items-center gap-2 text-ice-400 mb-1.5">
-                <i data-lucide="shield-check" class="w-5 h-5"></i>
-              </div>
-              <p class="text-sm font-semibold text-white leading-snug">Execução conforme normas</p>
+              <dt class="text-grafite-500 text-xs uppercase tracking-wide mb-1">Retorno do orçamento</dt>
+              <dd><span class="pendente">CONFIRMAR: prazo</span></dd>
             </div>
             <div>
-              <div class="flex items-center gap-2 text-ice-400 mb-1.5">
-                <i data-lucide="clock" class="w-5 h-5"></i>
-              </div>
-              <p class="text-sm font-semibold text-white leading-snug">Resposta rápida no orçamento</p>
+              <dt class="text-grafite-500 text-xs uppercase tracking-wide mb-1">Visita técnica</dt>
+              <dd><span class="pendente">CONFIRMAR: tem custo?</span></dd>
             </div>
             <div>
-              <div class="flex items-center gap-2 text-ice-400 mb-1.5">
-                <i data-lucide="wrench" class="w-5 h-5"></i>
-              </div>
-              <p class="text-sm font-semibold text-white leading-snug">Manutenção preventiva</p>
+              <dt class="text-grafite-500 text-xs uppercase tracking-wide mb-1">Garantia do serviço</dt>
+              <dd><span class="pendente">CONFIRMAR: dias</span></dd>
             </div>
             <div>
-              <div class="flex items-center gap-2 text-ice-400 mb-1.5">
-                <i data-lucide="building-2" class="w-5 h-5"></i>
-              </div>
-              <p class="text-sm font-semibold text-white leading-snug">Do lar à indústria</p>
+              <dt class="text-grafite-500 text-xs uppercase tracking-wide mb-1">Equipe</dt>
+              <dd><span class="pendente">CONFIRMAR: nº de técnicos</span></dd>
             </div>
-          </div>
+          </dl>
         </div>
 
-        <!-- Coluna do painel visual -->
-        <div class="lg:col-span-5 reveal-right" style="transition-delay:.2s">
-          <div class="relative">
-
-            <!-- Card de destaque -->
-            <div class="relative rounded-3xl border border-white/12 bg-white/[0.06] backdrop-blur-xl p-7 shadow-2xl shadow-navy-950/60">
-              <div class="flex items-center justify-between mb-6">
-                <h3 class="text-white font-bold text-lg">Painel de atuação</h3>
-                <span class="flex items-center gap-1.5 rounded-full bg-emerald-400/15 px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-emerald-300">
-                  <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span> Online
-                </span>
-              </div>
-
-              <div class="space-y-3">
-                <div class="flex items-center gap-4 rounded-2xl bg-white/[0.05] border border-white/10 p-4 transition-all duration-300 hover:bg-white/10 hover:border-ice-400/40">
-                  <div class="h-11 w-11 shrink-0 rounded-xl bg-gradient-to-br from-ice-400/25 to-ice-600/25 flex items-center justify-center text-ice-300">
-                    <i data-lucide="snowflake" class="w-5 h-5"></i>
-                  </div>
-                  <div class="min-w-0">
-                    <p class="text-white font-semibold text-sm">Climatização &amp; Refrigeração</p>
-                    <p class="text-navy-100/60 text-xs">Split, multi-split, VRF e câmaras frias</p>
-                  </div>
-                </div>
-
-                <div class="flex items-center gap-4 rounded-2xl bg-white/[0.05] border border-white/10 p-4 transition-all duration-300 hover:bg-white/10 hover:border-ice-400/40">
-                  <div class="h-11 w-11 shrink-0 rounded-xl bg-gradient-to-br from-amber-400/20 to-amber-600/20 flex items-center justify-center text-amber-300">
-                    <i data-lucide="zap" class="w-5 h-5"></i>
-                  </div>
-                  <div class="min-w-0">
-                    <p class="text-white font-semibold text-sm">Elétrica Predial &amp; Industrial</p>
-                    <p class="text-navy-100/60 text-xs">Quadros, cabeamento e manutenção</p>
-                  </div>
-                </div>
-
-                <div class="flex items-center gap-4 rounded-2xl bg-white/[0.05] border border-white/10 p-4 transition-all duration-300 hover:bg-white/10 hover:border-ice-400/40">
-                  <div class="h-11 w-11 shrink-0 rounded-xl bg-gradient-to-br from-violet-400/20 to-violet-600/20 flex items-center justify-center text-violet-300">
-                    <i data-lucide="cpu" class="w-5 h-5"></i>
-                  </div>
-                  <div class="min-w-0">
-                    <p class="text-white font-semibold text-sm">Automação Inteligente</p>
-                    <p class="text-navy-100/60 text-xs">Comandos, sensores e integração</p>
-                  </div>
-                </div>
-
-                <div class="flex items-center gap-4 rounded-2xl bg-white/[0.05] border border-white/10 p-4 transition-all duration-300 hover:bg-white/10 hover:border-ice-400/40">
-                  <div class="h-11 w-11 shrink-0 rounded-xl bg-gradient-to-br from-emerald-400/20 to-emerald-600/20 flex items-center justify-center text-emerald-300">
-                    <i data-lucide="shield" class="w-5 h-5"></i>
-                  </div>
-                  <div class="min-w-0">
-                    <p class="text-white font-semibold text-sm">Segurança Eletrônica</p>
-                    <p class="text-navy-100/60 text-xs">CFTV, alarmes e controle de acesso</p>
-                  </div>
-                </div>
-              </div>
-
-              <a href="https://wa.me/5511938062320?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20com%20a%20Empresa%20DoVale."
-                 target="_blank" rel="noopener noreferrer"
-                 class="mt-6 flex items-center justify-center gap-2 rounded-xl border border-ice-400/30 bg-ice-400/10 py-3 text-sm font-bold text-ice-200 transition-all duration-300 hover:bg-ice-400/20 hover:border-ice-400/60">
-                Falar com um técnico agora
-                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-              </a>
-            </div>
-
+        <!-- Coluna: foto real do trabalho -->
+        <div class="lg:col-span-5">
+          <!-- CONFIRMAR: foto real de um serviço executado. Sem banco de imagens. -->
+          <div class="foto-pendente rounded-md aspect-4/3 flex flex-col items-center justify-center text-center p-6 bg-grafite-900 border-grafite-700">
+            <i data-lucide="camera" class="w-7 h-7 text-grafite-500 mb-3"></i>
+            <p class="text-sm font-bold text-grafite-300">[FOTO REAL: equipe executando um serviço]</p>
+            <p class="text-xs text-grafite-500 mt-1.5 max-w-xs">
+              Quadro elétrico organizado, instalação de split ou câmera posicionada.
+              Foto de celular do próprio serviço vale mais que banco de imagens.
+            </p>
           </div>
         </div>
 
       </div>
     </div>
-
-    <!-- Indicador de scroll -->
-    <a href="#servicos" aria-label="Rolar para serviços"
-       class="hidden md:flex absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex-col items-center gap-2 text-white/45 hover:text-ice-400 transition-colors">
-      <span class="text-[10px] font-semibold uppercase tracking-[0.22em]">Role</span>
-      <i data-lucide="chevrons-down" class="w-5 h-5 animate-bounce"></i>
-    </a>
   </section>
 
   <!-- =========================================================
-       FAIXA DE CONFIANÇA
+       SERVIÇOS — problema do cliente primeiro
   ========================================================== -->
-  <section class="relative bg-navy-900 border-t border-white/5">
-    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-8">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-        <div class="reveal flex flex-col items-center gap-1.5">
-          <i data-lucide="hard-hat" class="w-6 h-6 text-ice-400"></i>
-          <p class="text-xs sm:text-sm font-semibold text-white/85">Equipe técnica qualificada</p>
+  <section id="servicos" class="py-16 sm:py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-5 sm:px-6">
+
+      <div class="grid lg:grid-cols-12 gap-10">
+
+        <!-- Título à esquerda, fixo -->
+        <div class="lg:col-span-4">
+          <div class="lg:sticky lg:top-24">
+            <p class="text-xs font-bold uppercase tracking-widest text-laranja-600 mb-3">Serviços</p>
+            <h2 class="text-2xl sm:text-3xl font-extrabold leading-tight mb-4">
+              O que costuma dar problema
+            </h2>
+            <p class="text-grafite-600 leading-relaxed text-sm">
+              Se o seu caso está em qualquer uma das quatro áreas, é a mesma equipe que atende.
+              Não terceirizamos para outro prestador.
+            </p>
+          </div>
         </div>
-        <div class="reveal flex flex-col items-center gap-1.5" style="transition-delay:.08s">
-          <i data-lucide="file-check-2" class="w-6 h-6 text-ice-400"></i>
-          <p class="text-xs sm:text-sm font-semibold text-white/85">Orçamento sem compromisso</p>
-        </div>
-        <div class="reveal flex flex-col items-center gap-1.5" style="transition-delay:.16s">
-          <i data-lucide="settings-2" class="w-6 h-6 text-ice-400"></i>
-          <p class="text-xs sm:text-sm font-semibold text-white/85">Materiais de qualidade</p>
-        </div>
-        <div class="reveal flex flex-col items-center gap-1.5" style="transition-delay:.24s">
-          <i data-lucide="headset" class="w-6 h-6 text-ice-400"></i>
-          <p class="text-xs sm:text-sm font-semibold text-white/85">Suporte pós-instalação</p>
+
+        <!-- Lista à direita -->
+        <div class="lg:col-span-8 divide-y divide-grafite-200 border-t border-grafite-200">
+
+          <article class="servico reveal pl-5 py-6">
+            <div class="flex items-start gap-4">
+              <i data-lucide="snowflake" class="w-5 h-5 text-grafite-500 mt-1 shrink-0"></i>
+              <div>
+                <h3 class="text-lg font-bold mb-1.5">Ar-condicionado que não gela, pinga ou faz barulho</h3>
+                <p class="text-grafite-600 text-sm leading-relaxed mb-3">
+                  Limpeza e higienização, carga de gás, troca de peça, instalação e desinstalação.
+                  Split, multi-split, VRF, câmara fria e refrigeração comercial.
+                </p>
+                <p class="text-xs text-grafite-500">
+                  Também fazemos contrato de manutenção periódica —
+                  <span class="pendente">CONFIRMAR: periodicidade e valor</span>
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article class="servico reveal pl-5 py-6">
+            <div class="flex items-start gap-4">
+              <i data-lucide="zap" class="w-5 h-5 text-grafite-500 mt-1 shrink-0"></i>
+              <div>
+                <h3 class="text-lg font-bold mb-1.5">Disjuntor que desarma, tomada que esquenta, luz que oscila</h3>
+                <p class="text-grafite-600 text-sm leading-relaxed mb-3">
+                  Diagnóstico de falha, troca e montagem de quadro, circuito novo para chuveiro
+                  ou ar-condicionado, aterramento e adequação de instalação antiga.
+                </p>
+                <p class="text-xs text-grafite-500">
+                  Atende de residência a quadro de comando industrial.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article class="servico reveal pl-5 py-6">
+            <div class="flex items-start gap-4">
+              <i data-lucide="cpu" class="w-5 h-5 text-grafite-500 mt-1 shrink-0"></i>
+              <div>
+                <h3 class="text-lg font-bold mb-1.5">Portão que travou ou luz que você quer controlar pelo celular</h3>
+                <p class="text-grafite-600 text-sm leading-relaxed mb-3">
+                  Motor de portão, fechadura elétrica, cenários de iluminação, acionamento
+                  programado e integração de máquinas na linha de produção.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article class="servico reveal pl-5 py-6">
+            <div class="flex items-start gap-4">
+              <i data-lucide="cctv" class="w-5 h-5 text-grafite-500 mt-1 shrink-0"></i>
+              <div>
+                <h3 class="text-lg font-bold mb-1.5">Câmera que parou de gravar, alarme que dispara sozinho</h3>
+                <p class="text-grafite-600 text-sm leading-relaxed mb-3">
+                  CFTV com acesso pelo celular, alarme e sensor de perímetro, interfone
+                  e controle de acesso. Instalação nova ou conserto do sistema existente.
+                </p>
+                <p class="text-xs text-grafite-500">
+                  Marcas com que trabalhamos: <span class="pendente">CONFIRMAR: marcas</span>
+                </p>
+              </div>
+            </div>
+          </article>
+
         </div>
       </div>
     </div>
   </section>
 
   <!-- =========================================================
-       SERVIÇOS
+       COMO TRABALHAMOS — bloco escuro, centralizado (quebra o ritmo)
   ========================================================== -->
-  <section id="servicos" class="relative py-24 sm:py-32 bg-navy-50/60">
-    <div class="absolute inset-0 dot-grid opacity-60"></div>
+  <section id="trabalho" class="py-16 sm:py-20 bg-grafite-950 text-white">
+    <div class="max-w-6xl mx-auto px-5 sm:px-6">
 
-    <div class="relative max-w-7xl mx-auto px-5 sm:px-8">
-
-      <!-- Cabeçalho da seção -->
-      <div class="max-w-3xl mx-auto text-center mb-16">
-        <span class="reveal inline-flex items-center gap-2 rounded-full border border-navy-200 bg-white px-4 py-1.5 text-xs font-bold uppercase tracking-[0.14em] text-navy-600 shadow-sm">
-          <i data-lucide="layers" class="w-3.5 h-3.5 text-ice-500"></i>
-          Nossos serviços
-        </span>
-        <h2 class="reveal mt-6 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-navy-900 leading-tight" style="transition-delay:.08s">
-          Quatro frentes técnicas,
-          <span class="bg-gradient-to-r from-ice-600 to-navy-700 bg-clip-text text-transparent">um só responsável</span>
+      <div class="max-w-2xl mb-10">
+        <p class="text-xs font-bold uppercase tracking-widest text-laranja-500 mb-3">Como trabalhamos</p>
+        <h2 class="text-2xl sm:text-3xl font-extrabold leading-tight">
+          Do primeiro contato até o serviço entregue
         </h2>
-        <p class="reveal mt-5 text-lg text-navy-800/70 leading-relaxed" style="transition-delay:.16s">
-          Projetos residenciais e industriais executados com método, planejamento e responsabilidade técnica.
-          Você contrata uma vez e resolve toda a infraestrutura do imóvel.
+      </div>
+
+      <ol class="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-grafite-800 border border-grafite-800">
+        <li class="reveal bg-grafite-950 p-6">
+          <span class="block text-laranja-500 font-black text-sm mb-3 tabular">01</span>
+          <h3 class="font-bold mb-2">Você descreve o problema</h3>
+          <p class="text-sm text-grafite-400 leading-relaxed">
+            Pelo WhatsApp ou pelo formulário. Foto e vídeo do equipamento encurtam o diagnóstico.
+          </p>
+        </li>
+        <li class="reveal bg-grafite-950 p-6">
+          <span class="block text-laranja-500 font-black text-sm mb-3 tabular">02</span>
+          <h3 class="font-bold mb-2">Avaliação</h3>
+          <p class="text-sm text-grafite-400 leading-relaxed">
+            Casos simples resolvem por mensagem. Quando precisa medir, agendamos visita —
+            <span class="pendente">CONFIRMAR: visita tem custo?</span>
+          </p>
+        </li>
+        <li class="reveal bg-grafite-950 p-6">
+          <span class="block text-laranja-500 font-black text-sm mb-3 tabular">03</span>
+          <h3 class="font-bold mb-2">Orçamento por escrito</h3>
+          <p class="text-sm text-grafite-400 leading-relaxed">
+            Serviço, materiais e prazo listados. Nada começa antes da sua aprovação.
+          </p>
+        </li>
+        <li class="reveal bg-grafite-950 p-6">
+          <span class="block text-laranja-500 font-black text-sm mb-3 tabular">04</span>
+          <h3 class="font-bold mb-2">Execução e teste</h3>
+          <p class="text-sm text-grafite-400 leading-relaxed">
+            Testamos junto com você e explicamos a operação. Garantia de
+            <span class="pendente">CONFIRMAR: dias</span>
+          </p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       FATOS VERIFICÁVEIS (substitui "Por que escolher")
+  ========================================================== -->
+  <section class="py-16 sm:py-20 bg-grafite-50">
+    <div class="max-w-6xl mx-auto px-5 sm:px-6">
+      <div class="grid md:grid-cols-2 gap-x-12 gap-y-8">
+
+        <div class="cartao rounded-md p-6">
+          <i data-lucide="user-check" class="w-5 h-5 text-laranja-600 mb-3"></i>
+          <h3 class="font-bold mb-2">Quem faz o orçamento é quem executa o serviço</h3>
+          <p class="text-sm text-grafite-600 leading-relaxed">
+            Você fala direto com o técnico que vai pôr a mão no equipamento —
+            sem vendedor no meio repassando informação pela metade.
+          </p>
+        </div>
+
+        <div class="cartao rounded-md p-6">
+          <i data-lucide="file-text" class="w-5 h-5 text-laranja-600 mb-3"></i>
+          <h3 class="font-bold mb-2">Orçamento por escrito, com materiais listados</h3>
+          <p class="text-sm text-grafite-600 leading-relaxed">
+            Você recebe o que será feito, quais peças entram e o prazo, antes de autorizar.
+            O valor aprovado é o valor cobrado.
+          </p>
+        </div>
+
+        <div class="cartao rounded-md p-6">
+          <i data-lucide="building-2" class="w-5 h-5 text-laranja-600 mb-3"></i>
+          <h3 class="font-bold mb-2">Atende apartamento, loja e galpão</h3>
+          <p class="text-sm text-grafite-600 leading-relaxed">
+            A mesma equipe circula entre os três portes, o que dá repertório para
+            caso que prestador de um nicho só costuma recusar.
+          </p>
+        </div>
+
+        <!-- CONFIRMAR: nome do responsável técnico e registro no CREA ou CFT -->
+        <div class="cartao rounded-md p-6">
+          <i data-lucide="badge-check" class="w-5 h-5 text-laranja-600 mb-3"></i>
+          <h3 class="font-bold mb-2">Responsável técnico identificado</h3>
+          <p class="text-sm text-grafite-600 leading-relaxed">
+            <span class="pendente">CONFIRMAR: nome do responsável técnico</span>
+            <span class="pendente">CONFIRMAR: registro CREA ou CFT</span>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       DEPOIMENTOS — estrutura vazia, nunca inventar
+       CONFIRMAR: pedir a 2 ou 3 clientes autorização para publicar
+       nome, bairro e o que foi feito.
+  ========================================================== -->
+  <section class="py-16 sm:py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-5 sm:px-6">
+
+      <div class="flex flex-wrap items-end justify-between gap-4 mb-8 border-b border-grafite-200 pb-4">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-widest text-laranja-600 mb-2">Clientes</p>
+          <h2 class="text-2xl sm:text-3xl font-extrabold">O que dizem sobre o serviço</h2>
+        </div>
+        <p class="text-xs text-grafite-500 max-w-xs">
+          Espaço reservado. Publicar apenas depoimento real, com autorização do cliente.
         </p>
       </div>
 
-      <!-- Grid de cards -->
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid sm:grid-cols-3 gap-5">
 
-        <!-- Card 1 -->
-        <article class="service-card reveal-zoom rounded-2xl border border-navy-100 bg-white p-7 shadow-sm">
-          <div class="icon-wrap h-14 w-14 rounded-2xl bg-ice-100 text-ice-600 flex items-center justify-center mb-6">
-            <i data-lucide="snowflake" class="w-7 h-7"></i>
-          </div>
-          <h3 class="text-xl font-bold text-navy-900 mb-3">Climatização e Refrigeração</h3>
-          <p class="text-sm leading-relaxed text-navy-800/70 mb-5">
-            Instalação, higienização e manutenção de ar-condicionado split, multi-split e sistemas VRF,
-            além de câmaras frias e refrigeração comercial. Ambiente na temperatura certa, com consumo sob controle.
-          </p>
-          <ul class="space-y-2 mb-6">
-            <li class="flex items-start gap-2 text-sm text-navy-800/80">
-              <i data-lucide="check" class="w-4 h-4 text-ice-500 mt-0.5 shrink-0"></i> Instalação e carga de gás
-            </li>
-            <li class="flex items-start gap-2 text-sm text-navy-800/80">
-              <i data-lucide="check" class="w-4 h-4 text-ice-500 mt-0.5 shrink-0"></i> Limpeza e higienização técnica
-            </li>
-            <li class="flex items-start gap-2 text-sm text-navy-800/80">
-              <i data-lucide="check" class="w-4 h-4 text-ice-500 mt-0.5 shrink-0"></i> Contratos de manutenção
-            </li>
-          </ul>
-          <div class="card-line h-1 rounded-full bg-gradient-to-r from-ice-400 to-navy-600"></div>
-        </article>
+        <figure class="cartao rounded-md p-6">
+          <span class="pendente mb-3">DEPOIMENTO REAL 1</span>
+          <blockquote class="text-sm text-grafite-400 leading-relaxed italic mt-3">
+            "…"
+          </blockquote>
+          <figcaption class="mt-4 pt-4 border-t border-grafite-200 text-xs text-grafite-500">
+            <span class="block font-bold text-grafite-600">[Nome do cliente]</span>
+            [Bairro] · [Serviço executado]
+          </figcaption>
+        </figure>
 
-        <!-- Card 2 -->
-        <article class="service-card reveal-zoom rounded-2xl border border-navy-100 bg-white p-7 shadow-sm" style="transition-delay:.1s">
-          <div class="icon-wrap h-14 w-14 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center mb-6">
-            <i data-lucide="zap" class="w-7 h-7"></i>
-          </div>
-          <h3 class="text-xl font-bold text-navy-900 mb-3">Instalação e Manutenção Elétrica</h3>
-          <p class="text-sm leading-relaxed text-navy-800/70 mb-5">
-            Da tomada nova ao quadro de comando industrial. Executamos instalações, adequações e manutenções
-            preventivas e corretivas com foco em segurança, continuidade e conformidade normativa.
-          </p>
-          <ul class="space-y-2 mb-6">
-            <li class="flex items-start gap-2 text-sm text-navy-800/80">
-              <i data-lucide="check" class="w-4 h-4 text-ice-500 mt-0.5 shrink-0"></i> Quadros e circuitos dedicados
-            </li>
-            <li class="flex items-start gap-2 text-sm text-navy-800/80">
-              <i data-lucide="check" class="w-4 h-4 text-ice-500 mt-0.5 shrink-0"></i> Aterramento e proteção
-            </li>
-            <li class="flex items-start gap-2 text-sm text-navy-800/80">
-              <i data-lucide="check" class="w-4 h-4 text-ice-500 mt-0.5 shrink-0"></i> Diagnóstico de falhas
-            </li>
-          </ul>
-          <div class="card-line h-1 rounded-full bg-gradient-to-r from-ice-400 to-navy-600"></div>
-        </article>
+        <figure class="cartao rounded-md p-6">
+          <span class="pendente mb-3">DEPOIMENTO REAL 2</span>
+          <blockquote class="text-sm text-grafite-400 leading-relaxed italic mt-3">
+            "…"
+          </blockquote>
+          <figcaption class="mt-4 pt-4 border-t border-grafite-200 text-xs text-grafite-500">
+            <span class="block font-bold text-grafite-600">[Nome do cliente]</span>
+            [Bairro] · [Serviço executado]
+          </figcaption>
+        </figure>
 
-        <!-- Card 3 -->
-        <article class="service-card reveal-zoom rounded-2xl border border-navy-100 bg-white p-7 shadow-sm" style="transition-delay:.2s">
-          <div class="icon-wrap h-14 w-14 rounded-2xl bg-violet-50 text-violet-600 flex items-center justify-center mb-6">
-            <i data-lucide="cpu" class="w-7 h-7"></i>
-          </div>
-          <h3 class="text-xl font-bold text-navy-900 mb-3">Automação Residencial e Industrial</h3>
-          <p class="text-sm leading-relaxed text-navy-800/70 mb-5">
-            Sistemas automatizados que economizam tempo e energia: iluminação inteligente, acionamentos programados,
-            portões, cortinas e integração de máquinas e processos produtivos.
-          </p>
-          <ul class="space-y-2 mb-6">
-            <li class="flex items-start gap-2 text-sm text-navy-800/80">
-              <i data-lucide="check" class="w-4 h-4 text-ice-500 mt-0.5 shrink-0"></i> Iluminação e cenários
-            </li>
-            <li class="flex items-start gap-2 text-sm text-navy-800/80">
-              <i data-lucide="check" class="w-4 h-4 text-ice-500 mt-0.5 shrink-0"></i> Portões e acessos motorizados
-            </li>
-            <li class="flex items-start gap-2 text-sm text-navy-800/80">
-              <i data-lucide="check" class="w-4 h-4 text-ice-500 mt-0.5 shrink-0"></i> Comandos e sensores industriais
-            </li>
-          </ul>
-          <div class="card-line h-1 rounded-full bg-gradient-to-r from-ice-400 to-navy-600"></div>
-        </article>
-
-        <!-- Card 4 -->
-        <article class="service-card reveal-zoom rounded-2xl border border-navy-100 bg-white p-7 shadow-sm" style="transition-delay:.3s">
-          <div class="icon-wrap h-14 w-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-6">
-            <i data-lucide="shield-check" class="w-7 h-7"></i>
-          </div>
-          <h3 class="text-xl font-bold text-navy-900 mb-3">Segurança Eletrônica</h3>
-          <p class="text-sm leading-relaxed text-navy-800/70 mb-5">
-            Monitoramento que funciona quando você mais precisa. Projetamos e instalamos CFTV, alarmes,
-            interfonia e controle de acesso com visualização remota pelo celular.
-          </p>
-          <ul class="space-y-2 mb-6">
-            <li class="flex items-start gap-2 text-sm text-navy-800/80">
-              <i data-lucide="check" class="w-4 h-4 text-ice-500 mt-0.5 shrink-0"></i> CFTV com acesso remoto
-            </li>
-            <li class="flex items-start gap-2 text-sm text-navy-800/80">
-              <i data-lucide="check" class="w-4 h-4 text-ice-500 mt-0.5 shrink-0"></i> Alarmes e sensores perimetrais
-            </li>
-            <li class="flex items-start gap-2 text-sm text-navy-800/80">
-              <i data-lucide="check" class="w-4 h-4 text-ice-500 mt-0.5 shrink-0"></i> Controle de acesso e interfonia
-            </li>
-          </ul>
-          <div class="card-line h-1 rounded-full bg-gradient-to-r from-ice-400 to-navy-600"></div>
-        </article>
+        <figure class="cartao rounded-md p-6">
+          <span class="pendente mb-3">DEPOIMENTO REAL 3</span>
+          <blockquote class="text-sm text-grafite-400 leading-relaxed italic mt-3">
+            "…"
+          </blockquote>
+          <figcaption class="mt-4 pt-4 border-t border-grafite-200 text-xs text-grafite-500">
+            <span class="block font-bold text-grafite-600">[Nome do cliente]</span>
+            [Bairro] · [Serviço executado]
+          </figcaption>
+        </figure>
 
       </div>
-
-      <!-- CTA da seção -->
-      <div class="reveal mt-14 text-center">
-        <p class="text-navy-800/70 mb-5">Não encontrou o que precisa? Fale com a gente — provavelmente atendemos.</p>
-        <a href="https://wa.me/5511938062320?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20com%20a%20Empresa%20DoVale."
-           target="_blank" rel="noopener noreferrer"
-           class="btn-cta inline-flex items-center gap-3 rounded-full bg-navy-900 px-8 py-4 text-base font-bold text-white shadow-xl shadow-navy-900/25">
-          <i data-lucide="message-circle" class="w-5 h-5 text-[#25D366]"></i>
-          Descrever meu serviço no WhatsApp
-        </a>
-      </div>
-
     </div>
   </section>
 
   <!-- =========================================================
-       DIFERENCIAIS
+       GALERIA ANTES / DEPOIS
+       CONFIRMAR: fotos reais de serviços executados.
   ========================================================== -->
-  <section id="diferenciais" class="relative py-24 sm:py-32 bg-white overflow-hidden">
-    <div class="absolute -right-40 top-24 w-[30rem] h-[30rem] bg-ice-100/60 rounded-full blur-[120px]"></div>
-    <div class="absolute -left-40 bottom-0 w-[26rem] h-[26rem] bg-navy-100/50 rounded-full blur-[110px]"></div>
+  <section class="py-16 sm:py-20 bg-grafite-50 border-y border-grafite-200">
+    <div class="max-w-6xl mx-auto px-5 sm:px-6">
 
-    <div class="relative max-w-7xl mx-auto px-5 sm:px-8">
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div class="max-w-2xl mb-8">
+        <p class="text-xs font-bold uppercase tracking-widest text-laranja-600 mb-3">Serviços executados</p>
+        <h2 class="text-2xl sm:text-3xl font-extrabold leading-tight mb-3">Antes e depois</h2>
+        <p class="text-grafite-600 text-sm leading-relaxed">
+          Quadro elétrico reorganizado, evaporadora limpa, cabeamento refeito.
+          Foto tirada no próprio serviço, sem banco de imagens.
+        </p>
+      </div>
 
-        <!-- Texto -->
-        <div class="reveal-left">
-          <span class="inline-flex items-center gap-2 rounded-full border border-navy-200 bg-navy-50 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.14em] text-navy-600">
-            <i data-lucide="badge-check" class="w-3.5 h-3.5 text-ice-500"></i>
-            Por que escolher a DoVale
-          </span>
+      <div class="grid sm:grid-cols-3 gap-5">
 
-          <h2 class="mt-6 text-3xl sm:text-4xl lg:text-[2.85rem] font-extrabold tracking-tight text-navy-900 leading-[1.12]">
-            Competência técnica que se enxerga
-            <span class="bg-gradient-to-r from-ice-600 to-navy-700 bg-clip-text text-transparent">no acabamento e no resultado.</span>
+        <div>
+          <div class="foto-pendente rounded-md aspect-4/3 flex items-center justify-center mb-2">
+            <span class="pendente">FOTO REAL: antes/depois 1</span>
+          </div>
+          <p class="text-xs text-grafite-500">[Descrever o serviço e o bairro]</p>
+        </div>
+
+        <div>
+          <div class="foto-pendente rounded-md aspect-4/3 flex items-center justify-center mb-2">
+            <span class="pendente">FOTO REAL: antes/depois 2</span>
+          </div>
+          <p class="text-xs text-grafite-500">[Descrever o serviço e o bairro]</p>
+        </div>
+
+        <div>
+          <div class="foto-pendente rounded-md aspect-4/3 flex items-center justify-center mb-2">
+            <span class="pendente">FOTO REAL: antes/depois 3</span>
+          </div>
+          <p class="text-xs text-grafite-500">[Descrever o serviço e o bairro]</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       ÁREA ATENDIDA
+       CONFIRMAR: listar bairros e cidades por extenso.
+  ========================================================== -->
+  <section id="area" class="py-16 sm:py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-5 sm:px-6">
+      <div class="grid lg:grid-cols-12 gap-10">
+
+        <div class="lg:col-span-5">
+          <p class="text-xs font-bold uppercase tracking-widest text-laranja-600 mb-3">Onde atendemos</p>
+          <h2 class="text-2xl sm:text-3xl font-extrabold leading-tight mb-4">
+            Bairros e cidades na área de cobertura
           </h2>
-
-          <p class="mt-5 text-lg leading-relaxed text-navy-800/70">
-            Instalação malfeita custa caro duas vezes: na primeira contratação e no retrabalho.
-            Trabalhamos com planejamento, dimensionamento correto e execução limpa — para que o sistema
-            entregue desempenho no primeiro dia e continue confiável anos depois.
+          <p class="text-grafite-600 text-sm leading-relaxed">
+            Escrever por extenso ajuda quem busca no Google por "manutenção de ar-condicionado
+            em [bairro]". Fora da área, consultar — pode haver taxa de deslocamento.
           </p>
-
-          <div class="mt-9 space-y-3">
-            <div class="feature-item flex gap-4 rounded-2xl border border-navy-100 bg-white p-5 hover:bg-navy-50/70">
-              <div class="h-11 w-11 shrink-0 rounded-xl bg-gradient-to-br from-navy-700 to-navy-900 flex items-center justify-center text-white">
-                <i data-lucide="graduation-cap" class="w-5 h-5"></i>
-              </div>
-              <div>
-                <h3 class="font-bold text-navy-900 mb-1">Atendimento técnico especializado</h3>
-                <p class="text-sm leading-relaxed text-navy-800/70">
-                  Quem avalia é quem executa. Você fala direto com técnicos que entendem do sistema —
-                  sem intermediários repassando informação pela metade.
-                </p>
-              </div>
-            </div>
-
-            <div class="feature-item flex gap-4 rounded-2xl border border-navy-100 bg-white p-5 hover:bg-navy-50/70">
-              <div class="h-11 w-11 shrink-0 rounded-xl bg-gradient-to-br from-ice-500 to-ice-700 flex items-center justify-center text-white">
-                <i data-lucide="building-2" class="w-5 h-5"></i>
-              </div>
-              <div>
-                <h3 class="font-bold text-navy-900 mb-1">Do residencial ao industrial</h3>
-                <p class="text-sm leading-relaxed text-navy-800/70">
-                  Mesma equipe atende o apartamento, o comércio e o galpão. Essa versatilidade nos dá repertório
-                  para resolver o que a maioria trata como "caso complicado".
-                </p>
-              </div>
-            </div>
-
-            <div class="feature-item flex gap-4 rounded-2xl border border-navy-100 bg-white p-5 hover:bg-navy-50/70">
-              <div class="h-11 w-11 shrink-0 rounded-xl bg-gradient-to-br from-navy-600 to-ice-600 flex items-center justify-center text-white">
-                <i data-lucide="shield-check" class="w-5 h-5"></i>
-              </div>
-              <div>
-                <h3 class="font-bold text-navy-900 mb-1">Segurança como prioridade</h3>
-                <p class="text-sm leading-relaxed text-navy-800/70">
-                  Proteções dimensionadas, materiais adequados e execução dentro das boas práticas.
-                  Instalação elétrica segura não é detalhe — é o que evita o prejuízo maior.
-                </p>
-              </div>
-            </div>
-
-            <div class="feature-item flex gap-4 rounded-2xl border border-navy-100 bg-white p-5 hover:bg-navy-50/70">
-              <div class="h-11 w-11 shrink-0 rounded-xl bg-gradient-to-br from-navy-800 to-navy-600 flex items-center justify-center text-white">
-                <i data-lucide="clipboard-check" class="w-5 h-5"></i>
-              </div>
-              <div>
-                <h3 class="font-bold text-navy-900 mb-1">Transparência do orçamento à entrega</h3>
-                <p class="text-sm leading-relaxed text-navy-800/70">
-                  Escopo claro, prazo combinado e nada de surpresa no valor final. Você aprova antes de começarmos.
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
 
-        <!-- Painel de números / destaque -->
-        <div class="reveal-right">
-          <div class="relative rounded-3xl bg-gradient-to-br from-navy-900 via-navy-800 to-navy-950 p-9 sm:p-10 shadow-2xl shadow-navy-900/35 overflow-hidden">
-            <div class="absolute inset-0 tech-grid opacity-60"></div>
-            <div class="absolute -top-20 -right-20 w-64 h-64 bg-ice-500/25 rounded-full blur-[90px]"></div>
-
-            <div class="relative">
-              <div class="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/15 px-3.5 py-1.5 mb-7">
-                <i data-lucide="sparkles" class="w-3.5 h-3.5 text-ice-300"></i>
-                <span class="text-[11px] font-bold uppercase tracking-[0.14em] text-ice-200">Nosso compromisso</span>
-              </div>
-
-              <div class="grid grid-cols-2 gap-7 mb-9">
-                <div>
-                  <p class="text-4xl font-extrabold text-white mb-1">4</p>
-                  <p class="text-sm text-navy-100/70 leading-snug">especialidades sob<br />um único contrato</p>
-                </div>
-                <div>
-                  <p class="text-4xl font-extrabold text-ice-300 mb-1">100%</p>
-                  <p class="text-sm text-navy-100/70 leading-snug">dos serviços com<br />responsabilidade técnica</p>
-                </div>
-                <div>
-                  <p class="text-4xl font-extrabold text-white mb-1">2</p>
-                  <p class="text-sm text-navy-100/70 leading-snug">perfis atendidos:<br />residencial e industrial</p>
-                </div>
-                <div>
-                  <p class="text-4xl font-extrabold text-ice-300 mb-1">24h</p>
-                  <p class="text-sm text-navy-100/70 leading-snug">para retorno do<br />seu orçamento*</p>
-                </div>
-              </div>
-
-              <div class="border-t border-white/10 pt-7">
-                <div class="flex items-start gap-3 mb-6">
-                  <i data-lucide="quote" class="w-7 h-7 text-ice-400/60 shrink-0"></i>
-                  <p class="text-base leading-relaxed text-navy-50/90 italic">
-                    "Nosso trabalho só termina quando o sistema está funcionando do jeito que foi combinado —
-                    e o cliente entendeu como usar."
-                  </p>
-                </div>
-                <p class="text-sm font-semibold text-white">Equipe Técnica DoVale</p>
-                <p class="text-xs text-navy-100/55 mb-7">Climatização · Elétrica · Automação · Segurança</p>
-
-                <a href="https://wa.me/5511938062320?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20com%20a%20Empresa%20DoVale."
-                   target="_blank" rel="noopener noreferrer"
-                   class="btn-cta flex items-center justify-center gap-2 rounded-xl bg-[#25D366] py-3.5 text-sm font-bold text-white shadow-lg shadow-[#25D366]/25">
-                  <i data-lucide="message-circle" class="w-4 h-4"></i>
-                  Solicitar orçamento agora
-                </a>
-                <p class="mt-3 text-[11px] text-navy-100/45 text-center">*Em dias úteis, conforme disponibilidade de agenda.</p>
-              </div>
+        <div class="lg:col-span-7">
+          <div class="cartao rounded-md p-6">
+            <p class="text-xs font-bold uppercase tracking-widest text-grafite-500 mb-4">Lista de bairros</p>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span class="pendente">CONFIRMAR: bairro 1</span>
+              <span class="pendente">CONFIRMAR: bairro 2</span>
+              <span class="pendente">CONFIRMAR: bairro 3</span>
+              <span class="pendente">CONFIRMAR: bairro 4</span>
+              <span class="pendente">CONFIRMAR: bairro 5</span>
+              <span class="pendente">CONFIRMAR: bairro 6</span>
             </div>
+            <p class="text-xs text-grafite-500 border-t border-grafite-200 pt-4">
+              Taxa de deslocamento fora da área: <span class="pendente">CONFIRMAR</span>
+            </p>
           </div>
         </div>
 
@@ -676,67 +575,102 @@
   </section>
 
   <!-- =========================================================
-       PROCESSO
+       ORÇAMENTO — formulário que monta mensagem no WhatsApp
+       Sem backend: o envio abre o WhatsApp com o texto pronto.
   ========================================================== -->
-  <section id="processo" class="relative py-24 sm:py-32 bg-navy-50/60">
-    <div class="absolute inset-0 dot-grid opacity-50"></div>
+  <section id="orcamento" class="py-16 sm:py-20 bg-grafite-950 text-white">
+    <div class="max-w-6xl mx-auto px-5 sm:px-6">
+      <div class="grid lg:grid-cols-12 gap-10 lg:gap-14">
 
-    <div class="relative max-w-7xl mx-auto px-5 sm:px-8">
-      <div class="max-w-2xl mx-auto text-center mb-16">
-        <span class="reveal inline-flex items-center gap-2 rounded-full border border-navy-200 bg-white px-4 py-1.5 text-xs font-bold uppercase tracking-[0.14em] text-navy-600 shadow-sm">
-          <i data-lucide="route" class="w-3.5 h-3.5 text-ice-500"></i>
-          Como funciona
-        </span>
-        <h2 class="reveal mt-6 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-navy-900 leading-tight" style="transition-delay:.08s">
-          Do primeiro contato à entrega em
-          <span class="bg-gradient-to-r from-ice-600 to-navy-700 bg-clip-text text-transparent">4 passos simples</span>
-        </h2>
-      </div>
-
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-
-        <div class="reveal relative rounded-2xl bg-white border border-navy-100 p-7 shadow-sm transition-all duration-500 hover:shadow-xl hover:shadow-navy-900/10 hover:-translate-y-1.5">
-          <span class="absolute top-6 right-6 text-5xl font-extrabold text-navy-100 select-none">01</span>
-          <div class="h-12 w-12 rounded-xl bg-navy-900 flex items-center justify-center text-white mb-5">
-            <i data-lucide="message-square-text" class="w-5 h-5"></i>
-          </div>
-          <h3 class="font-bold text-navy-900 mb-2 text-lg">Você nos chama</h3>
-          <p class="text-sm leading-relaxed text-navy-800/70">
-            Manda uma mensagem no WhatsApp contando o que precisa. Fotos e vídeos do local aceleram muito o diagnóstico.
+        <div class="lg:col-span-5">
+          <p class="text-xs font-bold uppercase tracking-widest text-laranja-500 mb-3">Orçamento</p>
+          <h2 class="text-2xl sm:text-3xl font-extrabold leading-tight mb-4">
+            Descreva o serviço e receba o orçamento
+          </h2>
+          <p class="text-grafite-400 text-sm leading-relaxed mb-6">
+            O formulário monta a mensagem e abre o seu WhatsApp com tudo preenchido.
+            Você confere antes de enviar. Não guardamos nada em servidor.
           </p>
+
+          <div class="space-y-3 text-sm border-t border-grafite-800 pt-6">
+            <a href="tel:+5511938062320" class="flex items-center gap-3 text-grafite-300 hover:text-white transition-colors">
+              <i data-lucide="phone" class="w-4 h-4 text-laranja-500 shrink-0"></i>
+              <span class="font-bold tabular">(11) 93806-2320</span>
+            </a>
+            <p class="flex items-center gap-3 text-grafite-300">
+              <i data-lucide="clock" class="w-4 h-4 text-laranja-500 shrink-0"></i>
+              <span class="pendente">CONFIRMAR: horário de atendimento</span>
+            </p>
+            <p class="flex items-center gap-3 text-grafite-300">
+              <i data-lucide="mail" class="w-4 h-4 text-laranja-500 shrink-0"></i>
+              <span class="pendente">CONFIRMAR: e-mail</span>
+            </p>
+          </div>
         </div>
 
-        <div class="reveal relative rounded-2xl bg-white border border-navy-100 p-7 shadow-sm transition-all duration-500 hover:shadow-xl hover:shadow-navy-900/10 hover:-translate-y-1.5" style="transition-delay:.1s">
-          <span class="absolute top-6 right-6 text-5xl font-extrabold text-navy-100 select-none">02</span>
-          <div class="h-12 w-12 rounded-xl bg-navy-800 flex items-center justify-center text-white mb-5">
-            <i data-lucide="search-check" class="w-5 h-5"></i>
-          </div>
-          <h3 class="font-bold text-navy-900 mb-2 text-lg">Avaliação técnica</h3>
-          <p class="text-sm leading-relaxed text-navy-800/70">
-            Analisamos a necessidade e, quando o serviço exige, agendamos visita para medir e dimensionar corretamente.
-          </p>
-        </div>
+        <div class="lg:col-span-7">
+          <form id="form-orcamento" class="bg-white text-grafite-900 rounded-md p-6 sm:p-7" novalidate>
 
-        <div class="reveal relative rounded-2xl bg-white border border-navy-100 p-7 shadow-sm transition-all duration-500 hover:shadow-xl hover:shadow-navy-900/10 hover:-translate-y-1.5" style="transition-delay:.2s">
-          <span class="absolute top-6 right-6 text-5xl font-extrabold text-navy-100 select-none">03</span>
-          <div class="h-12 w-12 rounded-xl bg-ice-600 flex items-center justify-center text-white mb-5">
-            <i data-lucide="file-text" class="w-5 h-5"></i>
-          </div>
-          <h3 class="font-bold text-navy-900 mb-2 text-lg">Orçamento transparente</h3>
-          <p class="text-sm leading-relaxed text-navy-800/70">
-            Você recebe escopo, materiais e prazo por escrito. Só começamos depois da sua aprovação — sem custo extra escondido.
-          </p>
-        </div>
+            <div class="grid sm:grid-cols-2 gap-4 mb-4">
+              <div>
+                <label for="f-nome" class="block text-sm font-bold mb-1.5">Nome</label>
+                <input type="text" id="f-nome" name="nome" class="campo" placeholder="Seu nome" required />
+              </div>
+              <div>
+                <label for="f-telefone" class="block text-sm font-bold mb-1.5">Telefone</label>
+                <input type="tel" id="f-telefone" name="telefone" class="campo" placeholder="(11) 90000-0000" required />
+              </div>
+            </div>
 
-        <div class="reveal relative rounded-2xl bg-white border border-navy-100 p-7 shadow-sm transition-all duration-500 hover:shadow-xl hover:shadow-navy-900/10 hover:-translate-y-1.5" style="transition-delay:.3s">
-          <span class="absolute top-6 right-6 text-5xl font-extrabold text-navy-100 select-none">04</span>
-          <div class="h-12 w-12 rounded-xl bg-ice-500 flex items-center justify-center text-white mb-5">
-            <i data-lucide="circle-check-big" class="w-5 h-5"></i>
-          </div>
-          <h3 class="font-bold text-navy-900 mb-2 text-lg">Execução e testes</h3>
-          <p class="text-sm leading-relaxed text-navy-800/70">
-            Serviço executado com organização e local entregue limpo. Testamos junto com você e explicamos a operação.
-          </p>
+            <div class="mb-4">
+              <label for="f-servico" class="block text-sm font-bold mb-1.5">Tipo de serviço</label>
+              <select id="f-servico" name="servico" class="campo" required>
+                <option value="">Selecione…</option>
+                <option>Climatização e refrigeração</option>
+                <option>Elétrica</option>
+                <option>Automação</option>
+                <option>Segurança eletrônica</option>
+                <option>Não sei dizer / outro</option>
+              </select>
+            </div>
+
+            <fieldset class="mb-4">
+              <legend class="block text-sm font-bold mb-2">Urgência</legend>
+              <div class="grid sm:grid-cols-3 gap-2">
+                <label class="cartao rounded-md px-3 py-2.5 flex items-center gap-2 cursor-pointer text-sm has-checked:border-laranja-500 has-checked:bg-laranja-500/5">
+                  <input type="radio" name="urgencia" value="Emergência — parou agora" class="accent-laranja-500" required />
+                  Emergência
+                </label>
+                <label class="cartao rounded-md px-3 py-2.5 flex items-center gap-2 cursor-pointer text-sm has-checked:border-laranja-500 has-checked:bg-laranja-500/5">
+                  <input type="radio" name="urgencia" value="Esta semana" class="accent-laranja-500" />
+                  Esta semana
+                </label>
+                <label class="cartao rounded-md px-3 py-2.5 flex items-center gap-2 cursor-pointer text-sm has-checked:border-laranja-500 has-checked:bg-laranja-500/5">
+                  <input type="radio" name="urgencia" value="Só orçamento, sem pressa" class="accent-laranja-500" />
+                  Só orçamento
+                </label>
+              </div>
+            </fieldset>
+
+            <div class="mb-5">
+              <label for="f-detalhe" class="block text-sm font-bold mb-1.5">
+                O que está acontecendo <span class="font-normal text-grafite-500">(opcional)</span>
+              </label>
+              <textarea id="f-detalhe" name="detalhe" rows="3" class="campo"
+                        placeholder="Ex.: split do quarto não gela e está pingando água na parede"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-whats w-full py-3.5 text-base">
+              <i data-lucide="message-circle" class="w-4.5 h-4.5"></i>
+              Abrir no WhatsApp com a mensagem pronta
+            </button>
+
+            <p id="form-erro" class="hidden mt-3 text-sm font-bold text-laranja-700" role="alert"></p>
+
+            <p class="mt-3 text-xs text-grafite-500 text-center">
+              Nada é enviado para servidor. A mensagem abre no seu WhatsApp para você conferir.
+            </p>
+          </form>
         </div>
 
       </div>
@@ -744,149 +678,95 @@
   </section>
 
   <!-- =========================================================
-       CTA FINAL
+       FOOTER — sinais de empresa real
+       CONFIRMAR: razão social, CNPJ, responsável técnico, endereço.
   ========================================================== -->
-  <section id="contato" class="relative py-24 sm:py-28 bg-navy-950 overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-navy-950 via-navy-900 to-navy-800"></div>
-    <div class="absolute inset-0 tech-grid opacity-60"></div>
-    <div class="absolute top-0 left-1/4 w-[30rem] h-[30rem] bg-ice-500/20 rounded-full blur-[130px]"></div>
-    <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-navy-500/25 rounded-full blur-[120px]"></div>
+  <footer class="bg-grafite-900 text-grafite-300 border-t border-grafite-800">
+    <div class="max-w-6xl mx-auto px-5 sm:px-6 py-12">
 
-    <div class="relative max-w-4xl mx-auto px-5 sm:px-8 text-center">
-      <div class="reveal inline-flex items-center gap-2 rounded-full border border-ice-400/30 bg-ice-400/10 px-4 py-1.5 backdrop-blur-sm mb-7">
-        <i data-lucide="calendar-check" class="w-3.5 h-3.5 text-ice-300"></i>
-        <span class="text-xs font-bold uppercase tracking-[0.14em] text-ice-200">Agenda aberta</span>
-      </div>
+      <div class="grid md:grid-cols-12 gap-8 mb-10">
 
-      <h2 class="reveal text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight mb-6" style="transition-delay:.08s">
-        Seu projeto merece ser feito
-        <span class="block mt-2 bg-gradient-to-r from-ice-300 to-ice-500 bg-clip-text text-transparent">certo da primeira vez.</span>
-      </h2>
-
-      <p class="reveal text-lg text-navy-100/80 leading-relaxed max-w-2xl mx-auto mb-10" style="transition-delay:.16s">
-        Conte o que você precisa e receba um orçamento claro, sem compromisso.
-        Atendemos residências, comércios e indústrias na Grande São Paulo.
-      </p>
-
-      <div class="reveal flex flex-col sm:flex-row gap-4 justify-center items-center" style="transition-delay:.24s">
-        <a href="https://wa.me/5511938062320?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20com%20a%20Empresa%20DoVale."
-           target="_blank" rel="noopener noreferrer"
-           class="btn-cta animate-pulseRing group inline-flex items-center justify-center gap-3 rounded-full bg-[#25D366] px-9 py-4 text-base font-bold text-white shadow-2xl shadow-[#25D366]/25">
-          <i data-lucide="message-circle" class="w-5 h-5"></i>
-          Solicitar Orçamento via WhatsApp
-          <i data-lucide="arrow-right" class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"></i>
-        </a>
-
-        <a href="tel:+5511938062320"
-           class="inline-flex items-center justify-center gap-3 rounded-full border border-white/25 bg-white/5 px-9 py-4 text-base font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:bg-white/12 hover:border-white/45 hover:-translate-y-0.5">
-          <i data-lucide="phone-call" class="w-5 h-5 text-ice-300"></i>
-          (11) 93806-2320
-        </a>
-      </div>
-
-      <p class="reveal mt-8 text-sm text-navy-100/50" style="transition-delay:.32s">
-        Resposta rápida em horário comercial · Orçamento sem compromisso
-      </p>
-    </div>
-  </section>
-
-  <!-- =========================================================
-       FOOTER
-  ========================================================== -->
-  <footer class="bg-navy-950 border-t border-white/10">
-    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-16">
-      <div class="grid md:grid-cols-12 gap-12 mb-12">
-
-        <!-- Marca -->
         <div class="md:col-span-5">
-          <div class="flex items-center gap-3 mb-5">
-            <div class="h-11 w-11 rounded-xl bg-gradient-to-br from-ice-400 to-navy-700 flex items-center justify-center shadow-lg">
-              <i data-lucide="zap" class="w-6 h-6 text-white"></i>
-            </div>
-            <div class="leading-tight">
-              <span class="block text-xl font-extrabold tracking-tight text-white">Do<span class="text-ice-400">Vale</span></span>
-              <span class="block text-[10px] font-semibold uppercase tracking-[0.18em] text-white/45">Engenharia &amp; Instalações</span>
-            </div>
+          <div class="flex items-center gap-2.5 mb-4">
+            <span class="h-8 w-8 bg-laranja-500 flex items-center justify-center rounded-sm">
+              <i data-lucide="zap" class="w-4.5 h-4.5 text-white"></i>
+            </span>
+            <span class="text-lg font-extrabold tracking-tight text-white leading-none">
+              Do<span class="text-grafite-400">Vale</span>
+            </span>
           </div>
-          <p class="text-sm leading-relaxed text-navy-100/60 max-w-md">
-            A Empresa DoVale é especializada em climatização, refrigeração, instalações e manutenção elétrica,
-            sistemas automatizados e segurança eletrônica. Unimos competência técnica, segurança e versatilidade
-            para atender do lar à indústria com o mesmo padrão de execução.
+          <p class="text-sm leading-relaxed text-grafite-400 max-w-sm mb-5">
+            Manutenção e instalação de climatização, elétrica, automação e segurança
+            eletrônica para residência, comércio e indústria.
           </p>
+
+          <!-- CONFIRMAR: dados cadastrais da empresa -->
+          <dl class="text-xs space-y-1.5 border-t border-grafite-800 pt-4">
+            <div class="flex flex-wrap gap-x-2">
+              <dt class="text-grafite-500">Razão social:</dt>
+              <dd><span class="pendente">CONFIRMAR: razão social</span></dd>
+            </div>
+            <div class="flex flex-wrap gap-x-2">
+              <dt class="text-grafite-500">CNPJ:</dt>
+              <dd><span class="pendente">CONFIRMAR: CNPJ</span></dd>
+            </div>
+            <div class="flex flex-wrap gap-x-2">
+              <dt class="text-grafite-500">Responsável técnico:</dt>
+              <dd><span class="pendente">CONFIRMAR: nome e CREA/CFT</span></dd>
+            </div>
+            <div class="flex flex-wrap gap-x-2">
+              <dt class="text-grafite-500">Endereço:</dt>
+              <dd><span class="pendente">CONFIRMAR: tem endereço fixo?</span></dd>
+            </div>
+          </dl>
         </div>
 
-        <!-- Serviços -->
         <div class="md:col-span-3">
-          <h3 class="text-sm font-bold uppercase tracking-[0.14em] text-white mb-5">Serviços</h3>
-          <ul class="space-y-3 text-sm text-navy-100/60">
-            <li><a href="#servicos" class="hover:text-ice-400 transition-colors">Climatização e Refrigeração</a></li>
-            <li><a href="#servicos" class="hover:text-ice-400 transition-colors">Instalação e Manutenção Elétrica</a></li>
-            <li><a href="#servicos" class="hover:text-ice-400 transition-colors">Automação Residencial e Industrial</a></li>
-            <li><a href="#servicos" class="hover:text-ice-400 transition-colors">Segurança Eletrônica</a></li>
+          <h3 class="text-xs font-bold uppercase tracking-widest text-white mb-4">Serviços</h3>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="#servicos" class="hover:text-white transition-colors">Climatização e refrigeração</a></li>
+            <li><a href="#servicos" class="hover:text-white transition-colors">Elétrica</a></li>
+            <li><a href="#servicos" class="hover:text-white transition-colors">Automação</a></li>
+            <li><a href="#servicos" class="hover:text-white transition-colors">Segurança eletrônica</a></li>
           </ul>
         </div>
 
-        <!-- Contato -->
         <div class="md:col-span-4">
-          <h3 class="text-sm font-bold uppercase tracking-[0.14em] text-white mb-5">Contato</h3>
-          <ul class="space-y-4 text-sm">
+          <h3 class="text-xs font-bold uppercase tracking-widest text-white mb-4">Contato</h3>
+          <ul class="space-y-3 text-sm">
             <li>
-              <a href="tel:+5511938062320" class="group flex items-center gap-3 text-navy-100/70 hover:text-white transition-colors">
-                <span class="h-9 w-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-ice-400 transition-colors group-hover:bg-ice-400/15">
-                  <i data-lucide="phone" class="w-4 h-4"></i>
-                </span>
-                <span>
-                  <span class="block text-[11px] uppercase tracking-wider text-navy-100/45">Telefone</span>
-                  <span class="font-semibold">(11) 93806-2320</span>
-                </span>
+              <a href="tel:+5511938062320" class="flex items-center gap-2.5 hover:text-white transition-colors">
+                <i data-lucide="phone" class="w-4 h-4 text-laranja-500 shrink-0"></i>
+                <span class="font-bold tabular">(11) 93806-2320</span>
               </a>
             </li>
             <li>
-              <a href="https://wa.me/5511938062320?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20com%20a%20Empresa%20DoVale."
+              <a href="https://wa.me/5511938062320?text=Ol%C3%A1%2C%20preciso%20de%20um%20servi%C3%A7o%20da%20DoVale."
                  target="_blank" rel="noopener noreferrer"
-                 class="group flex items-center gap-3 text-navy-100/70 hover:text-white transition-colors">
-                <span class="h-9 w-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-[#25D366] transition-colors group-hover:bg-[#25D366]/15">
-                  <i data-lucide="message-circle" class="w-4 h-4"></i>
-                </span>
-                <span>
-                  <span class="block text-[11px] uppercase tracking-wider text-navy-100/45">WhatsApp</span>
-                  <span class="font-semibold">Orçamento sem compromisso</span>
-                </span>
+                 class="flex items-center gap-2.5 hover:text-white transition-colors">
+                <i data-lucide="message-circle" class="w-4 h-4 text-laranja-500 shrink-0"></i>
+                WhatsApp
               </a>
             </li>
-            <li>
-              <div class="flex items-center gap-3 text-navy-100/70">
-                <span class="h-9 w-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-ice-400">
-                  <i data-lucide="map-pin" class="w-4 h-4"></i>
-                </span>
-                <span>
-                  <span class="block text-[11px] uppercase tracking-wider text-navy-100/45">Atendimento</span>
-                  <span class="font-semibold">São Paulo e região</span>
-                </span>
-              </div>
+            <li class="flex items-center gap-2.5">
+              <i data-lucide="clock" class="w-4 h-4 text-laranja-500 shrink-0"></i>
+              <span class="pendente">CONFIRMAR: horário</span>
             </li>
-            <li>
-              <div class="flex items-center gap-3 text-navy-100/70">
-                <span class="h-9 w-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-ice-400">
-                  <i data-lucide="clock" class="w-4 h-4"></i>
-                </span>
-                <span>
-                  <span class="block text-[11px] uppercase tracking-wider text-navy-100/45">Horário</span>
-                  <span class="font-semibold">Seg. a Sáb. · 08h às 18h</span>
-                </span>
-              </div>
+            <li class="flex items-center gap-2.5">
+              <i data-lucide="instagram" class="w-4 h-4 text-laranja-500 shrink-0"></i>
+              <span class="pendente">CONFIRMAR: Instagram</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i data-lucide="map-pin" class="w-4 h-4 text-laranja-500 shrink-0"></i>
+              <span class="pendente">CONFIRMAR: cidades atendidas</span>
             </li>
           </ul>
         </div>
       </div>
 
-      <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p class="text-xs text-navy-100/50 text-center sm:text-left">
-          © <span id="ano">2026</span> Empresa DoVale. Todos os direitos reservados.
-        </p>
-        <p class="text-xs text-navy-100/40 text-center sm:text-right">
-          Climatização · Elétrica · Automação · Segurança Eletrônica
-        </p>
+      <div class="border-t border-grafite-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-grafite-500">
+        <p>© <span id="ano">2026</span> Empresa DoVale. Todos os direitos reservados.</p>
+        <p>Climatização · Elétrica · Automação · Segurança eletrônica</p>
       </div>
     </div>
   </footer>
@@ -894,32 +774,24 @@
   <!-- =========================================================
        BOTÃO FLUTUANTE WHATSAPP
   ========================================================== -->
-  <a href="https://wa.me/5511938062320?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20com%20a%20Empresa%20DoVale."
+  <a href="https://wa.me/5511938062320?text=Ol%C3%A1%2C%20preciso%20de%20um%20servi%C3%A7o%20da%20DoVale."
      target="_blank" rel="noopener noreferrer"
      aria-label="Falar com a Empresa DoVale no WhatsApp"
-     class="group fixed bottom-6 right-6 z-50 flex items-center gap-3 rounded-full bg-[#25D366] pl-4 pr-5 py-4 shadow-2xl shadow-[#25D366]/40 animate-pulseRing transition-all duration-300 hover:scale-105 hover:bg-[#20bd5a]">
-    <i data-lucide="message-circle" class="w-7 h-7 text-white shrink-0"></i>
-    <span class="hidden sm:block max-w-0 overflow-hidden whitespace-nowrap text-sm font-bold text-white transition-all duration-500 group-hover:max-w-[13rem]">
-      Fale conosco agora
-    </span>
+     class="fixed bottom-5 right-5 z-50 h-13 w-13 rounded-full bg-whats-500 hover:bg-whats-600 flex items-center justify-center shadow-lg transition-colors">
+    <i data-lucide="message-circle" class="w-6 h-6 text-white"></i>
   </a>
-
-  <!-- Botão voltar ao topo -->
-  <button id="to-top" aria-label="Voltar ao topo"
-          class="fixed bottom-6 left-6 z-40 h-12 w-12 rounded-full bg-navy-900 text-white shadow-xl flex items-center justify-center opacity-0 translate-y-4 pointer-events-none transition-all duration-300 hover:bg-navy-800 hover:-translate-y-1">
-    <i data-lucide="arrow-up" class="w-5 h-5"></i>
-  </button>
 
   <!-- =========================================================
        SCRIPTS
   ========================================================== -->
   <script>
     // O script do Lucide usa "defer", entao roda antes do DOMContentLoaded.
-    // Inicializamos tudo aqui dentro para garantir que os icones ja existam.
     document.addEventListener('DOMContentLoaded', function () {
       'use strict';
 
-      /* ---------- Ícones Lucide ---------- */
+      var NUMERO_WHATSAPP = '5511938062320';
+
+      /* ---------- Ícones ---------- */
       function renderIcons() {
         if (window.lucide && typeof window.lucide.createIcons === 'function') {
           window.lucide.createIcons();
@@ -931,158 +803,101 @@
       var anoEl = document.getElementById('ano');
       if (anoEl) anoEl.textContent = new Date().getFullYear();
 
-      /* ---------- Header: muda de transparente para sólido ---------- */
-      var header    = document.getElementById('header');
-      var logoName  = document.getElementById('logo-name');
-      var logoTag   = document.getElementById('logo-tag');
-      var navDesk   = document.getElementById('nav-desktop');
-      var phoneLink = document.getElementById('phone-link');
-      var menuBtn   = document.getElementById('menu-btn');
-
-      function updateHeader() {
-        var scrolled = window.scrollY > 40;
-
-        if (scrolled) {
-          header.classList.add('bg-white/95', 'backdrop-blur-xl', 'shadow-lg', 'shadow-navy-900/5');
-          header.classList.remove('bg-transparent');
-
-          logoName.classList.remove('text-white');
-          logoName.classList.add('text-navy-900');
-
-          logoTag.classList.remove('text-white/60');
-          logoTag.classList.add('text-navy-400');
-
-          navDesk.classList.remove('text-white/85');
-          navDesk.classList.add('text-navy-800');
-
-          phoneLink.classList.remove('text-white/90');
-          phoneLink.classList.add('text-navy-800');
-
-          menuBtn.classList.remove('text-white', 'hover:bg-white/10');
-          menuBtn.classList.add('text-navy-900', 'hover:bg-navy-50');
-        } else {
-          header.classList.remove('bg-white/95', 'backdrop-blur-xl', 'shadow-lg', 'shadow-navy-900/5');
-          header.classList.add('bg-transparent');
-
-          logoName.classList.add('text-white');
-          logoName.classList.remove('text-navy-900');
-
-          logoTag.classList.add('text-white/60');
-          logoTag.classList.remove('text-navy-400');
-
-          navDesk.classList.add('text-white/85');
-          navDesk.classList.remove('text-navy-800');
-
-          phoneLink.classList.add('text-white/90');
-          phoneLink.classList.remove('text-navy-800');
-
-          menuBtn.classList.add('text-white', 'hover:bg-white/10');
-          menuBtn.classList.remove('text-navy-900', 'hover:bg-navy-50');
-        }
-      }
-
-      /* ---------- Botão voltar ao topo ---------- */
-      var toTop = document.getElementById('to-top');
-
-      function updateToTop() {
-        if (window.scrollY > 600) {
-          toTop.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
-          toTop.classList.add('opacity-100');
-        } else {
-          toTop.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
-          toTop.classList.remove('opacity-100');
-        }
-      }
-
-      toTop.addEventListener('click', function () {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-
-      /* ---------- Listener único de scroll (com rAF) ---------- */
-      var ticking = false;
-      function onScroll() {
-        if (!ticking) {
-          window.requestAnimationFrame(function () {
-            updateHeader();
-            updateToTop();
-            ticking = false;
-          });
-          ticking = true;
-        }
-      }
-      window.addEventListener('scroll', onScroll, { passive: true });
-      updateHeader();
-      updateToTop();
-
       /* ---------- Menu mobile ---------- */
+      var menuBtn    = document.getElementById('menu-btn');
       var mobileMenu = document.getElementById('mobile-menu');
       var menuIcon   = document.getElementById('menu-icon');
-      var menuOpen   = false;
+      var menuAberto = false;
 
-      function setMenu(open) {
-        menuOpen = open;
-        menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
-        menuBtn.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
-
-        if (open) {
-          mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
-          menuIcon.setAttribute('data-lucide', 'x');
-        } else {
-          mobileMenu.style.maxHeight = '0px';
-          menuIcon.setAttribute('data-lucide', 'menu');
-        }
+      function setMenu(aberto) {
+        menuAberto = aberto;
+        menuBtn.setAttribute('aria-expanded', aberto ? 'true' : 'false');
+        mobileMenu.style.maxHeight = aberto ? mobileMenu.scrollHeight + 'px' : '0px';
+        menuIcon.setAttribute('data-lucide', aberto ? 'x' : 'menu');
         renderIcons();
       }
 
-      menuBtn.addEventListener('click', function () {
-        setMenu(!menuOpen);
-      });
+      menuBtn.addEventListener('click', function () { setMenu(!menuAberto); });
 
       var mobileLinks = document.querySelectorAll('.mobile-link');
       for (var i = 0; i < mobileLinks.length; i++) {
-        mobileLinks[i].addEventListener('click', function () {
-          setMenu(false);
-        });
+        mobileLinks[i].addEventListener('click', function () { setMenu(false); });
       }
 
       window.addEventListener('resize', function () {
-        if (window.innerWidth >= 1024 && menuOpen) setMenu(false);
+        if (window.innerWidth >= 1024 && menuAberto) setMenu(false);
       });
 
-      /* ---------- Animações de entrada por scroll ---------- */
-      var animated = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-zoom');
-
+      /* ---------- Animações de entrada ---------- */
+      var alvos = document.querySelectorAll('.reveal');
       if ('IntersectionObserver' in window) {
-        var observer = new IntersectionObserver(function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('is-visible');
-              observer.unobserve(entry.target);
+        var obs = new IntersectionObserver(function (entradas) {
+          entradas.forEach(function (e) {
+            if (e.isIntersecting) {
+              e.target.classList.add('is-visible');
+              obs.unobserve(e.target);
             }
           });
-        }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
-
-        for (var j = 0; j < animated.length; j++) {
-          observer.observe(animated[j]);
-        }
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        for (var j = 0; j < alvos.length; j++) obs.observe(alvos[j]);
       } else {
-        for (var k = 0; k < animated.length; k++) {
-          animated[k].classList.add('is-visible');
-        }
+        for (var k = 0; k < alvos.length; k++) alvos[k].classList.add('is-visible');
       }
 
-      /* ---------- Scroll suave compensando o header fixo ---------- */
-      var anchors = document.querySelectorAll('a[href^="#"]');
-      for (var a = 0; a < anchors.length; a++) {
-        anchors[a].addEventListener('click', function (e) {
+      /* ---------- Formulário → WhatsApp (sem backend) ---------- */
+      var form = document.getElementById('form-orcamento');
+      var erroEl = document.getElementById('form-erro');
+
+      function mostrarErro(texto) {
+        erroEl.textContent = texto;
+        erroEl.classList.remove('hidden');
+      }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        erroEl.classList.add('hidden');
+
+        var nome     = form.nome.value.trim();
+        var telefone = form.telefone.value.trim();
+        var servico  = form.servico.value;
+        var detalhe  = form.detalhe.value.trim();
+        var urgSel   = form.querySelector('input[name="urgencia"]:checked');
+
+        if (!nome)     { mostrarErro('Preencha o seu nome.');            form.nome.focus();     return; }
+        if (!telefone) { mostrarErro('Preencha o seu telefone.');        form.telefone.focus(); return; }
+        if (!servico)  { mostrarErro('Escolha o tipo de serviço.');      form.servico.focus();  return; }
+        if (!urgSel)   { mostrarErro('Escolha a urgência do chamado.');                         return; }
+
+        var linhas = [
+          'Olá! Vim pelo site.',
+          '',
+          'Nome: ' + nome,
+          'Telefone: ' + telefone,
+          'Serviço: ' + servico,
+          'Urgência: ' + urgSel.value
+        ];
+
+        if (detalhe) {
+          linhas.push('');
+          linhas.push('O que está acontecendo:');
+          linhas.push(detalhe);
+        }
+
+        var url = 'https://wa.me/' + NUMERO_WHATSAPP + '?text=' + encodeURIComponent(linhas.join('\n'));
+        window.open(url, '_blank', 'noopener');
+      });
+
+      /* ---------- Rolagem suave com desconto do header ---------- */
+      var ancoras = document.querySelectorAll('a[href^="#"]');
+      for (var a = 0; a < ancoras.length; a++) {
+        ancoras[a].addEventListener('click', function (e) {
           var id = this.getAttribute('href');
           if (!id || id === '#') return;
-          var target = document.querySelector(id);
-          if (!target) return;
-
+          var alvo = document.querySelector(id);
+          if (!alvo) return;
           e.preventDefault();
-          var top = target.getBoundingClientRect().top + window.pageYOffset - 72;
-          window.scrollTo({ top: top, behavior: 'smooth' });
+          var topo = alvo.getBoundingClientRect().top + window.pageYOffset - 68;
+          window.scrollTo({ top: topo, behavior: 'smooth' });
         });
       }
     });
