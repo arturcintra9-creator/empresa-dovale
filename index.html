@@ -44,8 +44,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
-  <!-- CSS compilado do Tailwind. Gerado por: npm run build -->
-  <link rel="stylesheet" href="./dist/style.css" />
+  <!-- CSS compilado do Tailwind. Gerado por: npm run build
+       O ?v=3 força o navegador a baixar a versão nova em vez de usar a
+       que ele guardou. Se um dia o visual mudar e alguém continuar vendo
+       o antigo, basta subir esse número (v=4, v=5...). -->
+  <link rel="stylesheet" href="./dist/style.css?v=3" />
 
   <!-- Lucide Icons — SVG monocromático, traço simples -->
   <script src="https://unpkg.com/lucide@0.545.0/dist/umd/lucide.js" defer></script>
