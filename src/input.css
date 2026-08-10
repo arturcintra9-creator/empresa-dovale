@@ -71,116 +71,148 @@
 }
 
 /* =========================================================
-   ANIMACOES DE ENTRADA — discretas, so 12px de deslocamento
-   ========================================================= */
-.reveal {
-  opacity: 0;
-  transform: translateY(12px);
-  transition: opacity .5s ease-out, transform .5s ease-out;
-}
-.reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* =========================================================
    COMPONENTES
+   IMPORTANTE: tudo dentro de @layer components.
+   Sem o layer, estas regras venceriam os utilitarios do Tailwind
+   na cascata e classes como bg-*, text-* e has-checked: seriam
+   ignoradas nos elementos que usam estas classes.
    ========================================================= */
+@layer components {
 
-/* Cartao tecnico: borda de 1px, sem sombra pesada */
-.cartao {
-  border: 1px solid var(--color-grafite-200);
-  background: #fff;
-  transition: border-color .2s ease, background-color .2s ease;
-}
-.cartao:hover {
-  border-color: var(--color-grafite-400);
-}
+  /* Animacoes de entrada — discretas, so 12px de deslocamento */
+  .reveal {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity .5s ease-out, transform .5s ease-out;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
-/* Item de servico com marcador lateral no acento */
-.servico {
-  border-left: 3px solid var(--color-grafite-200);
-  transition: border-color .2s ease;
-}
-.servico:hover {
-  border-left-color: var(--color-laranja-500);
-}
+  /* Cartao tecnico: borda de 1px, sem sombra pesada */
+  .cartao {
+    border: 1px solid var(--color-grafite-200);
+    background: #fff;
+    transition: border-color .2s ease, background-color .2s ease;
+  }
+  .cartao:hover {
+    border-color: var(--color-grafite-400);
+  }
 
-/* Link de navegacao */
-.nav-link {
-  transition: color .15s ease;
-}
+  /* Item de servico com marcador lateral no acento */
+  .servico {
+    border-left: 3px solid var(--color-grafite-200);
+    transition: border-color .2s ease;
+  }
+  .servico:hover {
+    border-left-color: var(--color-laranja-500);
+  }
 
-/* Botoes */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: .5rem;
-  font-weight: 700;
-  border-radius: var(--radius-md);
-  transition: background-color .15s ease, border-color .15s ease;
-}
+  .nav-link {
+    transition: color .15s ease;
+  }
 
-.btn-whats {
-  background: var(--color-whats-500);
-  color: #fff;
-}
-.btn-whats:hover {
-  background: var(--color-whats-600);
-}
+  /* Botoes */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    font-weight: 700;
+    border-radius: var(--radius-md);
+    transition: background-color .15s ease, border-color .15s ease;
+  }
+  .btn-whats {
+    background: var(--color-whats-500);
+    color: #fff;
+  }
+  .btn-whats:hover {
+    background: var(--color-whats-600);
+  }
+  .btn-acento {
+    background: var(--color-laranja-500);
+    color: #fff;
+  }
+  .btn-acento:hover {
+    background: var(--color-laranja-600);
+  }
 
-.btn-acento {
-  background: var(--color-laranja-500);
-  color: #fff;
-}
-.btn-acento:hover {
-  background: var(--color-laranja-600);
-}
+  /* Opcao de urgencia (radio). Estado marcado escrito aqui em vez de
+     depender do variant has-checked:, que nao estava aplicando a borda. */
+  .opcao {
+    border: 1px solid var(--color-grafite-300);
+    border-radius: var(--radius-md);
+    transition: border-color .15s ease, background-color .15s ease;
+    cursor: pointer;
+  }
+  .opcao:hover {
+    border-color: var(--color-grafite-500);
+  }
+  .opcao:has(input:checked) {
+    border-color: var(--color-laranja-500);
+    background-color: rgba(232, 93, 4, .06);
+    font-weight: 600;
+  }
+  .opcao:focus-within {
+    outline: 2px solid var(--color-laranja-500);
+    outline-offset: 2px;
+  }
 
-/* Campos de formulario */
-.campo {
-  width: 100%;
-  border: 1px solid var(--color-grafite-300);
-  border-radius: var(--radius-md);
-  padding: .625rem .75rem;
-  font-size: .9375rem;
-  color: var(--color-grafite-900);
-  background: #fff;
-  transition: border-color .15s ease;
-}
-.campo:focus {
-  outline: none;
-  border-color: var(--color-laranja-500);
-}
-.campo::placeholder {
-  color: var(--color-grafite-400);
-}
+  /* Campos de formulario */
+  .campo {
+    width: 100%;
+    border: 1px solid var(--color-grafite-300);
+    border-radius: var(--radius-md);
+    padding: .625rem .75rem;
+    font-size: .9375rem;
+    color: var(--color-grafite-900);
+    background: #fff;
+    transition: border-color .15s ease;
+  }
+  .campo:focus {
+    outline: none;
+    border-color: var(--color-laranja-500);
+  }
+  .campo::placeholder {
+    color: var(--color-grafite-400);
+  }
 
-/* Marcadores de conteudo pendente — visiveis em tela ate serem preenchidos */
-.pendente {
-  display: inline-block;
-  border: 1px dashed var(--color-laranja-500);
-  background: rgba(232, 93, 4, .07);
-  color: var(--color-laranja-700);
-  font-size: .75rem;
-  font-weight: 700;
-  padding: .0625rem .375rem;
-  border-radius: 2px;
-  letter-spacing: .01em;
-}
+  /* ---------------------------------------------------------
+     Marcador de dado pendente.
+     Discreto por padrao: herda a cor do texto ao redor com
+     opacidade reduzida e um sublinhado pontilhado. Funciona
+     tanto em fundo claro quanto escuro, sem poluir o layout.
+     Para auditar tudo de uma vez, abra o site com ?revisar=1
+     --------------------------------------------------------- */
+  .pendente {
+    color: inherit;
+    opacity: .62;
+    border-bottom: 1px dotted currentColor;
+    font-weight: 500;
+    font-style: italic;
+  }
 
-/* Area reservada para foto real */
-.foto-pendente {
-  border: 1px dashed var(--color-grafite-300);
-  background:
-    repeating-linear-gradient(
-      45deg,
-      var(--color-grafite-50),
-      var(--color-grafite-50) 10px,
-      #fff 10px,
-      #fff 20px
-    );
+  /* Modo revisao: destaca todos os pendentes em laranja */
+  body.revisar .pendente {
+    opacity: 1;
+    font-style: normal;
+    font-weight: 700;
+    color: #fff;
+    background: var(--color-laranja-500);
+    border: 1px solid var(--color-laranja-700);
+    border-radius: 2px;
+    padding: 0 .3rem;
+  }
+
+  /* Area reservada para foto real — so a borda, sem fundo proprio,
+     para que as classes bg-* controlem a aparencia. */
+  .foto-pendente {
+    border: 1px dashed var(--color-grafite-300);
+  }
+  body.revisar .foto-pendente {
+    border-color: var(--color-laranja-500);
+  }
 }
 
 /* Barra de rolagem */

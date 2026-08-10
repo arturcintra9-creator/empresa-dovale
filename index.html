@@ -106,7 +106,7 @@
           <i data-lucide="triangle-alert" class="w-4 h-4 shrink-0"></i>
           Parou agora? Chamado de emergência
         </p>
-        <span class="pendente bg-white/15 border-white/50 text-white">CONFIRMAR: prazo de atendimento</span>
+        <span class="pendente text-sm">CONFIRMAR: prazo de atendimento</span>
         <a href="https://wa.me/5511938062320?text=EMERG%C3%8ANCIA%20-%20preciso%20de%20atendimento%20urgente."
            target="_blank" rel="noopener noreferrer"
            class="text-sm font-bold underline underline-offset-2 hover:no-underline">
@@ -177,11 +177,8 @@
       <div class="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
 
         <div class="lg:col-span-7">
-          <!-- CONFIRMAR: anos de mercado e bairros atendidos -->
-          <p class="flex flex-wrap items-center gap-2 text-xs font-bold uppercase tracking-widest text-grafite-400 mb-5">
-            <span class="pendente">CONFIRMAR: anos de mercado</span>
-            <span class="text-grafite-600">·</span>
-            <span class="pendente">CONFIRMAR: bairros atendidos</span>
+          <p class="text-xs font-bold uppercase tracking-widest text-laranja-500 mb-5">
+            Climatização · Elétrica · Automação · Segurança eletrônica
           </p>
 
           <!-- CONFIRMAR: trocar [CIDADE] pela cidade-base real -->
@@ -510,21 +507,21 @@
       <div class="grid sm:grid-cols-3 gap-5">
 
         <div>
-          <div class="foto-pendente rounded-md aspect-4/3 flex items-center justify-center mb-2">
+          <div class="foto-pendente rounded-md aspect-4/3 bg-white flex items-center justify-center mb-2">
             <span class="pendente">FOTO REAL: antes/depois 1</span>
           </div>
           <p class="text-xs text-grafite-500">[Descrever o serviço e o bairro]</p>
         </div>
 
         <div>
-          <div class="foto-pendente rounded-md aspect-4/3 flex items-center justify-center mb-2">
+          <div class="foto-pendente rounded-md aspect-4/3 bg-white flex items-center justify-center mb-2">
             <span class="pendente">FOTO REAL: antes/depois 2</span>
           </div>
           <p class="text-xs text-grafite-500">[Descrever o serviço e o bairro]</p>
         </div>
 
         <div>
-          <div class="foto-pendente rounded-md aspect-4/3 flex items-center justify-center mb-2">
+          <div class="foto-pendente rounded-md aspect-4/3 bg-white flex items-center justify-center mb-2">
             <span class="pendente">FOTO REAL: antes/depois 3</span>
           </div>
           <p class="text-xs text-grafite-500">[Descrever o serviço e o bairro]</p>
@@ -637,15 +634,15 @@
             <fieldset class="mb-4">
               <legend class="block text-sm font-bold mb-2">Urgência</legend>
               <div class="grid sm:grid-cols-3 gap-2">
-                <label class="cartao rounded-md px-3 py-2.5 flex items-center gap-2 cursor-pointer text-sm has-checked:border-laranja-500 has-checked:bg-laranja-500/5">
+                <label class="opcao px-3 py-2.5 flex items-center gap-2 text-sm">
                   <input type="radio" name="urgencia" value="Emergência — parou agora" class="accent-laranja-500" required />
                   Emergência
                 </label>
-                <label class="cartao rounded-md px-3 py-2.5 flex items-center gap-2 cursor-pointer text-sm has-checked:border-laranja-500 has-checked:bg-laranja-500/5">
+                <label class="opcao px-3 py-2.5 flex items-center gap-2 text-sm">
                   <input type="radio" name="urgencia" value="Esta semana" class="accent-laranja-500" />
                   Esta semana
                 </label>
-                <label class="cartao rounded-md px-3 py-2.5 flex items-center gap-2 cursor-pointer text-sm has-checked:border-laranja-500 has-checked:bg-laranja-500/5">
+                <label class="opcao px-3 py-2.5 flex items-center gap-2 text-sm">
                   <input type="radio" name="urgencia" value="Só orçamento, sem pressa" class="accent-laranja-500" />
                   Só orçamento
                 </label>
@@ -790,6 +787,15 @@
       'use strict';
 
       var NUMERO_WHATSAPP = '5511938062320';
+
+      /* ---------- Modo revisão ----------
+         Abrir o site com ?revisar=1 no fim do endereço destaca em laranja
+         tudo que ainda falta confirmar. Sem o parâmetro, os marcadores
+         ficam discretos e o site pode ser apresentado normalmente. */
+      var paramRevisar = new URLSearchParams(location.search).get('revisar');
+      if (paramRevisar !== null && paramRevisar !== '0' && paramRevisar !== 'false') {
+        document.body.classList.add('revisar');
+      }
 
       /* ---------- Ícones ---------- */
       function renderIcons() {
