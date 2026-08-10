@@ -45,10 +45,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
   <!-- CSS compilado do Tailwind. Gerado por: npm run build
-       O ?v=3 força o navegador a baixar a versão nova em vez de usar a
+       O ?v=4 força o navegador a baixar a versão nova em vez de usar a
        que ele guardou. Se um dia o visual mudar e alguém continuar vendo
-       o antigo, basta subir esse número (v=4, v=5...). -->
-  <link rel="stylesheet" href="./dist/style.css?v=3" />
+       o antigo, basta subir esse número (v=5, v=6...). -->
+  <link rel="stylesheet" href="./dist/style.css?v=4" />
 
   <!-- Lucide Icons — SVG monocromático, traço simples -->
   <script src="https://unpkg.com/lucide@0.545.0/dist/umd/lucide.js" defer></script>
@@ -97,6 +97,9 @@
 
 <body class="bg-white text-grafite-900 antialiased">
 
+  <!-- Barra de progresso da rolagem -->
+  <div id="progresso" class="progresso" aria-hidden="true"></div>
+
   <!-- =========================================================
        FAIXA DE EMERGÊNCIA — acima da dobra
        CONFIRMAR: existe plantão de emergência? Qual o prazo real
@@ -106,7 +109,7 @@
     <div class="max-w-6xl mx-auto px-5 sm:px-6">
       <div class="flex flex-col sm:flex-row sm:items-center justify-center gap-x-4 gap-y-1 py-2 text-center sm:text-left">
         <p class="text-sm font-bold flex items-center justify-center gap-2">
-          <i data-lucide="triangle-alert" class="w-4 h-4 shrink-0"></i>
+          <span class="ponto-vivo inline-flex h-2 w-2 rounded-full bg-white shrink-0" aria-hidden="true"></span>
           Parou agora? Chamado de emergência
         </p>
         <span class="pendente text-sm">CONFIRMAR: prazo de atendimento</span>
@@ -175,14 +178,14 @@
   <!-- =========================================================
        HERO — alinhado à esquerda, denso
   ========================================================== -->
-  <section id="inicio" class="bg-grafite-950 text-white">
+  <section id="inicio" class="bg-grafite-950 text-white textura halo overflow-hidden">
     <div class="max-w-6xl mx-auto px-5 sm:px-6 py-14 sm:py-20">
       <div class="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
 
-        <div class="lg:col-span-7">
+        <div class="lg:col-span-7 cascata">
           <p class="text-xs font-bold uppercase tracking-widest text-laranja-500 mb-5">
             Climatização · Elétrica · Automação · Segurança eletrônica
-          </p>
+          </p><span class="regua mb-4"></span>
 
           <!-- CONFIRMAR: trocar [CIDADE] pela cidade-base real -->
           <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black leading-[1.1] mb-5">
@@ -198,7 +201,7 @@
           <div class="flex flex-col sm:flex-row gap-3 mb-9">
             <a href="#orcamento" class="btn btn-acento px-6 py-3.5 text-base">
               Pedir orçamento
-              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              <i data-lucide="arrow-right" class="seta-btn w-4 h-4"></i>
             </a>
             <a href="https://wa.me/5511938062320?text=Ol%C3%A1%2C%20preciso%20de%20um%20servi%C3%A7o%20da%20DoVale."
                target="_blank" rel="noopener noreferrer"
@@ -257,7 +260,7 @@
         <!-- Título à esquerda, fixo -->
         <div class="lg:col-span-4">
           <div class="lg:sticky lg:top-24">
-            <p class="text-xs font-bold uppercase tracking-widest text-laranja-600 mb-3">Serviços</p>
+            <p class="text-xs font-bold uppercase tracking-widest text-laranja-600 mb-3">Serviços</p><span class="regua mb-4"></span>
             <h2 class="text-2xl sm:text-3xl font-extrabold leading-tight mb-4">
               O que costuma dar problema
             </h2>
@@ -271,11 +274,11 @@
         <!-- Lista à direita -->
         <div class="lg:col-span-8 divide-y divide-grafite-200 border-t border-grafite-200">
 
-          <article class="servico reveal pl-5 py-6">
+          <article class="servico reveal py-6">
             <div class="flex items-start gap-4">
-              <i data-lucide="snowflake" class="w-5 h-5 text-grafite-500 mt-1 shrink-0"></i>
+              <i data-lucide="snowflake" class="w-5 h-5 icone-servico text-grafite-500 mt-1 shrink-0"></i>
               <div>
-                <h3 class="text-lg font-bold mb-1.5">Ar-condicionado que não gela, pinga ou faz barulho</h3>
+                <h3 class="text-lg font-bold mb-1.5">Ar-condicionado que não gela, pinga ou faz barulho <i data-lucide="arrow-right" class="seta inline-block w-4 h-4 align-middle"></i></h3>
                 <p class="text-grafite-600 text-sm leading-relaxed mb-3">
                   Limpeza e higienização, carga de gás, troca de peça, instalação e desinstalação.
                   Split, multi-split, VRF, câmara fria e refrigeração comercial.
@@ -288,11 +291,11 @@
             </div>
           </article>
 
-          <article class="servico reveal pl-5 py-6">
+          <article class="servico reveal py-6">
             <div class="flex items-start gap-4">
-              <i data-lucide="zap" class="w-5 h-5 text-grafite-500 mt-1 shrink-0"></i>
+              <i data-lucide="zap" class="w-5 h-5 icone-servico text-grafite-500 mt-1 shrink-0"></i>
               <div>
-                <h3 class="text-lg font-bold mb-1.5">Disjuntor que desarma, tomada que esquenta, luz que oscila</h3>
+                <h3 class="text-lg font-bold mb-1.5">Disjuntor que desarma, tomada que esquenta, luz que oscila <i data-lucide="arrow-right" class="seta inline-block w-4 h-4 align-middle"></i></h3>
                 <p class="text-grafite-600 text-sm leading-relaxed mb-3">
                   Diagnóstico de falha, troca e montagem de quadro, circuito novo para chuveiro
                   ou ar-condicionado, aterramento e adequação de instalação antiga.
@@ -304,11 +307,11 @@
             </div>
           </article>
 
-          <article class="servico reveal pl-5 py-6">
+          <article class="servico reveal py-6">
             <div class="flex items-start gap-4">
-              <i data-lucide="cpu" class="w-5 h-5 text-grafite-500 mt-1 shrink-0"></i>
+              <i data-lucide="cpu" class="w-5 h-5 icone-servico text-grafite-500 mt-1 shrink-0"></i>
               <div>
-                <h3 class="text-lg font-bold mb-1.5">Portão que travou ou luz que você quer controlar pelo celular</h3>
+                <h3 class="text-lg font-bold mb-1.5">Portão que travou ou luz que você quer controlar pelo celular <i data-lucide="arrow-right" class="seta inline-block w-4 h-4 align-middle"></i></h3>
                 <p class="text-grafite-600 text-sm leading-relaxed mb-3">
                   Motor de portão, fechadura elétrica, cenários de iluminação, acionamento
                   programado e integração de máquinas na linha de produção.
@@ -317,11 +320,11 @@
             </div>
           </article>
 
-          <article class="servico reveal pl-5 py-6">
+          <article class="servico reveal py-6">
             <div class="flex items-start gap-4">
-              <i data-lucide="cctv" class="w-5 h-5 text-grafite-500 mt-1 shrink-0"></i>
+              <i data-lucide="cctv" class="w-5 h-5 icone-servico text-grafite-500 mt-1 shrink-0"></i>
               <div>
-                <h3 class="text-lg font-bold mb-1.5">Câmera que parou de gravar, alarme que dispara sozinho</h3>
+                <h3 class="text-lg font-bold mb-1.5">Câmera que parou de gravar, alarme que dispara sozinho <i data-lucide="arrow-right" class="seta inline-block w-4 h-4 align-middle"></i></h3>
                 <p class="text-grafite-600 text-sm leading-relaxed mb-3">
                   CFTV com acesso pelo celular, alarme e sensor de perímetro, interfone
                   e controle de acesso. Instalação nova ou conserto do sistema existente.
@@ -345,37 +348,37 @@
     <div class="max-w-6xl mx-auto px-5 sm:px-6">
 
       <div class="max-w-2xl mb-10">
-        <p class="text-xs font-bold uppercase tracking-widest text-laranja-500 mb-3">Como trabalhamos</p>
+        <p class="text-xs font-bold uppercase tracking-widest text-laranja-500 mb-3">Como trabalhamos</p><span class="regua mb-4"></span>
         <h2 class="text-2xl sm:text-3xl font-extrabold leading-tight">
           Do primeiro contato até o serviço entregue
         </h2>
       </div>
 
-      <ol class="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-grafite-800 border border-grafite-800">
-        <li class="reveal bg-grafite-950 p-6">
-          <span class="block text-laranja-500 font-black text-sm mb-3 tabular">01</span>
+      <ol class="cascata grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-grafite-800 border border-grafite-800">
+        <li class="passo p-6">
+          <span class="numero block text-laranja-500 font-black text-sm mb-3 tabular">01</span>
           <h3 class="font-bold mb-2">Você descreve o problema</h3>
           <p class="text-sm text-grafite-400 leading-relaxed">
             Pelo WhatsApp ou pelo formulário. Foto e vídeo do equipamento encurtam o diagnóstico.
           </p>
         </li>
-        <li class="reveal bg-grafite-950 p-6">
-          <span class="block text-laranja-500 font-black text-sm mb-3 tabular">02</span>
+        <li class="passo p-6">
+          <span class="numero block text-laranja-500 font-black text-sm mb-3 tabular">02</span>
           <h3 class="font-bold mb-2">Avaliação</h3>
           <p class="text-sm text-grafite-400 leading-relaxed">
             Casos simples resolvem por mensagem. Quando precisa medir, agendamos visita —
             <span class="pendente">CONFIRMAR: visita tem custo?</span>
           </p>
         </li>
-        <li class="reveal bg-grafite-950 p-6">
-          <span class="block text-laranja-500 font-black text-sm mb-3 tabular">03</span>
+        <li class="passo p-6">
+          <span class="numero block text-laranja-500 font-black text-sm mb-3 tabular">03</span>
           <h3 class="font-bold mb-2">Orçamento por escrito</h3>
           <p class="text-sm text-grafite-400 leading-relaxed">
             Serviço, materiais e prazo listados. Nada começa antes da sua aprovação.
           </p>
         </li>
-        <li class="reveal bg-grafite-950 p-6">
-          <span class="block text-laranja-500 font-black text-sm mb-3 tabular">04</span>
+        <li class="passo p-6">
+          <span class="numero block text-laranja-500 font-black text-sm mb-3 tabular">04</span>
           <h3 class="font-bold mb-2">Execução e teste</h3>
           <p class="text-sm text-grafite-400 leading-relaxed">
             Testamos junto com você e explicamos a operação. Garantia de
@@ -391,7 +394,7 @@
   ========================================================== -->
   <section class="py-16 sm:py-20 bg-grafite-50">
     <div class="max-w-6xl mx-auto px-5 sm:px-6">
-      <div class="grid md:grid-cols-2 gap-x-12 gap-y-8">
+      <div class="cascata grid md:grid-cols-2 gap-x-12 gap-y-8">
 
         <div class="cartao rounded-md p-6">
           <i data-lucide="user-check" class="w-5 h-5 text-laranja-600 mb-3"></i>
@@ -444,7 +447,7 @@
 
       <div class="flex flex-wrap items-end justify-between gap-4 mb-8 border-b border-grafite-200 pb-4">
         <div>
-          <p class="text-xs font-bold uppercase tracking-widest text-laranja-600 mb-2">Clientes</p>
+          <p class="text-xs font-bold uppercase tracking-widest text-laranja-600 mb-2">Clientes</p><span class="regua mb-4"></span>
           <h2 class="text-2xl sm:text-3xl font-extrabold">O que dizem sobre o serviço</h2>
         </div>
         <p class="text-xs text-grafite-500 max-w-xs">
@@ -452,7 +455,7 @@
         </p>
       </div>
 
-      <div class="grid sm:grid-cols-3 gap-5">
+      <div class="cascata grid sm:grid-cols-3 gap-5">
 
         <figure class="cartao rounded-md p-6">
           <span class="pendente mb-3">DEPOIMENTO REAL 1</span>
@@ -499,7 +502,7 @@
     <div class="max-w-6xl mx-auto px-5 sm:px-6">
 
       <div class="max-w-2xl mb-8">
-        <p class="text-xs font-bold uppercase tracking-widest text-laranja-600 mb-3">Serviços executados</p>
+        <p class="text-xs font-bold uppercase tracking-widest text-laranja-600 mb-3">Serviços executados</p><span class="regua mb-4"></span>
         <h2 class="text-2xl sm:text-3xl font-extrabold leading-tight mb-3">Antes e depois</h2>
         <p class="text-grafite-600 text-sm leading-relaxed">
           Quadro elétrico reorganizado, evaporadora limpa, cabeamento refeito.
@@ -507,7 +510,7 @@
         </p>
       </div>
 
-      <div class="grid sm:grid-cols-3 gap-5">
+      <div class="cascata grid sm:grid-cols-3 gap-5">
 
         <div>
           <div class="foto-pendente rounded-md aspect-4/3 bg-white flex items-center justify-center mb-2">
@@ -543,7 +546,7 @@
       <div class="grid lg:grid-cols-12 gap-10">
 
         <div class="lg:col-span-5">
-          <p class="text-xs font-bold uppercase tracking-widest text-laranja-600 mb-3">Onde atendemos</p>
+          <p class="text-xs font-bold uppercase tracking-widest text-laranja-600 mb-3">Onde atendemos</p><span class="regua mb-4"></span>
           <h2 class="text-2xl sm:text-3xl font-extrabold leading-tight mb-4">
             Bairros e cidades na área de cobertura
           </h2>
@@ -583,7 +586,7 @@
       <div class="grid lg:grid-cols-12 gap-10 lg:gap-14">
 
         <div class="lg:col-span-5">
-          <p class="text-xs font-bold uppercase tracking-widest text-laranja-500 mb-3">Orçamento</p>
+          <p class="text-xs font-bold uppercase tracking-widest text-laranja-500 mb-3">Orçamento</p><span class="regua mb-4"></span>
           <h2 class="text-2xl sm:text-3xl font-extrabold leading-tight mb-4">
             Descreva o serviço e receba o orçamento
           </h2>
@@ -777,9 +780,15 @@
   <a href="https://wa.me/5511938062320?text=Ol%C3%A1%2C%20preciso%20de%20um%20servi%C3%A7o%20da%20DoVale."
      target="_blank" rel="noopener noreferrer"
      aria-label="Falar com a Empresa DoVale no WhatsApp"
-     class="fixed bottom-5 right-5 z-50 h-13 w-13 rounded-full bg-whats-500 hover:bg-whats-600 flex items-center justify-center shadow-lg transition-colors">
+     class="flutuante fixed bottom-5 right-5 z-50 h-13 w-13 rounded-full bg-whats-500 hover:bg-whats-600 flex items-center justify-center shadow-lg">
     <i data-lucide="message-circle" class="w-6 h-6 text-white"></i>
   </a>
+
+  <!-- Voltar ao topo -->
+  <button id="ao-topo" aria-label="Voltar ao topo"
+          class="ao-topo flutuante fixed bottom-5 left-5 z-40 h-10 w-10 rounded-sm bg-grafite-900 hover:bg-laranja-500 text-white flex items-center justify-center border border-grafite-700">
+    <i data-lucide="arrow-up" class="w-4 h-4"></i>
+  </button>
 
   <!-- =========================================================
        SCRIPTS
@@ -838,7 +847,7 @@
       });
 
       /* ---------- Animações de entrada ---------- */
-      var alvos = document.querySelectorAll('.reveal');
+      var alvos = document.querySelectorAll('.reveal, .cascata, .regua');
       if ('IntersectionObserver' in window) {
         var obs = new IntersectionObserver(function (entradas) {
           entradas.forEach(function (e) {
@@ -852,6 +861,32 @@
       } else {
         for (var k = 0; k < alvos.length; k++) alvos[k].classList.add('is-visible');
       }
+
+      /* ---------- Barra de progresso + estado de rolagem ---------- */
+      var barra = document.getElementById('progresso');
+      var btnTopo = document.getElementById('ao-topo');
+      var agendado = false;
+
+      function aoRolar() {
+        var doc = document.documentElement;
+        var total = doc.scrollHeight - doc.clientHeight;
+        var y = window.scrollY || doc.scrollTop;
+        barra.style.width = total > 0 ? ((y / total) * 100) + '%' : '0%';
+        document.body.classList.toggle('rolou', y > 300);
+        agendado = false;
+      }
+
+      window.addEventListener('scroll', function () {
+        if (!agendado) {
+          agendado = true;
+          window.requestAnimationFrame(aoRolar);
+        }
+      }, { passive: true });
+      aoRolar();
+
+      btnTopo.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
 
       /* ---------- Formulário → WhatsApp (sem backend) ---------- */
       var form = document.getElementById('form-orcamento');
