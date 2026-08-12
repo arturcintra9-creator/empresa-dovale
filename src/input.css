@@ -83,7 +83,7 @@
   .reveal {
     opacity: 0;
     transform: translateY(12px);
-    transition: opacity .5s ease-out, transform .5s ease-out;
+    transition: opacity .4s ease-out, transform .4s ease-out;
   }
   .reveal.is-visible {
     opacity: 1;
@@ -224,27 +224,27 @@
   from { background-position: 0 0; }
   to   { background-position: 56px 0; }
 }
-@keyframes pulso-acento {
-  0%, 100% { opacity: 1; }
-  50%      { opacity: .35; }
-}
-@keyframes sobe-entra {
-  from { opacity: 0; transform: translateY(14px); }
-  to   { opacity: 1; transform: none; }
-}
 
 @layer components {
 
-  /* ---- Barra de progresso da rolagem ---- */
-  .progresso {
-    position: fixed;
-    top: 0; left: 0;
-    height: 2px;
-    width: 0;
+  /* ---- Logotipo: wordmark tipografico ----
+     Sem icone dentro de forma colorida e sem palavra bicolor.
+     Uma cor so, com uma barra de acento como unico elemento grafico. */
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: .625rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+  .logo .barra-logo {
+    display: block;
+    width: 3px;
+    height: 1.15em;
     background: var(--color-laranja-500);
-    z-index: 60;
-    transition: width .08s linear;
-    pointer-events: none;
+    flex: none;
   }
 
   /* ---- Cabecalho ganha profundidade ao rolar ---- */
@@ -256,23 +256,24 @@
     backdrop-filter: saturate(1.2);
   }
 
-  /* ---- Entrada em cascata dos filhos ---- */
+  /* ---- Entrada em cascata dos filhos ----
+     Deslocamento de 12px e duracao de 400ms: presenca sem
+     parecer landing page de infoproduto. */
   .cascata > * {
     opacity: 0;
-    transform: translateY(14px);
-    transition: opacity .55s cubic-bezier(.22, 1, .36, 1),
-                transform .55s cubic-bezier(.22, 1, .36, 1);
+    transform: translateY(12px);
+    transition: opacity .4s ease-out, transform .4s ease-out;
   }
   .cascata.is-visible > * {
     opacity: 1;
     transform: none;
   }
   .cascata.is-visible > *:nth-child(1) { transition-delay: 0ms; }
-  .cascata.is-visible > *:nth-child(2) { transition-delay: 70ms; }
-  .cascata.is-visible > *:nth-child(3) { transition-delay: 140ms; }
-  .cascata.is-visible > *:nth-child(4) { transition-delay: 210ms; }
-  .cascata.is-visible > *:nth-child(5) { transition-delay: 280ms; }
-  .cascata.is-visible > *:nth-child(6) { transition-delay: 350ms; }
+  .cascata.is-visible > *:nth-child(2) { transition-delay: 50ms; }
+  .cascata.is-visible > *:nth-child(3) { transition-delay: 100ms; }
+  .cascata.is-visible > *:nth-child(4) { transition-delay: 150ms; }
+  .cascata.is-visible > *:nth-child(5) { transition-delay: 200ms; }
+  .cascata.is-visible > *:nth-child(6) { transition-delay: 250ms; }
 
   /* ---- Textura de grade tecnica nas secoes escuras ---- */
   .textura {
@@ -321,19 +322,45 @@
     width: 2.5rem;
   }
 
-  /* ---- Item de servico: seta, borda e fundo respondem ao mouse ----
-     O padding base fica aqui, e nao como utilitario pl-5 no HTML.
-     Utilitario do Tailwind vence regra de componente na cascata, e
-     isso anulava o deslocamento no hover. */
+  /* ---- Card de servico, com foto do equipamento no topo ----
+     Valores base ficam aqui, nao como utilitario no HTML: utilitario
+     do Tailwind vence regra de componente e anularia os hovers. */
   .servico {
     position: relative;
-    padding-left: 1.25rem;
-    transition: border-color .2s ease, background-color .2s ease, padding-left .2s ease;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border: 1px solid var(--color-grafite-200);
+    overflow: hidden;
+    transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease;
   }
   .servico:hover {
-    border-left-color: var(--color-laranja-500);
-    background-color: var(--color-grafite-50);
-    padding-left: 1.5rem;
+    border-color: var(--color-grafite-400);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px -10px rgba(18, 21, 25, .45);
+  }
+
+  /* Moldura da foto: o fundo grafite aparece enquanto a imagem nao
+     existe ou nao carrega, evitando area branca vazia. */
+  .foto-servico {
+    position: relative;
+    background-color: var(--color-grafite-900);
+    overflow: hidden;
+  }
+  .foto-servico img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    color: transparent; /* esconde o texto do alt se o arquivo faltar */
+  }
+  /* Sobreposicao escura sutil, para o texto abaixo manter contraste */
+  .foto-servico::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(18, 21, 25, .25);
+    pointer-events: none;
   }
   .servico .seta {
     opacity: 0;
@@ -430,11 +457,6 @@
     transform: translateX(3px);
   }
 
-  /* ---- Ponto piscando na faixa de emergencia ---- */
-  .ponto-vivo {
-    animation: pulso-acento 1.8s ease-in-out infinite;
-  }
-
   /* ---- Area de foto com hachura em movimento ---- */
   .foto-pendente {
     background-image: repeating-linear-gradient(
@@ -500,12 +522,11 @@
 
   .regua { width: 2.5rem !important; transition: none !important; }
 
-  .foto-pendente,
-  .ponto-vivo { animation: none !important; }
+  .foto-pendente { animation: none !important; }
 
   .servico:hover,
   .cartao:hover,
-  .flutuante:hover { transform: none !important; padding-left: inherit; }
+  .flutuante:hover { transform: none !important; }
 
   .btn::after { display: none; }
 }

@@ -1,4 +1,4 @@
-# Empresa DoVale — Landing Page
+# Do Vale — Landing Page
 
 Página de vendas em HTML + Tailwind CSS + JavaScript puro.
 Sem framework, sem banco de dados. Rápida de editar e de publicar.
@@ -120,7 +120,7 @@ endereço provisório — a troca acontece só no servidor, a cada publicação.
 Aí sim vale gravar de forma permanente:
 
 ```bash
-npm run url https://empresadovale.com.br
+npm run url https://dovale.com.br
 ```
 
 ```bash

@@ -1,4 +1,4 @@
-# Empresa DoVale — Site
+# Do Vale — Site
 
 Site institucional de página única. HTML estático com Tailwind CSS.
 Sem framework, sem banco de dados, sem mensalidade de servidor.
@@ -138,6 +138,6 @@ Aparece em 4 formatos. Usar `Ctrl + H` (substituir) para cada um:
 
 - [ ] Confirmar a cidade e trocar `[CIDADE]` (aparece no título, H1 e miniatura)
 - [ ] Rodar `npm run imagens` depois de trocar a cidade
-- [ ] Conferir se o nome é **DoVale** ou **Do Valle**
+- [ ] Conferir se o nome é **Do Vale** ou **Do Valle**
 - [ ] Testar o formulário pelo celular
 - [ ] Mandar o link no WhatsApp e ver se a miniatura carrega

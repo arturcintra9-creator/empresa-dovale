@@ -2,7 +2,7 @@
   "name": "empresa-dovale",
   "version": "1.0.0",
   "private": true,
-  "description": "Landing page da Empresa DoVale - Climatizacao, Eletrica, Automacao e Seguranca Eletronica",
+  "description": "Landing page da Do Vale - Climatizacao, Eletrica, Automacao e Seguranca Eletronica",
   "scripts": {
     "build": "node ./tools/aplicar-url.mjs && tailwindcss -i ./src/input.css -o ./dist/style.css --minify",
     "dev": "tailwindcss -i ./src/input.css -o ./dist/style.css --watch",

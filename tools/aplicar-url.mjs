@@ -9,7 +9,7 @@
  *    sem voce precisar fazer nada. Os arquivos do SEU computador nao mudam.
  *
  * 2) MANUAL (quando voce tiver dominio proprio)
- *    npm run url https://empresadovale.com.br
+ *    npm run url https://dovale.com.br
  *    Nesse modo os arquivos sao gravados de verdade, para voce commitar.
  */
 
@@ -20,7 +20,7 @@ import { dirname, join } from 'node:path';
 const raiz = join(dirname(fileURLToPath(import.meta.url)), '..');
 
 /* Endereco provisorio gravado nos arquivos. */
-const PROVISORIO = 'https://empresadovale.vercel.app';
+const PROVISORIO = 'https://empresa-dovale.vercel.app';
 
 /* Arquivos que contem o endereco. */
 const ARQUIVOS = ['index.html', 'robots.txt', 'sitemap.xml'];

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://empresadovale.vercel.app/sitemap.xml
+Sitemap: https://empresa-dovale.vercel.app/sitemap.xml

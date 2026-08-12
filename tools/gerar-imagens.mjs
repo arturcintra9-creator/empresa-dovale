@@ -17,10 +17,6 @@ const raiz = join(dirname(fileURLToPath(import.meta.url)), '..');
 /* Fontes instaladas no Windows — usadas apenas na geracao, nao no site. */
 const FONTE = 'Segoe UI, Arial, Helvetica, sans-serif';
 
-/* Icone "zap" (raio) do Lucide, mesmo do cabecalho do site. */
-const RAIO =
-  'M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z';
-
 /* CONFIRMAR: trocar [CIDADE] pela cidade-base real antes de publicar. */
 const CIDADE = '[CIDADE]';
 
@@ -38,14 +34,12 @@ const ogSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630"
   <!-- Barra superior no acento -->
   <rect x="0" y="0" width="1200" height="8" fill="#e85d04"/>
 
-  <!-- Marca -->
+  <!-- Marca: wordmark tipografico. Barra laranja como unico
+       elemento grafico, palavra em uma cor so. -->
   <g transform="translate(80, 78)">
-    <rect width="52" height="52" rx="4" fill="#e85d04"/>
-    <g transform="translate(11, 11) scale(1.24)">
-      <path d="${RAIO}" fill="none" stroke="#ffffff" stroke-width="2.2"
-            stroke-linecap="round" stroke-linejoin="round"/>
-    </g>
-    <text x="68" y="35" font-family="${FONTE}" font-size="32" font-weight="800" fill="#ffffff">Do<tspan fill="#89929a">Vale</tspan></text>
+    <rect x="0" y="4" width="3" height="36" fill="#e85d04"/>
+    <text x="18" y="34" font-family="${FONTE}" font-size="34" font-weight="800"
+          letter-spacing="-0.7" fill="#ffffff">DO VALE</text>
   </g>
 
   <!-- Titulo -->
