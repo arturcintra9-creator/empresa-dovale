@@ -45,7 +45,7 @@ Nada foi inventado.
 7. Instagram
 
 ### Atendimento
-8. Cidade-base (aparece no título, no H1 e no Google — hoje está `[CIDADE]`)
+8. ~~Cidade-base~~ — definida: **São Paulo**
 9. Lista de bairros e cidades atendidos, por extenso
 10. Taxa de deslocamento fora da área
 11. Horário de atendimento real
@@ -136,8 +136,8 @@ Aparece em 4 formatos. Usar `Ctrl + H` (substituir) para cada um:
 
 ## Antes de apresentar ao cliente
 
-- [ ] Confirmar a cidade e trocar `[CIDADE]` (aparece no título, H1 e miniatura)
-- [ ] Rodar `npm run imagens` depois de trocar a cidade
-- [ ] Conferir se o nome é **Do Vale** ou **Do Valle**
+- [x] Cidade definida: São Paulo (título, H1, miniatura e dados do Google)
+- [x] Nome confirmado: **Do Vale**
+- [ ] Colocar os 5 arquivos de foto na pasta `img/`
 - [ ] Testar o formulário pelo celular
 - [ ] Mandar o link no WhatsApp e ver se a miniatura carrega

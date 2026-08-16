@@ -17,8 +17,9 @@ const raiz = join(dirname(fileURLToPath(import.meta.url)), '..');
 /* Fontes instaladas no Windows — usadas apenas na geracao, nao no site. */
 const FONTE = 'Segoe UI, Arial, Helvetica, sans-serif';
 
-/* CONFIRMAR: trocar [CIDADE] pela cidade-base real antes de publicar. */
-const CIDADE = '[CIDADE]';
+/* Cidade-base exibida na imagem de compartilhamento.
+   Ao mudar, rode: npm run imagens */
+const CIDADE = 'São Paulo';
 
 const ogSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <defs>
