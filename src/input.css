@@ -240,6 +240,30 @@
     border-radius: 2px;
   }
 
+  /* ---------- Painel de atuacao do hero ---------- */
+  .painel-hero {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background-color: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(14px);
+    box-shadow: 0 30px 70px -30px rgba(6, 22, 48, .85);
+  }
+  .linha-painel {
+    border: 1px solid var(--color-hairline);
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  .icone-painel {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    flex: none;
+    border-radius: var(--radius-md);
+    background-image: linear-gradient(135deg,
+                      rgba(51, 198, 247, .25), rgba(10, 169, 224, .25));
+    color: var(--color-ice-300);
+  }
+
   /* ---------- Cartoes ---------- */
   .cartao {
     border: 1px solid var(--color-navy-100);
@@ -382,25 +406,6 @@
     border-color: var(--color-ice-500);
     background-color: var(--color-ice-50);
     font-weight: 600;
-  }
-
-  /* ---------- Marcador de dado pendente ---------- */
-  .pendente {
-    color: inherit;
-    opacity: .62;
-    border-bottom: 1px dotted currentColor;
-    font-weight: 500;
-    font-style: italic;
-  }
-  body.revisar .pendente {
-    opacity: 1;
-    font-style: normal;
-    font-weight: 700;
-    color: #fff;
-    background-color: var(--color-ice-600);
-    border: 1px solid var(--color-ice-800);
-    border-radius: 4px;
-    padding: 0 .35rem;
   }
 
   /* ---------- Flutuantes ---------- */

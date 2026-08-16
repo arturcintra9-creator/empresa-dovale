@@ -44,42 +44,34 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
   <!-- CSS compilado do Tailwind. Gerado por: npm run build
-       O ?v=5 força o navegador a baixar a versão nova em vez de usar a
+       O ?v=6 força o navegador a baixar a versão nova em vez de usar a
        que ele guardou. Se um dia o visual mudar e alguém continuar vendo
-       o antigo, basta subir esse número (v=6, v=7...). -->
-  <link rel="stylesheet" href="./dist/style.css?v=5" />
+       o antigo, basta subir esse número (v=7, v=8...). -->
+  <link rel="stylesheet" href="./dist/style.css?v=6" />
 
   <!-- Lucide Icons — SVG monocromático, traço simples -->
   <script src="https://unpkg.com/lucide@0.545.0/dist/umd/lucide.js" defer></script>
 
   <!-- ==========================================================
        DADOS ESTRUTURADOS (Schema.org)
-       CONFIRMAR: bairros, horário, CNPJ e razão social
-       precisam ser preenchidos antes de publicar de verdade.
+       Declaramos apenas o que é sabido. Razão social, CNPJ, horário e
+       responsável técnico entram aqui quando forem confirmados.
        ========================================================== -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": ["HVACBusiness", "Electrician"],
     "name": "Do Vale",
-    "legalName": "[CONFIRMAR: razão social]",
-    "taxID": "[CONFIRMAR: CNPJ]",
     "description": "Manutenção e instalação de climatização, refrigeração, elétrica, automação e segurança eletrônica para residências, comércio e indústria.",
     "url": "https://empresa-dovale.vercel.app/",
     "image": "https://empresa-dovale.vercel.app/og-image.png",
     "telephone": "+55-11-93806-2320",
-    "areaServed": [
-      { "@type": "City", "name": "São Paulo", "addressRegion": "SP", "addressCountry": "BR" },
-      { "@type": "City", "name": "[CONFIRMAR: outras cidades atendidas]" }
-    ],
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "[CONFIRMAR: abertura]",
-        "closes": "[CONFIRMAR: fechamento]"
-      }
-    ],
+    "areaServed": {
+      "@type": "City",
+      "name": "São Paulo",
+      "addressRegion": "SP",
+      "addressCountry": "BR"
+    },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Serviços da Do Vale",
@@ -101,14 +93,6 @@
 
   <!-- =========================================================
        FAIXA DE EMERGÊNCIA — acima da dobra
-
-       CONFIRMAR: existe plantão de emergência? Qual o prazo real
-       de chegada? Atende fim de semana e madrugada?
-
-       O prazo NÃO aparece na tela de propósito: a primeira linha
-       visível da página não deve ser um marcador pendente.
-       Quando o prazo estiver confirmado, acrescente aqui como texto
-       normal, depois do título.
   ========================================================== -->
   <div class="bg-navy-900 text-white border-b-2 border-ice-400">
     <div class="max-w-6xl mx-auto px-5 sm:px-6">
@@ -143,7 +127,6 @@
         <nav id="nav-desktop" class="hidden lg:flex items-center gap-7 text-sm font-medium text-navy-200">
           <a href="#servicos" class="nav-link hover:text-white">Serviços</a>
           <a href="#trabalho" class="nav-link hover:text-white">Como trabalhamos</a>
-          <a href="#area" class="nav-link hover:text-white">Onde atendemos</a>
           <a href="#orcamento" class="nav-link hover:text-white">Orçamento</a>
         </nav>
 
@@ -170,7 +153,6 @@
       <nav class="px-5 py-3 flex flex-col text-sm">
         <a href="#servicos"  class="mobile-link py-2.5 text-navy-100 hover:text-white">Serviços</a>
         <a href="#trabalho"  class="mobile-link py-2.5 text-navy-100 hover:text-white">Como trabalhamos</a>
-        <a href="#area"      class="mobile-link py-2.5 text-navy-100 hover:text-white">Onde atendemos</a>
         <a href="#orcamento" class="mobile-link py-2.5 text-navy-100 hover:text-white">Orçamento</a>
         <a href="tel:+5511938062320" class="mobile-link py-2.5 font-bold text-white tabular">(11) 93806-2320</a>
       </nav>
@@ -178,80 +160,91 @@
   </header>
 
   <!-- =========================================================
-       AVISO DE APRESENTAÇÃO — REMOVER DEPOIS DA REUNIÃO
-
-       Explica ao cliente que os campos destacados são intencionais.
-       PARA REMOVER: apague este bloco inteiro, do comentário até
-       o </div> que fecha o id="aviso-preview". Nada mais depende dele.
-  ========================================================== -->
-  <div id="aviso-preview" class="bg-navy-100 border-b border-navy-100">
-    <div class="max-w-6xl mx-auto px-5 sm:px-6 py-2.5">
-      <p class="text-xs text-navy-700 leading-relaxed text-center">
-        Os campos destacados são dados que ainda preciso confirmar com você.
-        Nada aqui foi inventado.
-      </p>
-    </div>
-  </div>
-
-  <!-- =========================================================
-       HERO — alinhado à esquerda, denso
+       HERO
   ========================================================== -->
   <section id="inicio" class="halo-hero bg-navy-950 text-white overflow-hidden">
 
-    <div class="max-w-6xl mx-auto px-5 sm:px-6 py-20 sm:py-24">
-      <div class="cascata max-w-[60ch]">
-        <p class="eyebrow text-ice-400 mb-4">
-          Climatização · Elétrica · Automação · Segurança eletrônica
-        </p>
+    <div class="max-w-6xl mx-auto px-5 sm:px-6 py-20 sm:py-28">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
-        <h1 class="display mb-6">
-          Manutenção de climatização, elétrica, automação e segurança em
-          <span class="text-ice-400">São Paulo</span>
-        </h1>
+        <div class="lg:col-span-7 cascata">
+          <p class="eyebrow text-ice-400 mb-5">
+            Climatização · Elétrica · Automação · Segurança eletrônica
+          </p>
 
-        <p class="prosa text-lg text-navy-200 mb-8">
-          Uma equipe para os quatro sistemas. Atende residência, comércio e indústria.
-          Quem faz o orçamento é quem executa o serviço.
-        </p>
+          <h1 class="display mb-6">
+            Manutenção de climatização, elétrica, automação e segurança em
+            <span class="text-ice-400">São Paulo</span>
+          </h1>
 
-        <div class="flex flex-col sm:flex-row gap-3">
-          <a href="#orcamento" class="btn btn-acento px-6 py-3.5 text-base">
-            Pedir orçamento
-            <i data-lucide="arrow-right" class="seta-btn w-4 h-4"></i>
-          </a>
-          <a href="https://wa.me/5511938062320?text=Ol%C3%A1%2C%20preciso%20de%20um%20servi%C3%A7o%20da%20Do%20Vale."
-             target="_blank" rel="noopener noreferrer"
-             class="btn btn-whats animate-pulseRing px-6 py-3.5 text-base">
-            <i data-lucide="message-circle" class="w-4.5 h-4.5"></i>
-            Falar no WhatsApp
-          </a>
+          <p class="prosa text-lg text-navy-200 mb-9">
+            Uma equipe para os quatro sistemas. Atende residência, comércio e indústria.
+            Quem faz o orçamento é quem executa o serviço.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href="#orcamento" class="btn btn-acento px-7 py-4 text-base">
+              Pedir orçamento
+              <i data-lucide="arrow-right" class="seta-btn w-4 h-4"></i>
+            </a>
+            <a href="https://wa.me/5511938062320?text=Ol%C3%A1%2C%20preciso%20de%20um%20servi%C3%A7o%20da%20Do%20Vale."
+               target="_blank" rel="noopener noreferrer"
+               class="btn btn-whats animate-pulseRing px-7 py-4 text-base">
+              <i data-lucide="message-circle" class="w-4.5 h-4.5"></i>
+              Falar no WhatsApp
+            </a>
+          </div>
         </div>
+
+        <!-- Painel de atuação: os quatro sistemas. Conteúdo real,
+             sem foto e sem dado pendente. -->
+        <div class="lg:col-span-5">
+          <div class="painel-hero rounded-2xl p-7">
+            <p class="eyebrow text-ice-300 mb-5">Painel de atuação</p>
+
+            <ul class="space-y-2.5">
+              <li class="linha-painel flex items-center gap-4 rounded-2xl p-4">
+                <span class="icone-painel"><i data-lucide="snowflake" class="w-5 h-5"></i></span>
+                <span class="min-w-0">
+                  <span class="block text-white font-bold text-sm">Climatização e refrigeração</span>
+                  <span class="block text-navy-200 text-xs">Split, multi-split, VRF e câmara fria</span>
+                </span>
+              </li>
+              <li class="linha-painel flex items-center gap-4 rounded-2xl p-4">
+                <span class="icone-painel"><i data-lucide="zap" class="w-5 h-5"></i></span>
+                <span class="min-w-0">
+                  <span class="block text-white font-bold text-sm">Elétrica predial e industrial</span>
+                  <span class="block text-navy-200 text-xs">Quadro, circuito novo e aterramento</span>
+                </span>
+              </li>
+              <li class="linha-painel flex items-center gap-4 rounded-2xl p-4">
+                <span class="icone-painel"><i data-lucide="cpu" class="w-5 h-5"></i></span>
+                <span class="min-w-0">
+                  <span class="block text-white font-bold text-sm">Automação</span>
+                  <span class="block text-navy-200 text-xs">Portão, iluminação e acionamentos</span>
+                </span>
+              </li>
+              <li class="linha-painel flex items-center gap-4 rounded-2xl p-4">
+                <span class="icone-painel"><i data-lucide="cctv" class="w-5 h-5"></i></span>
+                <span class="min-w-0">
+                  <span class="block text-white font-bold text-sm">Segurança eletrônica</span>
+                  <span class="block text-navy-200 text-xs">CFTV, alarme e controle de acesso</span>
+                </span>
+              </li>
+            </ul>
+
+            <a href="https://wa.me/5511938062320?text=Ol%C3%A1%2C%20preciso%20de%20um%20servi%C3%A7o%20da%20Do%20Vale."
+               target="_blank" rel="noopener noreferrer"
+               class="mt-6 flex items-center justify-center gap-2 rounded-2xl border border-ice-400/30 bg-ice-400/10 py-3.5 text-sm font-bold text-ice-200 hover:bg-ice-400/20 hover:border-ice-400/60 transition-colors">
+              Falar com um técnico agora
+              <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
       </div>
     </div>
 
-    <!-- Faixa de fatos, separada por borda hairline -->
-    <div class="border-t border-hairline">
-      <div class="max-w-6xl mx-auto px-5 sm:px-6">
-        <dl class="grid grid-cols-2 sm:grid-cols-4">
-          <div class="py-6 pr-5 sm:border-r border-hairline">
-            <dt class="eyebrow text-navy-400 mb-1.5">Retorno do orçamento</dt>
-            <dd class="text-sm"><span class="pendente">CONFIRMAR: prazo</span></dd>
-          </div>
-          <div class="py-6 px-0 sm:px-5 sm:border-r border-hairline">
-            <dt class="eyebrow text-navy-400 mb-1.5">Visita técnica</dt>
-            <dd class="text-sm"><span class="pendente">CONFIRMAR: tem custo?</span></dd>
-          </div>
-          <div class="py-6 pr-5 sm:px-5 sm:border-r border-hairline">
-            <dt class="eyebrow text-navy-400 mb-1.5">Garantia do serviço</dt>
-            <dd class="text-sm"><span class="pendente">CONFIRMAR: dias</span></dd>
-          </div>
-          <div class="py-6 sm:pl-5">
-            <dt class="eyebrow text-navy-400 mb-1.5">Equipe</dt>
-            <dd class="text-sm"><span class="pendente">CONFIRMAR: nº de técnicos</span></dd>
-          </div>
-        </dl>
-      </div>
-    </div>
   </section>
 
   <!-- =========================================================
@@ -280,11 +273,6 @@
         <div class="lg:col-span-8 cascata grid sm:grid-cols-2 gap-5">
 
           <article class="servico rounded-2xl">
-            <div class="foto-servico aspect-video">
-              <img src="./img/climatizacao.jpg"
-                   alt="Condensadora de ar-condicionado instalada em fachada"
-                   width="640" height="360" loading="lazy" decoding="async" />
-            </div>
             <div class="p-5 flex items-start gap-3">
               <span class="icone-servico"><i data-lucide="snowflake" class="w-5 h-5"></i></span>
               <div>
@@ -293,20 +281,11 @@
                   Limpeza e higienização, carga de gás, troca de peça, instalação e desinstalação.
                   Split, multi-split, VRF, câmara fria e refrigeração comercial.
                 </p>
-                <p class="text-xs text-navy-400">
-                  Também fazemos contrato de manutenção periódica —
-                  <span class="pendente">CONFIRMAR: periodicidade e valor</span>
-                </p>
               </div>
             </div>
           </article>
 
           <article class="servico rounded-2xl">
-            <div class="foto-servico aspect-video">
-              <img src="./img/eletrica.jpg"
-                   alt="Quadro de distribuição elétrica com disjuntores organizados"
-                   width="640" height="360" loading="lazy" decoding="async" />
-            </div>
             <div class="p-5 flex items-start gap-3">
               <span class="icone-servico"><i data-lucide="zap" class="w-5 h-5"></i></span>
               <div>
@@ -323,11 +302,6 @@
           </article>
 
           <article class="servico rounded-2xl">
-            <div class="foto-servico aspect-video">
-              <img src="./img/automacao.jpg"
-                   alt="Motor de portão automático instalado em portão deslizante"
-                   width="640" height="360" loading="lazy" decoding="async" />
-            </div>
             <div class="p-5 flex items-start gap-3">
               <span class="icone-servico"><i data-lucide="cpu" class="w-5 h-5"></i></span>
               <div>
@@ -341,11 +315,6 @@
           </article>
 
           <article class="servico rounded-2xl">
-            <div class="foto-servico aspect-video">
-              <img src="./img/seguranca.jpg"
-                   alt="Câmera de segurança fixada em parede externa"
-                   width="640" height="360" loading="lazy" decoding="async" />
-            </div>
             <div class="p-5 flex items-start gap-3">
               <span class="icone-servico"><i data-lucide="cctv" class="w-5 h-5"></i></span>
               <div>
@@ -353,9 +322,6 @@
                 <p class="text-navy-700 text-sm leading-relaxed mb-3">
                   CFTV com acesso pelo celular, alarme e sensor de perímetro, interfone
                   e controle de acesso. Instalação nova ou conserto do sistema existente.
-                </p>
-                <p class="text-xs text-navy-400">
-                  Marcas com que trabalhamos: <span class="pendente">CONFIRMAR: marcas</span>
                 </p>
               </div>
             </div>
@@ -391,8 +357,7 @@
           <span class="numero block text-ice-400 font-black text-sm mb-3 tabular">02</span>
           <h3 class="font-bold mb-2">Avaliação</h3>
           <p class="text-sm text-navy-300 leading-relaxed">
-            Casos simples resolvem por mensagem. Quando precisa medir, agendamos visita —
-            <span class="pendente">CONFIRMAR: visita tem custo?</span>
+            Casos simples resolvem por mensagem. Quando precisa medir, agendamos visita.
           </p>
         </li>
         <li class="passo p-6">
@@ -406,8 +371,7 @@
           <span class="numero block text-ice-400 font-black text-sm mb-3 tabular">04</span>
           <h3 class="font-bold mb-2">Execução e teste</h3>
           <p class="text-sm text-navy-300 leading-relaxed">
-            Testamos junto com você e explicamos a operação. Garantia de
-            <span class="pendente">CONFIRMAR: dias</span>
+            Testamos junto com você e explicamos a operação.
           </p>
         </li>
       </ol>
@@ -448,177 +412,12 @@
           </p>
         </div>
 
-        <!-- CONFIRMAR: nome do responsável técnico e registro no CREA ou CFT -->
-        <div class="cartao rounded-2xl p-6">
-          <i data-lucide="badge-check" class="w-5 h-5 text-ice-600 mb-3"></i>
-          <h3 class="font-bold mb-2">Responsável técnico identificado</h3>
-          <p class="text-sm text-navy-700 leading-relaxed">
-            <span class="pendente">CONFIRMAR: nome do responsável técnico</span>
-            <span class="pendente">CONFIRMAR: registro CREA ou CFT</span>
-          </p>
-        </div>
 
       </div>
     </div>
   </section>
 
-  <!-- =========================================================
-       SEÇÕES DE PROVA — DESATIVADAS ATÉ HAVER MATERIAL REAL
 
-       Ficaram de fora "Depoimentos" e "Antes e depois": ocupavam
-       espaço sem entregar nada, só com marcadores vazios.
-
-       COMO REATIVAR:
-       1. Recorte tudo que está entre esta abertura e o fechamento
-          deste comentário.
-       2. Troque os [[ e ]] de volta por <!-- e --> (eram comentários
-          internos, neutralizados para não fechar este bloco antes).
-       3. Preencha com depoimento e foto REAIS, com autorização do
-          cliente. Não usar banco de imagens nem imagem de IA — estas
-          seções existem para provar serviço executado.
-  ========================================================== -->
-  <!--
-  [[ =========================================================
-       DEPOIMENTOS — estrutura vazia, nunca inventar
-       CONFIRMAR: pedir a 2 ou 3 clientes autorização para publicar
-       nome, bairro e o que foi feito.
-  ========================================================== ]]
-  <section class="py-20 sm:py-24 bg-white">
-    <div class="max-w-6xl mx-auto px-5 sm:px-6">
-
-      <div class="flex flex-wrap items-end justify-between gap-4 mb-8 border-b border-navy-100 pb-4 reveal">
-        <div>
-          <p class="eyebrow text-ice-600 mb-2">Clientes</p><span class="regua mb-4"></span>
-          <h2 class="text-2xl sm:text-3xl font-extrabold">O que dizem sobre o serviço</h2>
-        </div>
-        <p class="text-xs text-navy-400 max-w-xs">
-          Espaço reservado. Publicar apenas depoimento real, com autorização do cliente.
-        </p>
-      </div>
-
-      <div class="cascata grid sm:grid-cols-3 gap-5">
-
-        <figure class="cartao rounded-2xl p-6">
-          <span class="pendente mb-3">DEPOIMENTO REAL 1</span>
-          <blockquote class="text-sm text-navy-300 leading-relaxed italic mt-3">
-            "…"
-          </blockquote>
-          <figcaption class="mt-4 pt-4 border-t border-navy-100 text-xs text-navy-400">
-            <span class="block font-bold text-navy-700">[Nome do cliente]</span>
-            [Bairro] · [Serviço executado]
-          </figcaption>
-        </figure>
-
-        <figure class="cartao rounded-2xl p-6">
-          <span class="pendente mb-3">DEPOIMENTO REAL 2</span>
-          <blockquote class="text-sm text-navy-300 leading-relaxed italic mt-3">
-            "…"
-          </blockquote>
-          <figcaption class="mt-4 pt-4 border-t border-navy-100 text-xs text-navy-400">
-            <span class="block font-bold text-navy-700">[Nome do cliente]</span>
-            [Bairro] · [Serviço executado]
-          </figcaption>
-        </figure>
-
-        <figure class="cartao rounded-2xl p-6">
-          <span class="pendente mb-3">DEPOIMENTO REAL 3</span>
-          <blockquote class="text-sm text-navy-300 leading-relaxed italic mt-3">
-            "…"
-          </blockquote>
-          <figcaption class="mt-4 pt-4 border-t border-navy-100 text-xs text-navy-400">
-            <span class="block font-bold text-navy-700">[Nome do cliente]</span>
-            [Bairro] · [Serviço executado]
-          </figcaption>
-        </figure>
-
-      </div>
-    </div>
-  </section>
-
-  [[ =========================================================
-       GALERIA ANTES / DEPOIS
-       CONFIRMAR: fotos reais de serviços executados.
-  ========================================================== ]]
-  <section class="py-16 sm:py-20 bg-navy-50 border-y border-navy-100">
-    <div class="max-w-6xl mx-auto px-5 sm:px-6">
-
-      <div class="max-w-2xl mb-8 reveal">
-        <p class="eyebrow text-ice-600 mb-3">Serviços executados</p><span class="regua mb-4"></span>
-        <h2 class="text-2xl sm:text-3xl font-extrabold leading-tight mb-3">Antes e depois</h2>
-        <p class="text-navy-700 text-sm leading-relaxed">
-          Quadro elétrico reorganizado, evaporadora limpa, cabeamento refeito.
-          Foto tirada no próprio serviço, sem banco de imagens.
-        </p>
-      </div>
-
-      <div class="cascata grid sm:grid-cols-3 gap-5">
-
-        <div>
-          <div class="foto-pendente rounded-2xl aspect-4/3 bg-white flex items-center justify-center mb-2">
-            <span class="pendente">FOTO REAL: antes/depois 1</span>
-          </div>
-          <p class="text-xs text-navy-400">[Descrever o serviço e o bairro]</p>
-        </div>
-
-        <div>
-          <div class="foto-pendente rounded-2xl aspect-4/3 bg-white flex items-center justify-center mb-2">
-            <span class="pendente">FOTO REAL: antes/depois 2</span>
-          </div>
-          <p class="text-xs text-navy-400">[Descrever o serviço e o bairro]</p>
-        </div>
-
-        <div>
-          <div class="foto-pendente rounded-2xl aspect-4/3 bg-white flex items-center justify-center mb-2">
-            <span class="pendente">FOTO REAL: antes/depois 3</span>
-          </div>
-          <p class="text-xs text-navy-400">[Descrever o serviço e o bairro]</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-  -->
-
-  <!-- =========================================================
-       ÁREA ATENDIDA
-       CONFIRMAR: listar bairros e cidades por extenso.
-  ========================================================== -->
-  <section id="area" class="py-20 sm:py-24 bg-white">
-    <div class="max-w-6xl mx-auto px-5 sm:px-6">
-      <div class="grid lg:grid-cols-12 gap-10">
-
-        <div class="lg:col-span-5">
-          <p class="eyebrow text-ice-600 mb-3">Onde atendemos</p><span class="regua mb-4"></span>
-          <h2 class="text-2xl sm:text-3xl font-extrabold leading-tight mb-4">
-            Bairros e cidades na área de cobertura
-          </h2>
-          <p class="prosa text-navy-700 text-sm">
-            Atendemos São Paulo e região. Listar os bairros por extenso ajuda quem busca
-            no Google por "manutenção de ar-condicionado em [bairro]". Fora da área,
-            consultar — pode haver taxa de deslocamento.
-          </p>
-        </div>
-
-        <div class="lg:col-span-7">
-          <div class="cartao rounded-2xl p-6">
-            <p class="eyebrow text-navy-400 mb-4">Lista de bairros</p>
-            <div class="flex flex-wrap gap-2 mb-5">
-              <span class="pendente">CONFIRMAR: bairro 1</span>
-              <span class="pendente">CONFIRMAR: bairro 2</span>
-              <span class="pendente">CONFIRMAR: bairro 3</span>
-              <span class="pendente">CONFIRMAR: bairro 4</span>
-              <span class="pendente">CONFIRMAR: bairro 5</span>
-              <span class="pendente">CONFIRMAR: bairro 6</span>
-            </div>
-            <p class="text-xs text-navy-400 border-t border-navy-100 pt-4">
-              Taxa de deslocamento fora da área: <span class="pendente">CONFIRMAR</span>
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
 
   <!-- =========================================================
        ORÇAMENTO — formulário que monta mensagem no WhatsApp
@@ -643,14 +442,6 @@
               <i data-lucide="phone" class="w-4 h-4 text-ice-400 shrink-0"></i>
               <span class="font-bold tabular">(11) 93806-2320</span>
             </a>
-            <p class="flex items-center gap-3 text-navy-200">
-              <i data-lucide="clock" class="w-4 h-4 text-ice-400 shrink-0"></i>
-              <span class="pendente">CONFIRMAR: horário de atendimento</span>
-            </p>
-            <p class="flex items-center gap-3 text-navy-200">
-              <i data-lucide="mail" class="w-4 h-4 text-ice-400 shrink-0"></i>
-              <span class="pendente">CONFIRMAR: e-mail</span>
-            </p>
           </div>
         </div>
 
@@ -724,8 +515,7 @@
   </section>
 
   <!-- =========================================================
-       FOOTER — sinais de empresa real
-       CONFIRMAR: razão social, CNPJ, responsável técnico, endereço.
+       FOOTER
   ========================================================== -->
   <footer class="bg-navy-900 text-navy-200 border-t border-navy-800">
     <div class="max-w-6xl mx-auto px-5 sm:px-6 py-16">
@@ -742,25 +532,6 @@
             eletrônica para residência, comércio e indústria.
           </p>
 
-          <!-- CONFIRMAR: dados cadastrais da empresa -->
-          <dl class="text-xs space-y-1.5 border-t border-navy-800 pt-4">
-            <div class="flex flex-wrap gap-x-2">
-              <dt class="text-navy-400">Razão social:</dt>
-              <dd><span class="pendente">CONFIRMAR: razão social</span></dd>
-            </div>
-            <div class="flex flex-wrap gap-x-2">
-              <dt class="text-navy-400">CNPJ:</dt>
-              <dd><span class="pendente">CONFIRMAR: CNPJ</span></dd>
-            </div>
-            <div class="flex flex-wrap gap-x-2">
-              <dt class="text-navy-400">Responsável técnico:</dt>
-              <dd><span class="pendente">CONFIRMAR: nome e CREA/CFT</span></dd>
-            </div>
-            <div class="flex flex-wrap gap-x-2">
-              <dt class="text-navy-400">Endereço:</dt>
-              <dd><span class="pendente">CONFIRMAR: tem endereço fixo?</span></dd>
-            </div>
-          </dl>
         </div>
 
         <div class="md:col-span-3">
@@ -789,18 +560,6 @@
                 <i data-lucide="message-circle" class="w-4 h-4 text-ice-400 shrink-0"></i>
                 WhatsApp
               </a>
-            </li>
-            <li class="flex items-center gap-2.5">
-              <i data-lucide="clock" class="w-4 h-4 text-ice-400 shrink-0"></i>
-              <span class="pendente">CONFIRMAR: horário</span>
-            </li>
-            <li class="flex items-center gap-2.5">
-              <i data-lucide="instagram" class="w-4 h-4 text-ice-400 shrink-0"></i>
-              <span class="pendente">CONFIRMAR: Instagram</span>
-            </li>
-            <li class="flex items-center gap-2.5">
-              <i data-lucide="map-pin" class="w-4 h-4 text-ice-400 shrink-0"></i>
-              <span class="pendente">CONFIRMAR: cidades atendidas</span>
             </li>
           </ul>
         </div>
@@ -838,15 +597,6 @@
       'use strict';
 
       var NUMERO_WHATSAPP = '5511938062320';
-
-      /* ---------- Modo revisão ----------
-         Abrir o site com ?revisar=1 no fim do endereço destaca em ciano
-         tudo que ainda falta confirmar. Sem o parâmetro, os marcadores
-         ficam discretos e o site pode ser apresentado normalmente. */
-      var paramRevisar = new URLSearchParams(location.search).get('revisar');
-      if (paramRevisar !== null && paramRevisar !== '0' && paramRevisar !== 'false') {
-        document.body.classList.add('revisar');
-      }
 
       /* ---------- Ícones ---------- */
       // stroke-width 1.5 em todos os ícones, sem exceção

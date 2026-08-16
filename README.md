@@ -5,18 +5,6 @@ Sem framework, sem banco de dados. Rápida de editar e de publicar.
 
 ---
 
-## ⚠️ ANTES DE PUBLICAR — dados a confirmar
-
-Nenhum dado foi inventado. Tudo que ainda não foi confirmado está
-**marcado com sublinhado pontilhado na própria tela** e como
-`<!-- CONFIRMAR: ... -->` no código — são 35 marcações.
-
-A lista completa, agrupada por assunto, está em **[ENTREGA.md](ENTREGA.md)**.
-
-Para achar no código: abra o `index.html` e busque por `CONFIRMAR`.
-
----
-
 ## Atalhos de duplo clique (jeito fácil)
 
 Na pasta do site há dois arquivos que você abre com **duplo clique**,
