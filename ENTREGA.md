@@ -31,7 +31,7 @@ e cabeçalhos de segurança.
 
 ## O que falta confirmar com o cliente
 
-Tudo que ainda não foi confirmado aparece **marcado em laranja tracejado na
+Tudo que ainda não foi confirmado aparece **marcado com sublinhado pontilhado na
 própria tela** e como `<!-- CONFIRMAR: ... -->` no código. São 35 marcações.
 Nada foi inventado.
 
@@ -90,7 +90,7 @@ Não precisa de terminal nem de comando digitado.
 
 ### Ao substituir um marcador
 
-Trocar o bloco inteiro, incluindo a marcação laranja. Exemplo:
+Trocar o bloco inteiro, incluindo a marcação de pendência. Exemplo:
 
 ```html
 <!-- antes -->
@@ -115,8 +115,8 @@ Aparece em 4 formatos. Usar `Ctrl + H` (substituir) para cada um:
 
 ## Detalhes técnicos
 
-- **Cor de acento:** laranja `#E85D04`, usado só em CTA, números e destaques
-- **Base:** grafite `#121519` e branco
+- **Cor de acento:** azul gelo `#33C6F7` sobre azul profundo `#0B2447`
+- **Base:** azul profundo `#0B2447` e branco
 - **Fonte:** Inter, um peso para título (800/900) e um para corpo (400)
 - **Formulário:** não usa servidor — monta o texto e abre o WhatsApp
 - **Publicação:** Vercel, republicação automática a cada envio

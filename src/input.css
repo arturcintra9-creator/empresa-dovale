@@ -5,52 +5,70 @@
 
 /* =========================================================
    TEMA — Do Vale
-   Grafite em camadas + um acento laranja. Sem gradiente colorido.
+   Paleta e efeitos da primeira versao: azul profundo + azul gelo.
    ========================================================= */
 @theme {
   --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 
-  /* Grafite — nunca preto puro */
-  --color-grafite-50:  #f6f7f8;
-  --color-grafite-100: #eceef0;
-  --color-grafite-200: #d6dadd;
-  --color-grafite-300: #b3babf;
-  --color-grafite-400: #89929a;
-  --color-grafite-500: #6b747d;
-  --color-grafite-600: #545c64;
-  --color-grafite-700: #3d444b;
-  --color-grafite-800: #2b3036;
-  --color-grafite-900: #1c2025;
-  --color-grafite-950: #121519;
+  /* Azul Profundo — eletrica, seguranca, confianca */
+  --color-navy-50:  #eef4fb;
+  --color-navy-100: #d6e4f5;
+  --color-navy-200: #adc8ea;
+  --color-navy-300: #7da4db;
+  --color-navy-400: #4a7cc4;
+  --color-navy-500: #2b5ca6;
+  --color-navy-600: #1d4585;
+  --color-navy-700: #153468;
+  --color-navy-800: #0f264d;
+  --color-navy-900: #0b2447;
+  --color-navy-950: #061630;
 
-  /* Laranja de seguranca — acento unico */
-  --color-laranja-400: #ff7a1f;
-  --color-laranja-500: #e85d04;
-  --color-laranja-600: #cf5304;
-  --color-laranja-700: #a63f02;
+  /* Azul Gelo / Ciano — climatizacao, refrigeracao, tecnologia */
+  --color-ice-50:  #eefbff;
+  --color-ice-100: #d6f4ff;
+  --color-ice-200: #b0eaff;
+  --color-ice-300: #75dcff;
+  --color-ice-400: #33c6f7;
+  --color-ice-500: #0aa9e0;
+  --color-ice-600: #0087bd;
+  --color-ice-700: #026c99;
+  --color-ice-800: #0a597e;
+  --color-ice-900: #0e4a69;
 
-  /* Verde do WhatsApp — so nos botoes de WhatsApp */
+  /* Verde oficial do WhatsApp */
   --color-whats-500: #25d366;
-  --color-whats-600: #1eb457;
+  --color-whats-600: #20bd5a;
 
-  /* Borda hairline sobre fundo escuro */
-  --color-hairline: rgba(255, 255, 255, 0.08);
-  --color-hairline-forte: rgba(255, 255, 255, 0.14);
+  /* Borda tenue sobre fundo escuro */
+  --color-hairline: rgba(255, 255, 255, 0.10);
 
-  --radius-md: 0.25rem;
-  --radius-lg: 0.375rem;
+  /* Cantos arredondados da primeira versao */
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
 
-  /* Curva de saida unica para todo movimento */
-  --ease-saida: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-saida: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Animacoes da primeira versao */
+  --animate-pulseRing: pulseRing 2.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-floatSlow: floatSlow 6s ease-in-out infinite;
+
+  @keyframes pulseRing {
+    0%   { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.55); }
+    70%  { box-shadow: 0 0 0 18px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+  }
+
+  @keyframes floatSlow {
+    0%, 100% { transform: translateY(0px); }
+    50%      { transform: translateY(-14px); }
+  }
 }
 
 /* =========================================================
-   BASE — tipografia e acabamento
+   BASE
    ========================================================= */
 @layer base {
-  html {
-    scroll-behavior: smooth;
-  }
+  html { scroll-behavior: smooth; }
 
   body {
     font-family: var(--font-sans);
@@ -60,7 +78,6 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  /* Contraste forte entre display e corpo */
   h1, h2 {
     font-weight: 800;
     letter-spacing: -0.03em;
@@ -73,39 +90,30 @@
     line-height: 1.25;
   }
 
-  /* Numeros sempre alinhados */
-  .tabular,
-  .numero,
-  dd,
-  time {
+  .tabular, .numero, dd, time {
     font-variant-numeric: tabular-nums;
   }
 
-  /* Anel de foco proprio, no acento */
   :focus-visible {
-    outline: 2px solid var(--color-laranja-500);
+    outline: 3px solid var(--color-ice-400);
     outline-offset: 3px;
-    border-radius: 2px;
+    border-radius: 4px;
   }
 
   ::selection {
-    background: var(--color-laranja-500);
+    background: var(--color-ice-500);
     color: #fff;
   }
 
-  /* Barra de rolagem no tema escuro */
-  * {
-    scrollbar-color: var(--color-grafite-700) var(--color-grafite-950);
-    scrollbar-width: thin;
-  }
-  ::-webkit-scrollbar { width: 10px; height: 10px; }
-  ::-webkit-scrollbar-track { background: var(--color-grafite-950); }
+  /* Barra de rolagem da primeira versao */
+  ::-webkit-scrollbar { width: 11px; }
+  ::-webkit-scrollbar-track { background: var(--color-navy-50); }
   ::-webkit-scrollbar-thumb {
-    background: var(--color-grafite-700);
-    border: 2px solid var(--color-grafite-950);
+    background: var(--color-navy-600);
     border-radius: 99px;
+    border: 3px solid var(--color-navy-50);
   }
-  ::-webkit-scrollbar-thumb:hover { background: var(--color-grafite-600); }
+  ::-webkit-scrollbar-thumb:hover { background: var(--color-navy-900); }
 }
 
 /* =========================================================
@@ -116,8 +124,6 @@
 @layer components {
 
   /* ---------- Tipografia ---------- */
-
-  /* H1: escala fluida, sem breakpoint */
   .display {
     font-size: clamp(2.5rem, 4.2vw + 1.1rem, 4.5rem);
     font-weight: 900;
@@ -125,7 +131,6 @@
     line-height: 1.05;
   }
 
-  /* Texto pequeno em caixa alta acima dos titulos */
   .eyebrow {
     font-size: 0.6875rem;
     line-height: 1.4;
@@ -134,27 +139,28 @@
     text-transform: uppercase;
   }
 
-  /* Olho de texto confortavel */
-  .prosa {
-    max-width: 65ch;
-  }
+  .prosa { max-width: 65ch; }
 
   /* ---------- Profundidade ---------- */
 
-  /* Grao global sobre toda a pagina */
+  /* Grao sutil sobre a pagina */
   .grao {
     position: fixed;
     inset: 0;
     z-index: 100;
     pointer-events: none;
-    opacity: 0.035;
+    opacity: 0.03;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 
-  /* Luz ambiente no canto superior esquerdo do hero */
+  /* Hero da primeira versao: gradiente, grade tecnica e brilhos */
   .halo-hero {
     position: relative;
     isolation: isolate;
+    background-image: linear-gradient(to bottom right,
+                      var(--color-navy-950),
+                      var(--color-navy-900) 55%,
+                      var(--color-navy-800));
   }
   .halo-hero::before {
     content: '';
@@ -162,11 +168,23 @@
     inset: 0;
     z-index: -1;
     pointer-events: none;
-    background: radial-gradient(60rem 42rem at 10% -12%,
-                rgba(232, 93, 4, 0.06), transparent 70%);
+    background-image:
+      linear-gradient(rgba(255, 255, 255, .055) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, .055) 1px, transparent 1px);
+    background-size: 62px 62px;
+  }
+  .halo-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      radial-gradient(36rem 30rem at 88% -8%,  rgba(10, 169, 224, .22), transparent 70%),
+      radial-gradient(32rem 28rem at 8% 108%, rgba(43, 92, 166, .28), transparent 70%);
   }
 
-  /* Grade tecnica discreta nas secoes escuras */
+  /* Grade tecnica nas demais secoes escuras */
   .textura {
     position: relative;
     isolation: isolate;
@@ -178,28 +196,25 @@
     z-index: -1;
     pointer-events: none;
     background-image:
-      linear-gradient(rgba(255, 255, 255, .03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, .03) 1px, transparent 1px);
-    background-size: 64px 64px;
+      linear-gradient(rgba(255, 255, 255, .055) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, .055) 1px, transparent 1px);
+    background-size: 62px 62px;
     mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
   }
 
-  /* ---------- Cabecalho ----------
-     Fundo e altura vivem aqui, nao como utilitario no HTML:
-     utilitario venceria estas regras e anularia o encolhimento. */
+  /* ---------- Cabecalho ---------- */
   header.cabecalho {
-    background-color: rgba(18, 21, 25, 0.72);
+    background-color: rgba(6, 22, 48, 0.80);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--color-hairline);
   }
-  .barra-header {
-    height: 4rem;
-  }
+  .barra-header { height: 4rem; }
   body.rolou header.cabecalho {
-    background-color: rgba(18, 21, 25, 0.94);
+    background-color: rgba(6, 22, 48, 0.96);
+    box-shadow: 0 10px 30px -18px rgba(0, 0, 0, .9);
   }
 
-  /* ---------- Logotipo ---------- */
+  /* ---------- Logotipo (wordmark, mantido) ---------- */
   .logo {
     display: inline-flex;
     align-items: center;
@@ -213,43 +228,60 @@
     display: block;
     width: 3px;
     height: 1.15em;
-    background: var(--color-laranja-500);
+    background-image: linear-gradient(to bottom, var(--color-ice-400), var(--color-navy-600));
     flex: none;
   }
 
-  /* ---------- Regua de acento ---------- */
   .regua {
     display: block;
     height: 2px;
     width: 2.5rem;
-    background: var(--color-laranja-500);
+    background-image: linear-gradient(to right, var(--color-ice-400), var(--color-navy-600));
+    border-radius: 2px;
   }
 
-  /* ---------- Cartao ---------- */
+  /* ---------- Cartoes ---------- */
   .cartao {
-    border: 1px solid var(--color-grafite-200);
+    border: 1px solid var(--color-navy-100);
     background-color: #fff;
+    box-shadow: 0 1px 2px rgba(11, 36, 71, .06);
   }
   .cartao-escuro {
     border: 1px solid var(--color-hairline);
-    background-color: var(--color-grafite-900);
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
   }
 
-  /* ---------- Card de servico ---------- */
+  /* ---------- Card de servico, com a borda em gradiente da v1 ---------- */
   .servico {
     position: relative;
     display: flex;
     flex-direction: column;
     background-color: #fff;
-    border: 1px solid var(--color-grafite-200);
+    border: 1px solid var(--color-navy-100);
+    border-radius: var(--radius-md);
     overflow: hidden;
+    box-shadow: 0 1px 2px rgba(11, 36, 71, .06);
+  }
+  .servico::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    border-radius: var(--radius-md);
+    padding: 1.5px;
+    background: linear-gradient(135deg, #33c6f7, #2b5ca6 55%, #0b2447);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    opacity: 0;
+    pointer-events: none;
   }
 
-  /* Cabecalho de foto do card. O fundo grafite aparece enquanto o
-     arquivo nao existe ou nao carrega. */
   .foto-servico {
     position: relative;
-    background-color: var(--color-grafite-900);
+    background-color: var(--color-navy-900);
     overflow: hidden;
   }
   .foto-servico img {
@@ -259,34 +291,43 @@
     object-fit: cover;
     color: transparent; /* esconde o texto do alt se o arquivo faltar */
   }
-  /* Degrade para o texto respirar: transparente no topo, 70% na base */
   .foto-servico::after {
     content: '';
     position: absolute;
     inset: 0;
     pointer-events: none;
     background: linear-gradient(to bottom,
-                rgba(18, 21, 25, 0) 0%,
-                rgba(18, 21, 25, 0.7) 100%);
+                rgba(6, 22, 48, 0) 0%,
+                rgba(6, 22, 48, 0.7) 100%);
+  }
+
+  /* Moldura do icone com gradiente, como na v1 */
+  .icone-servico {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    flex: none;
+    border-radius: var(--radius-md);
+    background-color: var(--color-ice-100);
+    color: var(--color-ice-600);
   }
 
   /* ---------- Passos numerados ---------- */
-  .passo {
-    background-color: var(--color-grafite-950);
-  }
+  .passo { background-color: var(--color-navy-950); }
 
   /* ---------- Navegacao ---------- */
-  .nav-link {
-    position: relative;
-  }
+  .nav-link { position: relative; }
   .nav-link::after {
     content: '';
     position: absolute;
     left: 0;
-    bottom: -5px;
+    bottom: -6px;
     height: 2px;
     width: 0;
-    background: var(--color-laranja-500);
+    background-image: linear-gradient(to right, var(--color-ice-400), var(--color-navy-500));
+    border-radius: 2px;
   }
 
   /* ---------- Botoes ---------- */
@@ -297,47 +338,53 @@
     justify-content: center;
     gap: .5rem;
     font-weight: 700;
-    border-radius: var(--radius-md);
+    border-radius: 9999px;
     overflow: hidden;
   }
-  .btn-whats { background-color: var(--color-whats-500); color: #fff; }
+  .btn-whats {
+    background-color: var(--color-whats-500);
+    color: #fff;
+    box-shadow: 0 10px 30px -12px rgba(37, 211, 102, .5);
+  }
   .btn-whats:hover { background-color: var(--color-whats-600); }
-  .btn-acento { background-color: var(--color-laranja-500); color: #fff; }
-  .btn-acento:hover { background-color: var(--color-laranja-600); }
+  .btn-acento {
+    background-image: linear-gradient(to bottom right, var(--color-ice-500), var(--color-navy-700));
+    color: #fff;
+    box-shadow: 0 10px 30px -12px rgba(10, 169, 224, .55);
+  }
 
   /* ---------- Formulario ---------- */
   .campo {
     width: 100%;
-    border: 1px solid var(--color-grafite-300);
+    border: 1px solid var(--color-navy-200);
     border-radius: var(--radius-md);
-    padding: .625rem .75rem;
+    padding: .75rem 1rem;
     font-size: .9375rem;
     line-height: 1.5;
-    color: var(--color-grafite-900);
+    color: var(--color-navy-900);
     background-color: #fff;
   }
   .campo:focus {
     outline: none;
-    border-color: var(--color-laranja-500);
-    box-shadow: 0 0 0 3px rgba(232, 93, 4, .12);
+    border-color: var(--color-ice-500);
+    box-shadow: 0 0 0 3px rgba(10, 169, 224, .15);
   }
-  .campo::placeholder { color: var(--color-grafite-400); }
+  .campo::placeholder { color: var(--color-navy-300); }
 
   .opcao {
-    border: 1px solid var(--color-grafite-300);
+    border: 1px solid var(--color-navy-200);
     border-radius: var(--radius-md);
+    background-color: #fff;
     cursor: pointer;
   }
-  .opcao:hover { border-color: var(--color-grafite-500); }
+  .opcao:hover { border-color: var(--color-navy-400); }
   .opcao:has(input:checked) {
-    border-color: var(--color-laranja-500);
-    background-color: rgba(232, 93, 4, .06);
+    border-color: var(--color-ice-500);
+    background-color: var(--color-ice-50);
     font-weight: 600;
   }
 
-  /* ---------- Marcador de dado pendente ----------
-     Discreto: herda a cor do texto ao redor. Com ?revisar=1
-     aparece destacado em laranja. */
+  /* ---------- Marcador de dado pendente ---------- */
   .pendente {
     color: inherit;
     opacity: .62;
@@ -350,13 +397,13 @@
     font-style: normal;
     font-weight: 700;
     color: #fff;
-    background-color: var(--color-laranja-500);
-    border: 1px solid var(--color-laranja-700);
-    border-radius: 2px;
-    padding: 0 .3rem;
+    background-color: var(--color-ice-600);
+    border: 1px solid var(--color-ice-800);
+    border-radius: 4px;
+    padding: 0 .35rem;
   }
 
-  /* ---------- Botoes flutuantes ---------- */
+  /* ---------- Flutuantes ---------- */
   .ao-topo {
     opacity: 0;
     pointer-events: none;
@@ -369,108 +416,104 @@
 
 /* =========================================================
    MOVIMENTO
-   Tudo aqui dentro. Quem pede menos movimento no sistema
-   recebe a pagina estatica, sem nenhuma transicao.
+   Tudo dentro do media query: quem pede menos movimento
+   recebe a pagina estatica.
    ========================================================= */
 @media (prefers-reduced-motion: no-preference) {
   @layer components {
 
-    /* ---- Entrada no scroll: 16px, 500ms ---- */
+    /* Entrada no scroll — tempos da primeira versao */
     .reveal {
       opacity: 0;
-      transform: translateY(16px);
-      transition: opacity .5s var(--ease-saida),
-                  transform .5s var(--ease-saida);
+      transform: translateY(34px);
+      transition: opacity .8s var(--ease-saida), transform .8s var(--ease-saida);
     }
-    .reveal.is-visible {
-      opacity: 1;
-      transform: none;
-    }
+    .reveal.is-visible { opacity: 1; transform: none; }
 
-    /* ---- Escalonamento entre irmaos: 60ms, no maximo 4 ---- */
     .cascata > * {
       opacity: 0;
-      transform: translateY(16px);
-      transition: opacity .5s var(--ease-saida),
-                  transform .5s var(--ease-saida);
+      transform: translateY(34px);
+      transition: opacity .8s var(--ease-saida), transform .8s var(--ease-saida);
     }
-    .cascata.is-visible > * {
-      opacity: 1;
-      transform: none;
-    }
+    .cascata.is-visible > * { opacity: 1; transform: none; }
     .cascata.is-visible > *:nth-child(1) { transition-delay: 0ms; }
-    .cascata.is-visible > *:nth-child(2) { transition-delay: 60ms; }
-    .cascata.is-visible > *:nth-child(3) { transition-delay: 120ms; }
-    .cascata.is-visible > *:nth-child(4) { transition-delay: 180ms; }
-    /* a partir do 5o item nao ha mais atraso, para nao arrastar */
-    .cascata.is-visible > *:nth-child(n + 5) { transition-delay: 180ms; }
+    .cascata.is-visible > *:nth-child(2) { transition-delay: 100ms; }
+    .cascata.is-visible > *:nth-child(3) { transition-delay: 200ms; }
+    .cascata.is-visible > *:nth-child(4) { transition-delay: 300ms; }
+    .cascata.is-visible > *:nth-child(n + 5) { transition-delay: 300ms; }
 
-    /* ---- Cabecalho encolhe ao rolar ---- */
-    header.cabecalho { transition: background-color .25s ease; }
-    .barra-header { transition: height .25s ease; }
+    header.cabecalho { transition: background-color .3s ease, box-shadow .3s ease; }
+    .barra-header { transition: height .3s ease; }
     body.rolou .barra-header { height: 3.5rem; }
 
-    /* ---- Cartoes: 2px e a borda indo para o acento ---- */
-    .cartao,
-    .cartao-escuro,
+    /* Cartoes sobem e ganham sombra, como na v1 */
+    .cartao, .cartao-escuro {
+      transition: transform .45s var(--ease-saida), box-shadow .45s ease, border-color .45s ease;
+    }
+    .cartao:hover, .cartao-escuro:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 26px 55px -22px rgba(11, 36, 71, .45);
+      border-color: var(--color-ice-300);
+    }
+
     .servico {
-      transition: transform .2s ease, border-color .2s ease;
+      transition: transform .45s var(--ease-saida), box-shadow .45s ease;
     }
-    .cartao:hover,
-    .cartao-escuro:hover,
     .servico:hover {
-      transform: translateY(-2px);
-      border-color: rgba(232, 93, 4, 0.4);
+      transform: translateY(-10px);
+      box-shadow: 0 26px 55px -22px rgba(11, 36, 71, .45);
     }
+    .servico::before { transition: opacity .45s ease; }
+    .servico:hover::before { opacity: 1; }
 
-    /* ---- Passos ---- */
-    .passo { transition: background-color .2s ease; }
-    .passo:hover { background-color: var(--color-grafite-900); }
-
-    /* ---- Icone e seta do card de servico ---- */
-    .servico .icone-servico { transition: color .2s ease; }
-    .servico:hover .icone-servico { color: var(--color-laranja-500); }
+    .icone-servico {
+      transition: transform .45s var(--ease-saida), background-color .45s ease, color .45s ease;
+    }
+    .servico:hover .icone-servico {
+      transform: scale(1.08) rotate(-6deg);
+      background-image: linear-gradient(135deg, var(--color-ice-500), var(--color-navy-600));
+      color: #fff;
+    }
     .servico .seta {
       opacity: 0;
-      transform: translateX(-4px);
-      transition: opacity .2s ease, transform .2s ease;
-      color: var(--color-laranja-500);
+      transform: translateX(-6px);
+      transition: opacity .3s ease, transform .3s ease;
+      color: var(--color-ice-500);
     }
-    .servico:hover .seta {
-      opacity: 1;
-      transform: none;
-    }
+    .servico:hover .seta { opacity: 1; transform: none; }
 
-    /* ---- Navegacao ---- */
-    .nav-link { transition: color .15s ease; }
-    .nav-link::after { transition: width .22s var(--ease-saida); }
+    .passo { transition: background-color .3s ease; }
+    .passo:hover { background-color: var(--color-navy-900); }
+
+    .nav-link { transition: color .2s ease; }
+    .nav-link::after { transition: width .35s var(--ease-saida); }
     .nav-link:hover::after { width: 100%; }
 
-    /* ---- Botoes: brilho curto e seta deslocando 3px ---- */
-    .btn { transition: background-color .15s ease; }
+    /* Brilho atravessando os botoes */
+    .btn { transition: transform .3s ease, box-shadow .3s ease, background-color .2s ease; }
     .btn::after {
       content: '';
       position: absolute;
       top: 0;
-      left: -110%;
-      width: 45%;
+      left: -120%;
+      width: 60%;
       height: 100%;
-      background: linear-gradient(100deg, transparent, rgba(255, 255, 255, .18), transparent);
-      transform: skewX(-18deg);
-      transition: left .5s ease;
+      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, .32), transparent);
+      transform: skewX(-20deg);
+      transition: left .7s ease;
       pointer-events: none;
     }
-    .btn:hover::after { left: 150%; }
-    .btn .seta-btn { transition: transform .2s ease; }
-    .btn:hover .seta-btn { transform: translateX(3px); }
+    .btn:hover::after { left: 160%; }
+    .btn:hover { transform: translateY(-3px); }
+    .btn:active { transform: translateY(-1px) scale(.99); }
+    .btn .seta-btn { transition: transform .3s ease; }
+    .btn:hover .seta-btn { transform: translateX(4px); }
 
-    /* ---- Campos e opcoes ---- */
-    .campo { transition: border-color .15s ease, box-shadow .15s ease; }
-    .opcao { transition: border-color .15s ease, background-color .15s ease; }
+    .campo { transition: border-color .2s ease, box-shadow .2s ease; }
+    .opcao { transition: border-color .2s ease, background-color .2s ease; }
 
-    /* ---- Flutuantes ---- */
-    .flutuante { transition: transform .2s ease, background-color .15s ease; }
-    .flutuante:hover { transform: translateY(-2px); }
-    .ao-topo { transition: opacity .25s ease; }
+    .flutuante { transition: transform .3s ease, background-color .2s ease; }
+    .flutuante:hover { transform: translateY(-3px) scale(1.05); }
+    .ao-topo { transition: opacity .3s ease, transform .3s ease; }
   }
 }

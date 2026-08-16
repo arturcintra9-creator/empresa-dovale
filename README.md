@@ -8,7 +8,7 @@ Sem framework, sem banco de dados. Rápida de editar e de publicar.
 ## ⚠️ ANTES DE PUBLICAR — dados a confirmar
 
 Nenhum dado foi inventado. Tudo que ainda não foi confirmado está
-**marcado em laranja tracejado na própria tela** e como
+**marcado com sublinhado pontilhado na própria tela** e como
 `<!-- CONFIRMAR: ... -->` no código — são 35 marcações.
 
 A lista completa, agrupada por assunto, está em **[ENTREGA.md](ENTREGA.md)**.

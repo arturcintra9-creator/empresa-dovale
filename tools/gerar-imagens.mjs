@@ -29,16 +29,16 @@ const ogSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630"
   </defs>
 
   <!-- Fundo grafite chapado, sem gradiente -->
-  <rect width="1200" height="630" fill="#121519"/>
+  <rect width="1200" height="630" fill="#061630"/>
   <rect width="1200" height="630" fill="url(#grade)"/>
 
   <!-- Barra superior no acento -->
-  <rect x="0" y="0" width="1200" height="8" fill="#e85d04"/>
+  <rect x="0" y="0" width="1200" height="8" fill="#33c6f7"/>
 
   <!-- Marca: wordmark tipografico. Barra laranja como unico
        elemento grafico, palavra em uma cor so. -->
   <g transform="translate(80, 78)">
-    <rect x="0" y="4" width="3" height="36" fill="#e85d04"/>
+    <rect x="0" y="4" width="3" height="36" fill="#33c6f7"/>
     <text x="18" y="34" font-family="${FONTE}" font-size="34" font-weight="800"
           letter-spacing="-0.7" fill="#ffffff">DO VALE</text>
   </g>
@@ -46,13 +46,13 @@ const ogSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630"
   <!-- Titulo -->
   <text x="80" y="248" font-family="${FONTE}" font-size="56" font-weight="900" fill="#ffffff">Manutenção de climatização,</text>
   <text x="80" y="316" font-family="${FONTE}" font-size="56" font-weight="900" fill="#ffffff">elétrica, automação e segurança</text>
-  <text x="80" y="384" font-family="${FONTE}" font-size="56" font-weight="900" fill="#e85d04">em ${CIDADE}</text>
+  <text x="80" y="384" font-family="${FONTE}" font-size="56" font-weight="900" fill="#33c6f7">em ${CIDADE}</text>
 
   <!-- Linha divisoria -->
-  <rect x="80" y="428" width="1040" height="1" fill="#2b3036"/>
+  <rect x="80" y="428" width="1040" height="1" fill="#153468"/>
 
   <!-- Subtexto -->
-  <text x="80" y="472" font-family="${FONTE}" font-size="23" font-weight="500" fill="#b3babf">Uma equipe para os quatro sistemas &#183; Residência, comércio e indústria</text>
+  <text x="80" y="472" font-family="${FONTE}" font-size="23" font-weight="500" fill="#adc8ea">Uma equipe para os quatro sistemas &#183; Residência, comércio e indústria</text>
 
   <!-- Rodape: botao WhatsApp + telefone -->
   <g transform="translate(80, 520)">
