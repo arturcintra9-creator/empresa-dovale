@@ -698,11 +698,11 @@
         if (!servico)  { mostrarErro('Escolha o tipo de serviço.');      form.servico.focus();  return; }
         if (!urgSel)   { mostrarErro('Escolha a urgência do chamado.');                         return; }
 
+        // Nome e telefone continuam sendo pedidos no formulário, mas ficam
+        // de fora da mensagem: o WhatsApp já identifica quem está enviando.
         var linhas = [
-          'Olá! Vim pelo site.',
+          'Olá! Gostaria de um orçamento.',
           '',
-          'Nome: ' + nome,
-          'Telefone: ' + telefone,
           'Serviço: ' + servico,
           'Urgência: ' + urgSel.value
         ];
