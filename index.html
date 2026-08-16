@@ -96,6 +96,9 @@
 
 <body class="bg-white text-grafite-900 antialiased">
 
+  <!-- Grão sutil sobre toda a página. Puramente decorativo. -->
+  <div class="grao" aria-hidden="true"></div>
+
   <!-- =========================================================
        FAIXA DE EMERGÊNCIA — acima da dobra
 
@@ -126,9 +129,9 @@
   <!-- =========================================================
        HEADER
   ========================================================== -->
-  <header class="sticky top-0 z-50 bg-grafite-950 border-b border-grafite-800">
+  <header class="cabecalho sticky top-0 z-50 text-white">
     <div class="max-w-6xl mx-auto px-5 sm:px-6">
-      <div class="flex items-center justify-between h-16">
+      <div class="barra-header flex items-center justify-between">
 
         <!-- Logotipo: wordmark tipográfico. A barra laranja é o único
              elemento gráfico. Sem ícone e sem palavra bicolor. -->
@@ -193,72 +196,60 @@
   <!-- =========================================================
        HERO — alinhado à esquerda, denso
   ========================================================== -->
-  <section id="inicio" class="bg-grafite-950 text-white textura halo overflow-hidden">
-    <div class="max-w-6xl mx-auto px-5 sm:px-6 py-14 sm:py-20">
-      <div class="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+  <section id="inicio" class="halo-hero bg-grafite-950 text-white overflow-hidden">
 
-        <div class="lg:col-span-7 cascata">
-          <p class="text-xs font-bold uppercase tracking-widest text-laranja-500 mb-5">
-            Climatização · Elétrica · Automação · Segurança eletrônica
-          </p><span class="regua mb-4"></span>
+    <div class="max-w-6xl mx-auto px-5 sm:px-6 py-20 sm:py-24">
+      <div class="cascata max-w-[60ch]">
+        <p class="eyebrow text-laranja-500 mb-4">
+          Climatização · Elétrica · Automação · Segurança eletrônica
+        </p>
 
-          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black leading-[1.1] mb-5">
-            Manutenção de climatização, elétrica, automação e segurança em
-            <span class="text-laranja-500">São Paulo</span>
-          </h1>
+        <h1 class="display mb-6">
+          Manutenção de climatização, elétrica, automação e segurança em
+          <span class="text-laranja-500">São Paulo</span>
+        </h1>
 
-          <p class="text-lg text-grafite-300 leading-relaxed max-w-xl mb-7">
-            Uma equipe para os quatro sistemas. Atende residência, comércio e indústria.
-            Quem faz o orçamento é quem executa o serviço.
-          </p>
+        <p class="prosa text-lg text-grafite-300 mb-8">
+          Uma equipe para os quatro sistemas. Atende residência, comércio e indústria.
+          Quem faz o orçamento é quem executa o serviço.
+        </p>
 
-          <div class="flex flex-col sm:flex-row gap-3 mb-9">
-            <a href="#orcamento" class="btn btn-acento px-6 py-3.5 text-base">
-              Pedir orçamento
-              <i data-lucide="arrow-right" class="seta-btn w-4 h-4"></i>
-            </a>
-            <a href="https://wa.me/5511938062320?text=Ol%C3%A1%2C%20preciso%20de%20um%20servi%C3%A7o%20da%20Do%20Vale."
-               target="_blank" rel="noopener noreferrer"
-               class="btn btn-whats px-6 py-3.5 text-base">
-              <i data-lucide="message-circle" class="w-4.5 h-4.5"></i>
-              Falar no WhatsApp
-            </a>
-          </div>
-
-          <!-- Fatos, não adjetivos -->
-          <dl class="grid grid-cols-2 sm:grid-cols-4 gap-x-5 gap-y-4 border-t border-grafite-800 pt-6 text-sm">
-            <div>
-              <dt class="text-grafite-500 text-xs uppercase tracking-wide mb-1">Retorno do orçamento</dt>
-              <dd><span class="pendente">CONFIRMAR: prazo</span></dd>
-            </div>
-            <div>
-              <dt class="text-grafite-500 text-xs uppercase tracking-wide mb-1">Visita técnica</dt>
-              <dd><span class="pendente">CONFIRMAR: tem custo?</span></dd>
-            </div>
-            <div>
-              <dt class="text-grafite-500 text-xs uppercase tracking-wide mb-1">Garantia do serviço</dt>
-              <dd><span class="pendente">CONFIRMAR: dias</span></dd>
-            </div>
-            <div>
-              <dt class="text-grafite-500 text-xs uppercase tracking-wide mb-1">Equipe</dt>
-              <dd><span class="pendente">CONFIRMAR: nº de técnicos</span></dd>
-            </div>
-          </dl>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="#orcamento" class="btn btn-acento px-6 py-3.5 text-base">
+            Pedir orçamento
+            <i data-lucide="arrow-right" class="seta-btn w-4 h-4"></i>
+          </a>
+          <a href="https://wa.me/5511938062320?text=Ol%C3%A1%2C%20preciso%20de%20um%20servi%C3%A7o%20da%20Do%20Vale."
+             target="_blank" rel="noopener noreferrer"
+             class="btn btn-whats px-6 py-3.5 text-base">
+            <i data-lucide="message-circle" class="w-4.5 h-4.5"></i>
+            Falar no WhatsApp
+          </a>
         </div>
+      </div>
+    </div>
 
-        <!-- Coluna: foto real do trabalho -->
-        <div class="lg:col-span-5">
-          <!-- CONFIRMAR: foto real de um serviço executado. Sem banco de imagens. -->
-          <div class="foto-pendente rounded-md aspect-4/3 flex flex-col items-center justify-center text-center p-6 bg-grafite-900 border-grafite-700">
-            <i data-lucide="camera" class="w-7 h-7 text-grafite-500 mb-3"></i>
-            <p class="text-sm font-bold text-grafite-300">[FOTO REAL: equipe executando um serviço]</p>
-            <p class="text-xs text-grafite-500 mt-1.5 max-w-xs">
-              Quadro elétrico organizado, instalação de split ou câmera posicionada.
-              Foto de celular do próprio serviço vale mais que banco de imagens.
-            </p>
+    <!-- Faixa de fatos, separada por borda hairline -->
+    <div class="border-t border-hairline">
+      <div class="max-w-6xl mx-auto px-5 sm:px-6">
+        <dl class="grid grid-cols-2 sm:grid-cols-4">
+          <div class="py-6 pr-5 sm:border-r border-hairline">
+            <dt class="eyebrow text-grafite-500 mb-1.5">Retorno do orçamento</dt>
+            <dd class="text-sm"><span class="pendente">CONFIRMAR: prazo</span></dd>
           </div>
-        </div>
-
+          <div class="py-6 px-0 sm:px-5 sm:border-r border-hairline">
+            <dt class="eyebrow text-grafite-500 mb-1.5">Visita técnica</dt>
+            <dd class="text-sm"><span class="pendente">CONFIRMAR: tem custo?</span></dd>
+          </div>
+          <div class="py-6 pr-5 sm:px-5 sm:border-r border-hairline">
+            <dt class="eyebrow text-grafite-500 mb-1.5">Garantia do serviço</dt>
+            <dd class="text-sm"><span class="pendente">CONFIRMAR: dias</span></dd>
+          </div>
+          <div class="py-6 sm:pl-5">
+            <dt class="eyebrow text-grafite-500 mb-1.5">Equipe</dt>
+            <dd class="text-sm"><span class="pendente">CONFIRMAR: nº de técnicos</span></dd>
+          </div>
+        </dl>
       </div>
     </div>
   </section>
@@ -266,7 +257,7 @@
   <!-- =========================================================
        SERVIÇOS — problema do cliente primeiro
   ========================================================== -->
-  <section id="servicos" class="py-16 sm:py-20 bg-white">
+  <section id="servicos" class="py-20 sm:py-24 bg-white">
     <div class="max-w-6xl mx-auto px-5 sm:px-6">
 
       <div class="grid lg:grid-cols-12 gap-10">
@@ -274,7 +265,7 @@
         <!-- Título à esquerda, fixo -->
         <div class="lg:col-span-4">
           <div class="lg:sticky lg:top-24 reveal">
-            <p class="text-xs font-bold uppercase tracking-widest text-laranja-600 mb-3">Serviços</p><span class="regua mb-4"></span>
+            <p class="eyebrow text-laranja-600 mb-3">Serviços</p><span class="regua mb-4"></span>
             <h2 class="text-2xl sm:text-3xl font-extrabold leading-tight mb-4">
               O que costuma dar problema
             </h2>
@@ -378,19 +369,11 @@
   <!-- =========================================================
        COMO TRABALHAMOS — bloco escuro, centralizado (quebra o ritmo)
   ========================================================== -->
-  <section id="trabalho" class="relative py-16 sm:py-20 bg-grafite-950 text-white overflow-hidden">
-
-    <!-- Textura de fundo. alt vazio de propósito: a imagem é decorativa
-         e não carrega informação — leitor de tela deve ignorá-la. -->
-    <img src="./img/textura-hero.jpg" alt="" aria-hidden="true"
-         width="1600" height="900" loading="lazy" decoding="async"
-         class="absolute inset-0 w-full h-full object-cover" />
-    <div class="absolute inset-0 bg-grafite-950/88" aria-hidden="true"></div>
-
-    <div class="relative max-w-6xl mx-auto px-5 sm:px-6">
+  <section id="trabalho" class="textura py-20 sm:py-24 bg-grafite-950 text-white overflow-hidden">
+    <div class="max-w-6xl mx-auto px-5 sm:px-6">
 
       <div class="max-w-2xl mb-10 reveal">
-        <p class="text-xs font-bold uppercase tracking-widest text-laranja-500 mb-3">Como trabalhamos</p><span class="regua mb-4"></span>
+        <p class="eyebrow text-laranja-500 mb-3">Como trabalhamos</p><span class="regua mb-4"></span>
         <h2 class="text-2xl sm:text-3xl font-extrabold leading-tight">
           Do primeiro contato até o serviço entregue
         </h2>
@@ -434,7 +417,7 @@
   <!-- =========================================================
        FATOS VERIFICÁVEIS (substitui "Por que escolher")
   ========================================================== -->
-  <section class="py-16 sm:py-20 bg-grafite-50">
+  <section class="py-20 sm:py-24 bg-grafite-50">
     <div class="max-w-6xl mx-auto px-5 sm:px-6">
       <div class="cascata grid md:grid-cols-2 gap-x-12 gap-y-8">
 
@@ -480,16 +463,32 @@
   </section>
 
   <!-- =========================================================
+       SEÇÕES DE PROVA — DESATIVADAS ATÉ HAVER MATERIAL REAL
+
+       Ficaram de fora "Depoimentos" e "Antes e depois": ocupavam
+       espaço sem entregar nada, só com marcadores vazios.
+
+       COMO REATIVAR:
+       1. Recorte tudo que está entre esta abertura e o fechamento
+          deste comentário.
+       2. Troque os [[ e ]] de volta por <!-- e --> (eram comentários
+          internos, neutralizados para não fechar este bloco antes).
+       3. Preencha com depoimento e foto REAIS, com autorização do
+          cliente. Não usar banco de imagens nem imagem de IA — estas
+          seções existem para provar serviço executado.
+  ========================================================== -->
+  <!--
+  [[ =========================================================
        DEPOIMENTOS — estrutura vazia, nunca inventar
        CONFIRMAR: pedir a 2 ou 3 clientes autorização para publicar
        nome, bairro e o que foi feito.
-  ========================================================== -->
-  <section class="py-16 sm:py-20 bg-white">
+  ========================================================== ]]
+  <section class="py-20 sm:py-24 bg-white">
     <div class="max-w-6xl mx-auto px-5 sm:px-6">
 
       <div class="flex flex-wrap items-end justify-between gap-4 mb-8 border-b border-grafite-200 pb-4 reveal">
         <div>
-          <p class="text-xs font-bold uppercase tracking-widest text-laranja-600 mb-2">Clientes</p><span class="regua mb-4"></span>
+          <p class="eyebrow text-laranja-600 mb-2">Clientes</p><span class="regua mb-4"></span>
           <h2 class="text-2xl sm:text-3xl font-extrabold">O que dizem sobre o serviço</h2>
         </div>
         <p class="text-xs text-grafite-500 max-w-xs">
@@ -536,15 +535,15 @@
     </div>
   </section>
 
-  <!-- =========================================================
+  [[ =========================================================
        GALERIA ANTES / DEPOIS
        CONFIRMAR: fotos reais de serviços executados.
-  ========================================================== -->
+  ========================================================== ]]
   <section class="py-16 sm:py-20 bg-grafite-50 border-y border-grafite-200">
     <div class="max-w-6xl mx-auto px-5 sm:px-6">
 
       <div class="max-w-2xl mb-8 reveal">
-        <p class="text-xs font-bold uppercase tracking-widest text-laranja-600 mb-3">Serviços executados</p><span class="regua mb-4"></span>
+        <p class="eyebrow text-laranja-600 mb-3">Serviços executados</p><span class="regua mb-4"></span>
         <h2 class="text-2xl sm:text-3xl font-extrabold leading-tight mb-3">Antes e depois</h2>
         <p class="text-grafite-600 text-sm leading-relaxed">
           Quadro elétrico reorganizado, evaporadora limpa, cabeamento refeito.
@@ -578,29 +577,31 @@
       </div>
     </div>
   </section>
+  -->
 
   <!-- =========================================================
        ÁREA ATENDIDA
        CONFIRMAR: listar bairros e cidades por extenso.
   ========================================================== -->
-  <section id="area" class="py-16 sm:py-20 bg-white">
+  <section id="area" class="py-20 sm:py-24 bg-white">
     <div class="max-w-6xl mx-auto px-5 sm:px-6">
       <div class="grid lg:grid-cols-12 gap-10">
 
         <div class="lg:col-span-5">
-          <p class="text-xs font-bold uppercase tracking-widest text-laranja-600 mb-3">Onde atendemos</p><span class="regua mb-4"></span>
+          <p class="eyebrow text-laranja-600 mb-3">Onde atendemos</p><span class="regua mb-4"></span>
           <h2 class="text-2xl sm:text-3xl font-extrabold leading-tight mb-4">
             Bairros e cidades na área de cobertura
           </h2>
-          <p class="text-grafite-600 text-sm leading-relaxed">
-            Escrever por extenso ajuda quem busca no Google por "manutenção de ar-condicionado
-            em [bairro]". Fora da área, consultar — pode haver taxa de deslocamento.
+          <p class="prosa text-grafite-600 text-sm">
+            Atendemos São Paulo e região. Listar os bairros por extenso ajuda quem busca
+            no Google por "manutenção de ar-condicionado em [bairro]". Fora da área,
+            consultar — pode haver taxa de deslocamento.
           </p>
         </div>
 
         <div class="lg:col-span-7">
           <div class="cartao rounded-md p-6">
-            <p class="text-xs font-bold uppercase tracking-widest text-grafite-500 mb-4">Lista de bairros</p>
+            <p class="eyebrow text-grafite-500 mb-4">Lista de bairros</p>
             <div class="flex flex-wrap gap-2 mb-5">
               <span class="pendente">CONFIRMAR: bairro 1</span>
               <span class="pendente">CONFIRMAR: bairro 2</span>
@@ -623,12 +624,12 @@
        ORÇAMENTO — formulário que monta mensagem no WhatsApp
        Sem backend: o envio abre o WhatsApp com o texto pronto.
   ========================================================== -->
-  <section id="orcamento" class="py-16 sm:py-20 bg-grafite-950 text-white">
+  <section id="orcamento" class="py-20 sm:py-24 bg-grafite-950 text-white">
     <div class="max-w-6xl mx-auto px-5 sm:px-6">
       <div class="grid lg:grid-cols-12 gap-10 lg:gap-14">
 
         <div class="lg:col-span-5">
-          <p class="text-xs font-bold uppercase tracking-widest text-laranja-500 mb-3">Orçamento</p><span class="regua mb-4"></span>
+          <p class="eyebrow text-laranja-500 mb-3">Orçamento</p><span class="regua mb-4"></span>
           <h2 class="text-2xl sm:text-3xl font-extrabold leading-tight mb-4">
             Descreva o serviço e receba o orçamento
           </h2>
@@ -727,7 +728,7 @@
        CONFIRMAR: razão social, CNPJ, responsável técnico, endereço.
   ========================================================== -->
   <footer class="bg-grafite-900 text-grafite-300 border-t border-grafite-800">
-    <div class="max-w-6xl mx-auto px-5 sm:px-6 py-12">
+    <div class="max-w-6xl mx-auto px-5 sm:px-6 py-16">
 
       <div class="grid md:grid-cols-12 gap-8 mb-10">
 
@@ -763,7 +764,7 @@
         </div>
 
         <div class="md:col-span-3">
-          <h3 class="text-xs font-bold uppercase tracking-widest text-white mb-4">Serviços</h3>
+          <h3 class="eyebrow text-white mb-4">Serviços</h3>
           <ul class="space-y-2.5 text-sm">
             <li><a href="#servicos" class="hover:text-white transition-colors">Climatização e refrigeração</a></li>
             <li><a href="#servicos" class="hover:text-white transition-colors">Elétrica</a></li>
@@ -773,7 +774,7 @@
         </div>
 
         <div class="md:col-span-4">
-          <h3 class="text-xs font-bold uppercase tracking-widest text-white mb-4">Contato</h3>
+          <h3 class="eyebrow text-white mb-4">Contato</h3>
           <ul class="space-y-3 text-sm">
             <li>
               <a href="tel:+5511938062320" class="flex items-center gap-2.5 hover:text-white transition-colors">
@@ -848,9 +849,10 @@
       }
 
       /* ---------- Ícones ---------- */
+      // stroke-width 1.5 em todos os ícones, sem exceção
       function renderIcons() {
         if (window.lucide && typeof window.lucide.createIcons === 'function') {
-          window.lucide.createIcons();
+          window.lucide.createIcons({ attrs: { 'stroke-width': 1.5 } });
         }
       }
       renderIcons();
