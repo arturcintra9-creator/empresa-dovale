@@ -21,3 +21,6 @@ npm-debug.log*
 # Observacao: a pasta dist/ NAO esta ignorada de proposito.
 # O arquivo dist/style.css fica versionado para que o site funcione
 # mesmo abrindo o index.html direto, sem precisar rodar o build.
+
+# Pacotes compactados do projeto: nao devem ir para o site
+*.zip

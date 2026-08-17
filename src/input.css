@@ -270,12 +270,6 @@
     background-color: #fff;
     box-shadow: 0 1px 2px rgba(11, 36, 71, .06);
   }
-  .cartao-escuro {
-    border: 1px solid var(--color-hairline);
-    background-color: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(8px);
-  }
-
   /* ---------- Card de servico, com a borda em gradiente da v1 ---------- */
   .servico {
     position: relative;
@@ -301,28 +295,6 @@
     mask-composite: exclude;
     opacity: 0;
     pointer-events: none;
-  }
-
-  .foto-servico {
-    position: relative;
-    background-color: var(--color-navy-900);
-    overflow: hidden;
-  }
-  .foto-servico img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    color: transparent; /* esconde o texto do alt se o arquivo faltar */
-  }
-  .foto-servico::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background: linear-gradient(to bottom,
-                rgba(6, 22, 48, 0) 0%,
-                rgba(6, 22, 48, 0.7) 100%);
   }
 
   /* Moldura do icone com gradiente, como na v1 */
@@ -452,10 +424,10 @@
     body.rolou .barra-header { height: 3.5rem; }
 
     /* Cartoes sobem e ganham sombra, como na v1 */
-    .cartao, .cartao-escuro {
+    .cartao {
       transition: transform .45s var(--ease-saida), box-shadow .45s ease, border-color .45s ease;
     }
-    .cartao:hover, .cartao-escuro:hover {
+    .cartao:hover {
       transform: translateY(-6px);
       box-shadow: 0 26px 55px -22px rgba(11, 36, 71, .45);
       border-color: var(--color-ice-300);

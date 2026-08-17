@@ -1,0 +1,10 @@
+# Arquivos que ficam no repositorio mas NAO devem ser publicados no site.
+# Sem isto, qualquer pessoa consegue abrir empresa-dovale.vercel.app/README.md
+# ou baixar os atalhos .bat.
+#
+# ATENCAO: nao acrescente aqui src/ nem tools/ — o build da Vercel precisa
+# desses dois para gerar o CSS e o endereco do site.
+
+*.md
+*.bat
+*.zip
